@@ -50,7 +50,7 @@ const SmoothReveal: React.FC<SmoothRevealProps> = ({
 
   // Set initial and final styles based on direction
   let initialStyles = {};
-  
+
   switch (direction) {
     case 'left':
       initialStyles = { clipPath: 'inset(0 100% 0 0)' };
@@ -70,7 +70,7 @@ const SmoothReveal: React.FC<SmoothRevealProps> = ({
 
   const style = {
     ...initialStyles,
-    clipPath: isRevealed ? 'inset(0 0 0 0)' : (initialStyles as any).clipPath,
+    clipPath: isRevealed ? 'inset(0 0 0 0)' : (initialStyles as { clipPath: string }).clipPath,
     transition: `clip-path ${duration}ms cubic-bezier(0.4, 0, 0.2, 1)`,
     transitionDelay: `${delay}ms`,
   };
