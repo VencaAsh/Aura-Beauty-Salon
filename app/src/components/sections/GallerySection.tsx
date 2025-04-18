@@ -13,38 +13,38 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: 'img1',
-    src: '/images/gallery/gallery-1.jpg',
+    src: '/images/gallery/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png',
     alt: 'Péče o řasy a obočí',
     caption: 'Péče o řasy'
   },
   {
     id: 'img2',
-    src: '/images/gallery/gallery-2.jpg',
+    src: '/images/gallery/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png',
     alt: 'Kosmetické ošetření pleti',
     caption: 'Péče o pleť'
   },
   {
     id: 'img3',
-    src: '/images/gallery/gallery-3.jpg',
+    src: '/images/gallery/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png',
     alt: 'Profesionální kosmetické ošetření',
     caption: 'Kosmetické ošetření'
   },
   // Doplňující placeholdery pro zachování designu
   {
     id: 'img4',
-    src: '/images/gallery/gallery-1.jpg', // Opakujeme první obrázek
+    src: '/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png', // Opakujeme první obrázek
     alt: 'Péče o řasy a obočí',
     caption: 'Lash lifting'
   },
   {
     id: 'img5',
-    src: '/images/gallery/gallery-2.jpg', // Opakujeme druhý obrázek
+    src: '/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png', // Opakujeme druhý obrázek
     alt: 'Kosmetické ošetření pleti',
     caption: 'Hloubkové čištění'
   },
   {
     id: 'img6',
-    src: '/images/gallery/gallery-3.jpg', // Opakujeme třetí obrázek
+    src: '/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png', // Opakujeme třetí obrázek
     alt: 'Profesionální kosmetické ošetření',
     caption: 'Laminace obočí'
   }

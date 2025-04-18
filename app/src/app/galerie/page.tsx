@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 // Importy obrázků
-import galleryImage1 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
-import galleryImage2 from '@/assets/images/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886.png';
-import galleryImage3 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
+import galleryImage1 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png';
+import galleryImage2 from '@/assets/images/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png';
+import galleryImage3 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png';
 // Náhledový obrázek pro galerii
 import galleryPreview from '../../../public/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
 

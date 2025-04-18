@@ -16,7 +16,7 @@ const news = [
     title: 'Nová kolekce letních procedur',
     excerpt: 'Představujeme novou kolekci letních procedur, které osvěží vaši pleť a připraví ji na slunečné dny.',
     date: '2023-06-15',
-    image: '/images/news/487887388_17861238159384747_2260617714556481489_n.jpg',
+    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
     slug: 'nova-kolekce-letnich-procedur',
     category: 'Nové služby'
   },
@@ -25,7 +25,7 @@ const news = [
     title: 'Speciální nabídka na prodloužení řas',
     excerpt: 'Využijte naši speciální nabídku na prodloužení řas metodou řasa na řasu s 20% slevou do konce měsíce.',
     date: '2023-06-10',
-    image: '/images/news/488362544_17861140617384747_6723293397755226033_n.jpg',
+    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
     slug: 'specialni-nabidka-prodlouzeni-ras',
     category: 'Akce'
   },
@@ -34,7 +34,7 @@ const news = [
     title: 'Nový přístroj pro omlazení pleti',
     excerpt: 'Do našeho salonu jsme pořídili nový přístroj pro neinvazivní omlazení pleti, který přináší viditelné výsledky již po prvním ošetření.',
     date: '2023-06-05',
-    image: '/images/news/488526782_17861239131384747_1447675895797273619_n.jpg',
+    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
     slug: 'novy-pristroj-omlazeni-pleti',
     category: 'Nové služby'
   },
@@ -43,7 +43,7 @@ const news = [
     title: 'Letní balíček péče o tělo',
     excerpt: 'Připravte své tělo na léto s naším speciálním balíčkem, který zahrnuje anticelulitidní masáž, zábal a peeling.',
     date: '2023-05-25',
-    image: '/images/news/487887388_17861238159384747_2260617714556481489_n.jpg',
+    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
     slug: 'letni-balicek-pece-o-telo',
     category: 'Akce'
   },
@@ -52,7 +52,7 @@ const news = [
     title: 'Nová řada korejské kosmetiky',
     excerpt: 'Rozšířili jsme naši nabídku o novou řadu korejské kosmetiky, která je známá svými inovativními přístupy a účinnými složkami.',
     date: '2023-05-15',
-    image: '/images/news/488362544_17861140617384747_6723293397755226033_n.jpg',
+    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
     slug: 'nova-rada-korejske-kosmetiky',
     category: 'Produkty'
   },
@@ -61,7 +61,7 @@ const news = [
     title: 'Věrnostní program pro stálé klienty',
     excerpt: 'Spouštíme nový věrnostní program pro naše stálé klienty. Sbírejte body za každou návštěvu a získejte zajímavé odměny.',
     date: '2023-05-01',
-    image: '/images/news/488526782_17861239131384747_1447675895797273619_n.jpg',
+    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
     slug: 'vernostni-program-stali-klienti',
     category: 'Akce'
   }
