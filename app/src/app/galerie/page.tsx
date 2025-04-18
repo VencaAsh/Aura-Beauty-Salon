@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import { Camera } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -9,9 +10,11 @@ export const metadata: Metadata = {
 };
 
 // Importy obrázků
-import galleryImage1 from '@/assets/images/487887388_17861238159384747_2260617714556481489_n.jpg';
-import galleryImage2 from '@/assets/images/488362544_17861140617384747_6723293397755226033_n.jpg';
-import galleryImage3 from '@/assets/images/488526782_17861239131384747_1447675895797273619_n.jpg';
+import galleryImage1 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
+import galleryImage2 from '@/assets/images/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886.png';
+import galleryImage3 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
+// Náhledový obrázek pro galerii
+import galleryPreview from '../../../public/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
 
 // Data pro galerii
 const galleryItems = [
@@ -34,23 +37,11 @@ export default function GaleriePage() {
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-brand-secondary-light py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-brand-black mb-6">Gallery</h1>
-            <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
-            <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
-              Prohlédněte si fotografie našich prací, interiéru salonu a výsledků našich služeb.
-              Přesvědčte se o kvalitě, kterou nabízíme.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Gallery"
+        subtitle="Prohlédněte si fotografie našich prací, interiéru salonu a výsledků našich služeb. Přesvědčte se o kvalitě, kterou nabízíme."
+        backgroundClass="bg-[#F8F4E9]"
+      />
 
       <div className="container mx-auto px-4 py-16">
         {/* Filtry kategorií */}
@@ -94,10 +85,12 @@ export default function GaleriePage() {
           ))}
         </div>
 
+   
+
         {/* Instagram odkaz */}
         <div className="text-center mt-16 bg-white p-8 rounded-sm shadow-sm border border-[#E6CCB2]/30 max-w-3xl mx-auto">
           <h3 className="text-xl font-serif font-light mb-4 text-[#121212]">Sledujte nás na Instagramu</h3>
-          <p className="text-brand-secondary-dark mb-6 font-light">
+          <p className="text-[#121212]/70 mb-6 font-light">
             Pro více fotografií a aktuální novinky sledujte náš Instagram profil.
           </p>
           <a
