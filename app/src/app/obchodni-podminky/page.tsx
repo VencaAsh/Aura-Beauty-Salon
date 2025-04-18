@@ -1,5 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import { FileText, Shield, Scale } from 'lucide-react';
 
 export const metadata = {
@@ -12,22 +13,11 @@ export default function TermsPage() {
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-[#F8F4E9] py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-[#121212] mb-6">Obchodní podmínky</h1>
-            <div className="h-[1px] w-16 bg-[#C9B8A8] mx-auto mb-6"></div>
-            <p className="text-center text-[#121212]/70 mb-0 max-w-2xl mx-auto font-light">
-              Seznamte se s našimi obchodními podmínkami pro poskytování kosmetických služeb.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Obchodní podmínky"
+        subtitle="Seznamte se s našimi obchodními podmínkami pro poskytování kosmetických služeb."
+        backgroundClass="bg-[#F8F4E9]"
+      />
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
