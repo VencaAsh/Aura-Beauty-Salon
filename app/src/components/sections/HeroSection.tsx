@@ -21,7 +21,7 @@ export default function HeroSection() {
           <div className="aspect-[3/4] bg-[#E6CCB2]/20 rounded-sm overflow-hidden relative">
             {/* Actual image */}
             <Image
-              src="/images/hero/image-2.jpg"
+              src="/images/hero/image-darken.jpg"
               alt="Kosmetické ošetření pleti"
               fill
               priority

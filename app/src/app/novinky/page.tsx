@@ -1,16 +1,15 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import Link from 'next/link';
-import Image from 'next/image';
+import { PageHero } from '@/components/ui';
+import { NewsFilter, NewsGrid, NewsItem, Category } from '@/components/news';
 import { Bell } from 'lucide-react';
 
-export const metadata = {
-  title: 'Novinky a speciální nabídky | Aura Beauty Salon',
-  description: 'Aktuální novinky, speciální nabídky a akce v Aura Beauty Salon. Sledujte naše nejnovější služby a výhodné balíčky.',
-};
+// Metadata je nyní v layout.tsx, protože toto je klientská komponenta
 
 // Ukázková data pro novinky
-const news = [
+const news: NewsItem[] = [
   {
     id: '1',
     title: 'Nová kolekce letních procedur',
@@ -68,7 +67,7 @@ const news = [
 ];
 
 // Kategorie pro filtrování
-const categories = [
+const categories: Category[] = [
   { id: 'all', name: 'Všechny novinky' },
   { id: 'nove-sluzby', name: 'Nové služby' },
   { id: 'akce', name: 'Akce' },
@@ -76,126 +75,91 @@ const categories = [
 ];
 
 export default function NewsPage() {
+  const [filteredNews, setFilteredNews] = useState<NewsItem[]>(news);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulace odeslání formuláře
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubscribed(true);
+      setEmail('');
+    }, 1500);
+  };
+
   return (
-    <main>
+    <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-brand-secondary-light py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-brand-black mb-6">Novinky</h1>
-            <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
-            <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
-              Buďte mezi prvními, kdo se dozví o našich novinkách, akcích a doporučeních.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Novinky"
+        subtitle="Buďte mezi prvními, kdo se dozví o našich novinkách, akcích a doporučeních."
+        backgroundClass="bg-[#F8F4E9]"
+      />
 
       <div className="container mx-auto px-4 py-16">
-
-        {/* Filtry kategorií - v reálné aplikaci by byly interaktivní */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`px-6 py-2 transition-all duration-300 ${category.id === 'all' ? 'border-b-2 border-brand-secondary-dark text-brand-black font-medium' : 'border-b border-brand-secondary-light/50 text-brand-secondary-dark hover:border-brand-secondary hover:text-brand-black'}`}
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
+        {/* Filtr novinek */}
+        <NewsFilter
+          news={news}
+          categories={categories}
+          onFilterChange={setFilteredNews}
+        />
 
         {/* Seznam novinek */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {news.map((item) => (
-            <div key={item.id} className="group">
-              <div className="bg-white rounded-sm overflow-hidden border border-brand-secondary-light/30 hover:shadow-md hover:border-brand-secondary transition-all duration-500 h-full flex flex-col">
-                <div className="h-56 relative overflow-hidden">
-                  {item.image ? (
-                    <div className="relative h-full w-full overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500"></div>
-                    </div>
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center bg-brand-secondary-light text-brand-secondary-dark">
-                      <span>{item.title}</span>
-                    </div>
-                  )}
-                  {item.category && (
-                    <div className="absolute top-3 right-3 bg-white/90 text-brand-black text-xs px-3 py-1 rounded-sm">
-                      {item.category}
-                    </div>
-                  )}
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center text-brand-secondary-dark mb-2">
-                    <p className="text-xs">{new Date(item.date).toLocaleDateString('cs-CZ', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
-                    })}</p>
-                  </div>
-                  <h3 className="text-xl font-serif font-medium text-brand-black mb-2 group-hover:text-brand-secondary-dark transition-colors duration-300">{item.title}</h3>
-                  <p className="text-brand-secondary-dark mb-4 text-sm flex-grow">{item.excerpt}</p>
-                  <Link
-                    href={`/novinky/${item.slug}`}
-                    className="mt-2 inline-flex items-center text-brand-black hover:text-brand-secondary-dark text-sm transition-colors duration-300"
-                  >
-                    Zobrazit více
-                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <NewsGrid news={filteredNews} />
 
         {/* Přihlášení k odběru novinek */}
-        <div className="bg-brand-secondary-light border border-brand-secondary/20 p-12 mt-24 text-center">
-          <h2 className="text-2xl font-serif font-light mb-4 text-brand-black">Odebírejte naše novinky</h2>
-          <div className="h-[1px] w-16 bg-brand-secondary/50 mx-auto mb-6"></div>
-          <p className="mb-10 max-w-2xl mx-auto text-brand-secondary-dark font-light">
+        <div className="bg-[#F8F4E9] border border-[#E6CCB2]/20 p-8 md:p-12 mt-24 text-center rounded-sm shadow-sm">
+          <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Odebírejte naše novinky</h2>
+          <div className="h-[1px] w-16 bg-[#C9B8A8]/50 mx-auto mb-6"></div>
+          <p className="mb-10 max-w-2xl mx-auto text-[#121212]/70 font-light">
             Přihlaste se k odběru našeho newsletteru a buďte první, kdo se dozví o našich novinkách, speciálních nabídkách a akcích.
           </p>
 
           <div className="max-w-md mx-auto">
-            <form className="flex flex-col sm:flex-row gap-4">
-              <div className="flex-grow">
-                <label htmlFor="email" className="sr-only">E-mail</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Váš e-mail"
-                  className="w-full px-4 py-3 border border-brand-secondary/30 bg-white focus:outline-none focus:border-brand-secondary rounded-sm placeholder-brand-secondary-dark/50 text-brand-black"
-                  required
-                />
+            {subscribed ? (
+              <div className="bg-white/80 p-6 rounded-sm border border-[#E6CCB2]/30 text-center">
+                <p className="text-[#121212] font-light">Děkujeme za přihlášení k odběru novinek!</p>
               </div>
-              <button
-                type="submit"
-                className="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden rounded-sm font-sans text-sm tracking-wider text-brand-black transition-all duration-500 group bg-brand-secondary opacity-90 border border-brand-secondary/20"
-              >
-                <span className="relative z-10 flex items-center">
-                  <Bell className="mr-2 h-4 w-4" />
-                  Odebírat
-                </span>
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-white group-hover:w-[calc(100%-20px)] transition-all duration-700 ease-out"></span>
-              </button>
-            </form>
+            ) : (
+              <form className="flex flex-col sm:flex-row gap-4" onSubmit={handleSubmit}>
+                <div className="flex-grow">
+                  <label htmlFor="email" className="sr-only">E-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Váš e-mail"
+                    className="w-full px-4 py-3 border border-[#E6CCB2]/30 bg-white focus:outline-none focus:border-[#E6CCB2] rounded-sm placeholder-[#121212]/50 text-[#121212]"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden rounded-sm font-sans text-sm tracking-wider text-[#121212] transition-all duration-500 group bg-[#E6CCB2]/80 hover:bg-[#E6CCB2] border border-[#E6CCB2]/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  <span className="relative z-10 flex items-center">
+                    {isSubmitting ? (
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-[#121212]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    ) : (
+                      <Bell className="mr-2 h-4 w-4" />
+                    )}
+                    <span className="font-light">{isSubmitting ? 'Odesílání...' : 'Odebírat'}</span>
+                  </span>
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>
