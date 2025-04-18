@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '../app/colors.css';
+import '../styles/colors.css';
 
 export const metadata: Metadata = {
   title: 'Test barev - Aura Beauty Salon',
