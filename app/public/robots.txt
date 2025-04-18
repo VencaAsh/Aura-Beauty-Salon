@@ -1,0 +1,10 @@
+# robots.txt for Aura Beauty Salon
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of API routes or other sensitive areas if needed in the future
+# Disallow: /api/
+# Disallow: /admin/
+
+Sitemap: /sitemap.xml

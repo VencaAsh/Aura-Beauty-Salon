@@ -1,0 +1,11 @@
+Toto je placeholder soubor pro mapu. V produkčním prostředí by zde byla statická mapa nebo by byla použita interaktivní mapa z Google Maps nebo jiné mapové služby.
+
+Doporučené rozměry pro statickou mapu:
+- Rozlišení: 800x600 pixelů
+- Formát: JPG nebo WebP pro lepší kompresi
+- Kvalita: Střední až vysoká, optimalizovaná pro web
+
+Název souboru:
+- map.jpg - Statická mapa s lokací salonu
+
+Alternativně lze použít iframe s Google Maps nebo jinou mapovou službou přímo v komponentě ContactSection.tsx.

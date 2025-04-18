@@ -1,0 +1,3 @@
+This is a placeholder file for the kosmetické ošetření (cosmetic treatment) image. 
+In a real implementation, this would be replaced with a high-quality image file (jpg or png).
+The image should show a professional cosmetic treatment being performed.

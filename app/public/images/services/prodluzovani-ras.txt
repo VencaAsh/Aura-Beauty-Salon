@@ -1,0 +1,3 @@
+This is a placeholder file for the prodlužování řas (eyelash extension) image. 
+In a real implementation, this would be replaced with a high-quality image file (jpg or png).
+The image should show a professional eyelash extension treatment or the result of such treatment.

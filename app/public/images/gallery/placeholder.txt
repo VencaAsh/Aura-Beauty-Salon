@@ -1,0 +1,14 @@
+Toto je placeholder soubor pro galerii. V produkčním prostředí by zde byly skutečné obrázky.
+
+Doporučené rozměry pro obrázky galerie:
+- Rozlišení: 800x800 pixelů (čtvercový formát)
+- Formát: JPG nebo WebP pro lepší kompresi
+- Kvalita: Vysoká, ale optimalizovaná pro web (cca 80-90%)
+
+Názvy souborů:
+- gallery-1.jpg - Detail kosmetického ošetření pleti
+- gallery-2.jpg - Úprava obočí zblízka
+- gallery-3.jpg - Aplikace řas
+- gallery-4.jpg - Interiér salonu
+- gallery-5.jpg - Kosmetické produkty
+- gallery-6.jpg - Detail ošetření

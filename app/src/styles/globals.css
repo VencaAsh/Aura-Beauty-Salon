@@ -1,0 +1,289 @@
+@import "tailwindcss";
+@import "./colors.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #121212;
+  --gold: #d4af37;
+  --gold-light: #f7f4e1;
+  --gold-dark: #aa8c2c;
+  --beige: #e6ccb2;
+  --beige-light: #f8f4e9;
+  --beige-dark: #c9a689;
+
+  /* Vertikální rytmus a mezery */
+  --section-spacing-sm: 4rem;   /* 64px */
+  --section-spacing-md: 6rem;   /* 96px */
+  --section-spacing-lg: 8rem;   /* 128px */
+  --section-padding-y: 6rem;    /* 96px */
+  --section-padding-y-sm: 4rem; /* 64px */
+
+  /* Tailwind CSS proměnné */
+  --tw-brand-primary: #d4af37;
+  --tw-brand-primary-light: #f7f4e1;
+  --tw-brand-primary-dark: #aa8c2c;
+  --tw-brand-secondary: #e6ccb2;
+  --tw-brand-secondary-light: #f8f4e9;
+  --tw-brand-secondary-dark: #c9a689;
+  --tw-brand-gold: #d4af37;
+  --tw-brand-gold-light: #f7f4e1;
+  --tw-brand-gold-dark: #aa8c2c;
+  --tw-brand-black: #121212;
+  --tw-brand-white: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+}
+
+/* Elegantní styly pro tlačítka */
+.btn-primary {
+  background-color: var(--gold);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--beige-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Vlastní CSS třídy pro barvy */
+.text-brand-gold {
+  color: var(--gold) !important;
+}
+
+.text-brand-gold-light {
+  color: var(--gold-light) !important;
+}
+
+.text-brand-gold-dark {
+  color: var(--gold-dark) !important;
+}
+
+.bg-brand-gold {
+  background-color: var(--gold) !important;
+}
+
+.bg-brand-gold-light {
+  background-color: var(--gold-light) !important;
+}
+
+.bg-brand-gold-dark {
+  background-color: var(--gold-dark) !important;
+}
+
+.border-brand-gold {
+  border-color: var(--gold) !important;
+}
+
+.border-brand-gold-light {
+  border-color: var(--gold-light) !important;
+}
+
+.border-brand-gold-dark {
+  border-color: var(--gold-dark) !important;
+}
+
+/* Mapování brand-primary na gold */
+.text-brand-primary {
+  color: var(--gold) !important;
+}
+
+.text-brand-primary-light {
+  color: var(--gold-light) !important;
+}
+
+.text-brand-primary-dark {
+  color: var(--gold-dark) !important;
+}
+
+.bg-brand-primary {
+  background-color: var(--gold) !important;
+}
+
+.bg-brand-primary-light {
+  background-color: var(--gold-light) !important;
+}
+
+.bg-brand-primary-dark {
+  background-color: var(--gold-dark) !important;
+}
+
+.border-brand-primary {
+  border-color: var(--gold) !important;
+}
+
+.hover\:text-brand-primary:hover {
+  color: var(--gold) !important;
+}
+
+.hover\:bg-brand-primary:hover {
+  background-color: var(--gold) !important;
+}
+
+.hover\:bg-brand-primary-dark:hover {
+  background-color: var(--gold-dark) !important;
+}
+
+/* Mapování brand-secondary na beige */
+.text-brand-secondary {
+  color: var(--beige) !important;
+}
+
+.text-brand-secondary-light {
+  color: var(--beige-light) !important;
+}
+
+.text-brand-secondary-dark {
+  color: var(--beige-dark) !important;
+}
+
+.bg-brand-secondary {
+  background-color: var(--beige) !important;
+}
+
+.bg-brand-secondary-light {
+  background-color: var(--beige-light) !important;
+}
+
+.bg-brand-secondary-dark {
+  background-color: var(--beige-dark) !important;
+}
+
+.border-brand-secondary {
+  border-color: var(--beige) !important;
+}
+
+.border-brand-secondary-light {
+  border-color: var(--beige-light) !important;
+}
+
+.hover\:text-brand-secondary:hover {
+  color: var(--beige) !important;
+}
+
+.hover\:bg-brand-secondary:hover {
+  background-color: var(--beige) !important;
+}
+
+.hover\:bg-brand-secondary-light:hover {
+  background-color: var(--beige-light) !important;
+}
+
+.hover\:text-brand-gold:hover {
+  color: var(--gold) !important;
+}
+
+.hover\:bg-brand-gold:hover {
+  background-color: var(--gold) !important;
+}
+
+.hover\:bg-brand-gold-dark:hover {
+  background-color: var(--gold-dark) !important;
+}
+
+.from-brand-gold-dark {
+  --tw-gradient-from: var(--gold-dark) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(170 140 44 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-brand-gold {
+  --tw-gradient-to: var(--gold) var(--tw-gradient-to-position);
+}
+
+.from-brand-gold {
+  --tw-gradient-from: var(--gold) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(212 175 55 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-brand-gold-light {
+  --tw-gradient-to: var(--gold-light) var(--tw-gradient-to-position);
+}
+
+/* Styly pro sekce */
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section--hero {
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.section--light {
+  background-color: var(--background);
+}
+
+.section--beige {
+  background-color: #F9F7F5;
+}
+
+/* Responzivní mezery mezi sekcemi */
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--section-padding-y-sm);
+    padding-bottom: var(--section-padding-y-sm);
+  }
+}
+
+/* Spacer utility classes */
+.spacer {
+  width: 100%;
+  height: var(--section-spacing-md);
+}
+
+.spacer--sm {
+  height: var(--section-spacing-sm);
+}
+
+.spacer--md {
+  height: var(--section-spacing-md);
+}
+
+.spacer--lg {
+  height: var(--section-spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .spacer {
+    height: var(--section-spacing-sm);
+  }
+
+  .spacer--lg {
+    height: var(--section-spacing-md);
+  }
+}

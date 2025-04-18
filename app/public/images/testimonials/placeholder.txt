@@ -1,0 +1,13 @@
+Toto je placeholder soubor pro obrázky recenzí. V produkčním prostředí by zde byly skutečné fotografie klientek.
+
+Doporučené rozměry pro fotografie recenzí:
+- Rozlišení: 300x300 pixelů (čtvercový formát pro kruhové oříznutí)
+- Formát: JPG nebo WebP pro lepší kompresi
+- Kvalita: Vysoká, ale optimalizovaná pro web (cca 80-90%)
+
+Názvy souborů:
+- testimonial-1.jpg - Fotografie Karolíny M.
+- testimonial-2.jpg - Fotografie Terezy K.
+- testimonial-3.jpg - Fotografie Martiny V.
+
+Poznámka: Pro zachování soukromí klientek je možné použít modelky nebo stock fotografie s příslušnými licencemi.
