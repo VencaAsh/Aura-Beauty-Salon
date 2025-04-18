@@ -21,7 +21,7 @@ export default function SluzbyPage() {
       </section>
 
       {/* Hlavní obsah */}
-      <div className="bg-white pb-16">
+      <div className="bg-white py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Filtry kategorií */}
           <div className="mb-12">

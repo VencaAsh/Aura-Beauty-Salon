@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { BRANCHES } from '@/constants';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
+import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const mainBranch = BRANCHES[0]; // Hlavní pobočka (Brno - Řečkovice)
@@ -108,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link href="/kontakt" className="text-xs tracking-widest text-[#121212]/70 hover:text-[#C9B8A8] transition-colors py-1 font-light inline-block px-2">kontakt</Link>
               </li>
-       
+
             </ul>
           </nav>
 
@@ -126,9 +128,7 @@ export default function Footer() {
                 Obchodní podmínky
               </Link>
               <span className="hidden md:inline text-xs text-[#121212]/30 font-light">|</span>
-              <Link href="/cookies" className="text-xs text-[#121212]/50 hover:text-[#C9B8A8] transition-colors font-light px-1">
-                Cookies
-              </Link>
+              <CookieSettingsButton />
             </div>
           </div>
         </div>

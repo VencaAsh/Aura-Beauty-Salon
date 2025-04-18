@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { CalendarCheck, Clock, CheckCircle, Phone, Mail } from 'lucide-react';
+import { CalendarCheck, Clock, CheckCircle, Phone, Mail, Info } from 'lucide-react';
 import NoonaReservation from '@/components/NoonaReservation';
 
 export const metadata = {
@@ -14,16 +14,16 @@ export default function ReservationPage() {
       <Breadcrumbs />
 
       {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-brand-secondary-light py-24">
+      <section className="relative overflow-hidden bg-[#F8F4E9] py-24">
         {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
+        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-brand-black mb-6">Reservation</h1>
-            <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
-            <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
+            <h1 className="text-4xl md:text-5xl font-serif font-light text-[#121212] mb-6">Rezervace</h1>
+            <div className="h-[1px] w-16 bg-[#C9B8A8] mx-auto mb-6"></div>
+            <p className="text-center text-[#121212]/70 mb-0 max-w-2xl mx-auto font-light">
               Rezervujte si termín v našem salonu online. Vyberte si službu, specialistu a termín, který vám vyhovuje.
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function ReservationPage() {
               <CalendarCheck className="w-10 h-10" />
             </div>
             <h3 className="text-xl font-serif font-light text-[#121212] mb-3">Jednoduchá rezervace</h3>
-            <p className="text-brand-secondary-dark font-light">
+            <p className="text-[#121212]/70 font-light">
               Vyberte si službu, specialistu a termín, který vám vyhovuje, a rezervujte si návštěvu online.
             </p>
           </div>
@@ -47,8 +47,8 @@ export default function ReservationPage() {
               <Clock className="w-10 h-10" />
             </div>
             <h3 className="text-xl font-serif font-light text-[#121212] mb-3">Flexibilní termíny</h3>
-            <p className="text-brand-secondary-dark font-light">
-              Nabízíme širokou škálu termínů od pondělí do soboty, abyste si mohli vybrat ten, který vám nejlépe vyhovuje.
+            <p className="text-[#121212]/70 font-light">
+              Nabízíme širokou škálu termínů od pondělí do pátku, abyste si mohli vybrat ten, který vám nejlépe vyhovuje.
             </p>
           </div>
 
@@ -57,22 +57,38 @@ export default function ReservationPage() {
               <CheckCircle className="w-10 h-10" />
             </div>
             <h3 className="text-xl font-serif font-light text-[#121212] mb-3">Okamžité potvrzení</h3>
-            <p className="text-brand-secondary-dark font-light">
+            <p className="text-[#121212]/70 font-light">
               Po dokončení rezervace obdržíte okamžité potvrzení e-mailem s detaily vaší návštěvy.
             </p>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white shadow-md border border-[#E6CCB2]/30 rounded-sm overflow-hidden mb-16">
-          <h2 className="text-2xl font-serif font-light p-6 text-[#121212] text-center border-b border-[#E6CCB2]/30">Online rezervační systém</h2>
-          <div className="p-4">
-            <NoonaReservation />
+        <div className="max-w-6xl mx-auto bg-white shadow-lg border border-[#E6CCB2]/30 rounded-sm overflow-hidden mb-16">
+          <div className="p-6 border-b border-[#E6CCB2]/30 flex flex-col md:flex-row justify-between items-center">
+            <h2 className="text-2xl font-serif font-light text-[#121212] mb-3 md:mb-0">Online rezervační systém</h2>
+            <div className="text-sm text-[#121212]/70 font-light">
+              <span className="inline-flex items-center">
+                <Clock className="w-4 h-4 mr-2 text-[#C9B8A8]" />
+                Otevíraci doba: Po-Pá 11:00-20:00
+              </span>
+            </div>
+          </div>
+          <div className="p-0 md:p-2 bg-[#F8F4E9]/30">
+            <div className="bg-white rounded-sm overflow-hidden">
+              <NoonaReservation />
+            </div>
+          </div>
+          <div className="p-4 border-t border-[#E6CCB2]/30 bg-[#F8F4E9]/20">
+            <div className="flex items-center justify-center text-sm text-[#121212]/70 font-light">
+              <Info className="w-4 h-4 mr-2 text-[#C9B8A8]" />
+              <span>Rezervační systém je poskytován službou Noona</span>
+            </div>
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto bg-white shadow-md border border-[#E6CCB2]/30 rounded-sm overflow-hidden p-8 text-center">
           <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Potřebujete pomoc s rezervací?</h2>
-          <p className="mb-8 text-brand-secondary-dark font-light max-w-2xl mx-auto">
+          <p className="mb-8 text-[#121212]/70 font-light max-w-2xl mx-auto">
             Pokud máte jakékoliv dotazy nebo potřebujete pomoc s rezervací, neváhejte nás kontaktovat telefonicky nebo e-mailem.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">

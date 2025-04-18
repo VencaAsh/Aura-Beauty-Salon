@@ -15,7 +15,7 @@ const teamMember = {
   name: 'Alexandra Makrushyna',
   position: 'Majitelka & Kosmetička',
   bio: 'Makrushyna je zakladatelkou a majitelkou Aura Beauty Salonu s více než 15 lety zkušeností v oblasti kosmetiky a wellness. Specializuje se na luxusní ošetření pleti, anti-aging procedury a holístický přístup ke kráse. Její vášeň pro dokonalost a individuální přístup ke každému klientovi z ní dělá vyhledávanou odbornici v oboru.',
-  image: '/images/team/488362544_17861140617384747_6723293397755226033_n.jpg',
+  image: '/images/team/makrushyna.jpeg',
   phone: '+420 777 123 456',
   email: 'makrushyna@aurabeauty.cz',
   branch: 'Brno - Řečkovice',

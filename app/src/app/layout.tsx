@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google"; // Elegantní kombinace fontů
 import { Header, Footer } from "@/components/layout"; // Import layout komponent
-import { CookieConsentBanner } from "@/components/ui"; // Import UI komponent
+// import { CookieConsentBanner } from "@/components/ui"; // Původní cookie banner - nyní nepoužíváme
+import EnhancedCookieConsentBanner from "@/components/ui/EnhancedCookieConsentBanner"; // Import vylepšeného cookie banneru
 import { SITE_METADATA } from "@/constants";
 import "@/styles/globals.css";
 
@@ -34,7 +35,8 @@ export default function RootLayout({
             {children}
           </main>
           <Footer /> {/* Použití komponenty Footer */}
-          <CookieConsentBanner /> {/* Přidání cookie lišty */}
+          {/* <CookieConsentBanner /> */} {/* Původní cookie lišta - zaměněno za vylepšenou verzi */}
+          <EnhancedCookieConsentBanner hideFooterButton={true} /> {/* Vylepšená cookie lišta s centrem preferencí */}
         </div>
       </body>
     </html>
