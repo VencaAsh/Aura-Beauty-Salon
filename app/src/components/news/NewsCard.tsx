@@ -54,7 +54,7 @@ export default function NewsCard({ item, index }: NewsCardProps) {
           <h3 className="text-xl font-serif font-light text-[#121212] mb-2 group-hover:text-[#C9B8A8] transition-colors duration-300">{item.title}</h3>
           <p className="text-[#121212]/70 mb-4 text-sm flex-grow font-light">{item.excerpt}</p>
           <Link
-            href={`/novinky/${item.slug}`}
+            href={`/blog/${item.slug}`}
             className="mt-2 inline-flex items-center text-[#121212] hover:text-[#C9B8A8] text-sm transition-colors duration-300"
           >
             <span className="font-light">Zobrazit více</span>

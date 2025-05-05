@@ -11,13 +11,13 @@ interface NewsGridProps {
 
 export default function NewsGrid({ news }: NewsGridProps) {
   const [visibleCount, setVisibleCount] = useState(6);
-  
+
   const showMore = () => {
     setVisibleCount(prev => Math.min(prev + 3, news.length));
   };
-  
+
   const hasMore = visibleCount < news.length;
-  
+
   return (
     <div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -27,17 +27,17 @@ export default function NewsGrid({ news }: NewsGridProps) {
           ))}
         </AnimatePresence>
       </div>
-      
+
       {news.length === 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-center py-16"
         >
-          <p className="text-[#121212]/70 font-light">Nebyly nalezeny žádné novinky odpovídající vašemu filtru.</p>
+          <p className="text-[#121212]/70 font-light">Nebyly nalezeny žádné články odpovídající vašemu filtru.</p>
         </motion.div>
       )}
-      
+
       {hasMore && (
         <div className="text-center mt-12">
           <motion.button

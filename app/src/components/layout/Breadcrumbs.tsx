@@ -28,8 +28,8 @@ export default function Breadcrumbs() {
       case 'sluzby':
         name = 'Služby';
         break;
-      case 'novinky':
-        name = 'Novinky';
+      case 'blog':
+        name = 'Blog';
         break;
       case 'aktuality':
         name = 'Aktuality';

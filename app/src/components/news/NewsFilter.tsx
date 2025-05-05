@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, X, Filter, Calendar, Tag } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Typy pro novinky a kategorie
+// Typy pro články a kategorie
 export interface NewsItem {
   id: string;
   title: string;
@@ -34,18 +34,18 @@ export default function NewsFilter({ news, categories, onFilterChange }: NewsFil
   const [isAdvancedFilterOpen, setIsAdvancedFilterOpen] = useState(false);
   const [dateRange, setDateRange] = useState({ from: '', to: '' });
 
-  // Efekt pro filtrování novinek
+  // Efekt pro filtrování článků
   useEffect(() => {
     const filteredNews = news.filter((item) => {
       // Filtrování podle vyhledávacího výrazu
-      const matchesSearch = searchTerm === '' || 
-        item.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      const matchesSearch = searchTerm === '' ||
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      
+
       // Filtrování podle kategorie
-      const matchesCategory = selectedCategory === 'all' || 
+      const matchesCategory = selectedCategory === 'all' ||
         item.category.toLowerCase().replace(/\s+/g, '-') === selectedCategory;
-      
+
       // Filtrování podle data
       let matchesDate = true;
       if (dateRange.from) {
@@ -54,22 +54,22 @@ export default function NewsFilter({ news, categories, onFilterChange }: NewsFil
       if (dateRange.to) {
         matchesDate = matchesDate && new Date(item.date) <= new Date(dateRange.to);
       }
-      
+
       return matchesSearch && matchesCategory && matchesDate;
     });
-    
+
     // Řazení novinek
     const sortedNews = [...filteredNews].sort((a, b) => {
       const dateA = new Date(a.date).getTime();
       const dateB = new Date(b.date).getTime();
-      
+
       if (sortBy === 'newest') {
         return dateB - dateA;
       } else {
         return dateA - dateB;
       }
     });
-    
+
     onFilterChange(sortedNews);
   }, [news, searchTerm, selectedCategory, sortBy, dateRange, onFilterChange]);
 
@@ -94,18 +94,18 @@ export default function NewsFilter({ news, categories, onFilterChange }: NewsFil
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Hledat v novinkách..."
+            placeholder="Hledat v blogu..."
             className="w-full py-3 px-3 text-[#121212] bg-transparent border-none focus:outline-none font-light"
           />
           {searchTerm && (
-            <button 
+            <button
               onClick={() => setSearchTerm('')}
               className="pr-4 text-[#C9B8A8] hover:text-[#121212] transition-colors duration-300"
             >
               <X size={18} />
             </button>
           )}
-          <button 
+          <button
             onClick={() => setIsAdvancedFilterOpen(!isAdvancedFilterOpen)}
             className={`px-4 py-3 border-l border-[#E6CCB2]/30 text-[#121212] hover:bg-[#F8F4E9]/50 transition-all duration-300 flex items-center ${isAdvancedFilterOpen ? 'bg-[#F8F4E9]/50' : ''}`}
           >
@@ -220,8 +220,8 @@ export default function NewsFilter({ news, categories, onFilterChange }: NewsFil
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
             className={`px-6 py-2 transition-all duration-300 ${
-              category.id === selectedCategory 
-                ? 'border-b-2 border-[#C9B8A8] text-[#121212] font-medium' 
+              category.id === selectedCategory
+                ? 'border-b-2 border-[#C9B8A8] text-[#121212] font-medium'
                 : 'border-b border-[#E6CCB2]/30 text-[#121212]/70 hover:border-[#C9B8A8] hover:text-[#121212]'
             }`}
           >

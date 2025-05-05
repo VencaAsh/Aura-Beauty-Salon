@@ -8,7 +8,7 @@ import { Bell } from 'lucide-react';
 
 // Metadata je nyní v layout.tsx, protože toto je klientská komponenta
 
-// Ukázková data pro novinky
+// Ukázková data pro blog
 const news: NewsItem[] = [
   {
     id: '1',
@@ -68,13 +68,13 @@ const news: NewsItem[] = [
 
 // Kategorie pro filtrování
 const categories: Category[] = [
-  { id: 'all', name: 'Všechny novinky' },
+  { id: 'all', name: 'Všechny články' },
   { id: 'nove-sluzby', name: 'Nové služby' },
   { id: 'akce', name: 'Akce' },
   { id: 'produkty', name: 'Produkty' }
 ];
 
-export default function NewsPage() {
+export default function BlogPage() {
   const [filteredNews, setFilteredNews] = useState<NewsItem[]>(news);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [email, setEmail] = useState('');
@@ -97,25 +97,25 @@ export default function NewsPage() {
       <Breadcrumbs />
 
       <PageHero
-        title="Novinky"
+        title="Blog"
         subtitle="Buďte mezi prvními, kdo se dozví o našich novinkách, akcích a doporučeních."
         backgroundClass="bg-[#F8F4E9]"
       />
 
       <div className="container mx-auto px-4 py-16">
-        {/* Filtr novinek */}
+        {/* Filtr článků */}
         <NewsFilter
           news={news}
           categories={categories}
           onFilterChange={setFilteredNews}
         />
 
-        {/* Seznam novinek */}
+        {/* Seznam článků */}
         <NewsGrid news={filteredNews} />
 
         {/* Přihlášení k odběru novinek */}
         <div className="bg-[#F8F4E9] border border-[#E6CCB2]/20 p-8 md:p-12 mt-24 text-center rounded-sm shadow-sm">
-          <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Odebírejte naše novinky</h2>
+          <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Odebírejte náš blog</h2>
           <div className="h-[1px] w-16 bg-[#C9B8A8]/50 mx-auto mb-6"></div>
           <p className="mb-10 max-w-2xl mx-auto text-[#121212]/70 font-light">
             Přihlaste se k odběru našeho newsletteru a buďte první, kdo se dozví o našich novinkách, speciálních nabídkách a akcích.

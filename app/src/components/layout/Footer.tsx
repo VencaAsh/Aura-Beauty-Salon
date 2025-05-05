@@ -102,6 +102,9 @@ export default function Footer() {
                 <Link href="/sluzby" className="text-xs tracking-widest text-[#121212]/70 hover:text-[#C9B8A8] transition-colors py-1 font-light inline-block px-2">služby</Link>
               </li>
               <li>
+                <Link href="/blog" className="text-xs tracking-widest text-[#121212]/70 hover:text-[#C9B8A8] transition-colors py-1 font-light inline-block px-2">blog</Link>
+              </li>
+              <li>
                 <Link href="/cenik" className="text-xs tracking-widest text-[#121212]/70 hover:text-[#C9B8A8] transition-colors py-1 font-light inline-block px-2">ceník</Link>
               </li>
               <li>

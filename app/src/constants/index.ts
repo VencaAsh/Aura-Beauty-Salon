@@ -2,7 +2,7 @@
 export const NAV_LINKS = [
   { href: '/', label: 'domů' },
   { href: '/sluzby', label: 'služby' },
-  { href: '/novinky', label: 'novinky' },
+  { href: '/blog', label: 'blog' },
   { href: '/tym', label: 'náš tým' },
   { href: '/cenik', label: 'ceník' },
   { href: '/galerie', label: 'galerie' },
