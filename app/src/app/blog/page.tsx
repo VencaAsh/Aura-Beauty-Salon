@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { PageHero } from '@/components/ui';
 import { NewsFilter, NewsGrid, NewsItem, Category } from '@/components/news';
-import { Bell } from 'lucide-react';
 
 // Metadata je nyní v layout.tsx, protože toto je klientská komponenta
 
@@ -76,21 +75,6 @@ const categories: Category[] = [
 
 export default function BlogPage() {
   const [filteredNews, setFilteredNews] = useState<NewsItem[]>(news);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulace odeslání formuláře
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubscribed(true);
-      setEmail('');
-    }, 1500);
-  };
 
   return (
     <main className="bg-[#F5F3F0]">
@@ -113,53 +97,58 @@ export default function BlogPage() {
         {/* Seznam článků */}
         <NewsGrid news={filteredNews} />
 
-        {/* Přihlášení k odběru novinek */}
+        {/* Sociální sítě */}
         <div className="bg-[#F8F4E9] border border-[#E6CCB2]/20 p-8 md:p-12 mt-24 text-center rounded-sm shadow-sm">
-          <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Odebírejte náš blog</h2>
+          <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Sledujte nás</h2>
           <div className="h-[1px] w-16 bg-[#C9B8A8]/50 mx-auto mb-6"></div>
           <p className="mb-10 max-w-2xl mx-auto text-[#121212]/70 font-light">
-            Přihlaste se k odběru našeho newsletteru a buďte první, kdo se dozví o našich novinkách, speciálních nabídkách a akcích.
+            Sledujte nás na sociálních sítích, kde pravidelně zveřejňujeme novinky, tipy na péči a inspiraci
           </p>
 
-          <div className="max-w-md mx-auto">
-            {subscribed ? (
-              <div className="bg-white/80 p-6 rounded-sm border border-[#E6CCB2]/30 text-center">
-                <p className="text-[#121212] font-light">Děkujeme za přihlášení k odběru novinek!</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            {/* Instagram */}
+            <div className="group flex flex-col items-center text-center p-6 bg-white border border-[#E6CCB2]/10 hover:border-[#E6CCB2]/30 transition-all duration-500 rounded-sm">
+              <div className="w-12 h-12 flex items-center justify-center border border-[#E6CCB2]/20 rounded-full mb-4 group-hover:bg-[#E6CCB2]/10 transition-all duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#121212]">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
               </div>
-            ) : (
-              <form className="flex flex-col sm:flex-row gap-4" onSubmit={handleSubmit}>
-                <div className="flex-grow">
-                  <label htmlFor="email" className="sr-only">E-mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Váš e-mail"
-                    className="w-full px-4 py-3 border border-[#E6CCB2]/30 bg-white focus:outline-none focus:border-[#E6CCB2] rounded-sm placeholder-[#121212]/50 text-[#121212]"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden rounded-sm font-sans text-sm tracking-wider text-[#121212] transition-all duration-500 group bg-[#E6CCB2]/80 hover:bg-[#E6CCB2] border border-[#E6CCB2]/20 disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  <span className="relative z-10 flex items-center">
-                    {isSubmitting ? (
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-[#121212]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    ) : (
-                      <Bell className="mr-2 h-4 w-4" />
-                    )}
-                    <span className="font-light">{isSubmitting ? 'Odesílání...' : 'Odebírat'}</span>
-                  </span>
-                </button>
-              </form>
-            )}
+              <h3 className="text-lg font-serif font-light mb-2 text-[#121212]">Instagram</h3>
+              <p className="text-[#121212]/70 mb-4 font-light text-sm">
+                Sledujte naše nejnovější práce a inspirace
+              </p>
+              <a
+                href="https://www.instagram.com/aura.beautyy.salon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-transparent border border-[#E6CCB2]/50 text-[#121212] hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 font-light py-2 px-4 rounded-sm transition-all duration-300 text-xs tracking-wide"
+              >
+                Sledovat na Instagramu
+              </a>
+            </div>
+
+            {/* Facebook */}
+            <div className="group flex flex-col items-center text-center p-6 bg-white border border-[#E6CCB2]/10 hover:border-[#E6CCB2]/30 transition-all duration-500 rounded-sm">
+              <div className="w-12 h-12 flex items-center justify-center border border-[#E6CCB2]/20 rounded-full mb-4 group-hover:bg-[#E6CCB2]/10 transition-all duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#121212]">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </div>
+              <h3 className="text-lg font-serif font-light mb-2 text-[#121212]">Facebook</h3>
+              <p className="text-[#121212]/70 mb-4 font-light text-sm">
+                Sledujte naše akce a speciální nabídky
+              </p>
+              <a
+                href="https://www.facebook.com/profile.php?id=61573920463799"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-transparent border border-[#E6CCB2]/50 text-[#121212] hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 font-light py-2 px-4 rounded-sm transition-all duration-300 text-xs tracking-wide"
+              >
+                Sledovat na Facebooku
+              </a>
+            </div>
           </div>
         </div>
       </div>

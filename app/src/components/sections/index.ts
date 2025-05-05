@@ -5,3 +5,4 @@ export { default as ServicesSection } from './ServicesSection';
 export { default as GallerySection } from './GallerySection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as ContactSection } from './ContactSection';
+export { default as SocialLinksSection } from './SocialLinksSection';

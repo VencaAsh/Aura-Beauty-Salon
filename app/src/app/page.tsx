@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { SITE_METADATA } from '@/constants';
-import { HeroSection, ExperienceSection, ServicesSection, GallerySection, TestimonialsSection, ContactSection } from '@/components/sections';
+import { HeroSection, ExperienceSection, ServicesSection, GallerySection, TestimonialsSection, SocialLinksSection, ContactSection } from '@/components/sections';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
@@ -19,6 +19,8 @@ export default function Home() {
       <GallerySection />
 
       <TestimonialsSection />
+
+      <SocialLinksSection />
 
       <ContactSection />
     </main>
