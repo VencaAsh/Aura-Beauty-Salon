@@ -18,41 +18,57 @@ type PriceCategory = {
 
 export const metadata = {
   title: 'Ceník služeb | Aura Beauty Salon',
-  description: 'Ceník služeb nabízených v Aura Beauty Salon. Prodlužování řas, architektura obočí a laminace obočí.',
+  description: 'Ceník služeb nabízených v Aura Beauty Salon. Prodlužování řas, architektura obočí, laminace obočí a kompletní kosmetické služby.',
 };
 
 // Data pro ceník
 const priceList: PriceCategory[] = [
   {
-    category: 'Prodlužování řas',
+    category: 'Obočí',
     services: [
-      { name: 'Prodloužení řas - metoda řasa na řasu (Nový set)', price: '1 100 Kč', duration: '150 min' },
-      { name: 'Doplnění řas (2 týdny)', price: '550 Kč', duration: '100 min' },
-      { name: 'Doplnění řas (3 týdny)', price: '750 Kč', duration: '130 min' },
-      { name: 'Doplnění řas (4 týdny)', price: '1 050 Kč', duration: '150 min' },
-      { name: 'Prodloužení řas - metoda 2D/3D (Nový set)', price: '1 200 Kč', duration: '150 min' },
-      { name: 'Odstranění řas', price: '250 Kč', duration: '20 min' }
-    ]
-  },
-  {
-    category: 'Architektura obočí',
-    services: [
-      { name: 'Architektura & Barvení obočí', price: '490 Kč', duration: '60 min', description: 'Architektura a barvení obočí zvýrazní kontury, dodá symetrii a vytvoří přirozeně plný a upravený vzhled.' },
-      { name: 'Úprava tvaru voskem a pinzetou & Výživa', price: '250 Kč', duration: '50 min', description: 'Přirozené zvýraznění tvaru obočí pomocí vosku/pinzety bez barvení.' }
-    ]
-  },
-  {
-    category: 'Laminace obočí',
-    services: [
+      { name: 'Laminace obočí s barvou', price: '890 Kč', duration: '60 min', description: 'Laminace obočí zafixuje chloupky do požadovaného tvaru, zvýrazní je a dodá upravený vzhled. Výdrž 4-6 týdnů.' },
       { name: 'Laminace obočí bez barvy', price: '790 Kč', duration: '60 min', description: 'Laminace obočí zafixuje chloupky do požadovaného tvaru, zvýrazní je a dodá upravený vzhled. Výdrž 4-6 týdnů.' },
-      { name: 'Laminace obočí s barvou', price: '890 Kč', duration: '60 min', description: 'Laminace obočí zafixuje chloupky do požadovaného tvaru, zvýrazní je a dodá upravený vzhled. Výdrž 4-6 týdnů.' }
+      { name: 'Architektura & barvení obočí', price: '490 Kč', duration: '60 min', description: 'Architektura a barvení obočí zvýrazní kontury, dodá symetrii a vytvoří přirozeně plný a upravený vzhled.' },
+      { name: 'Basic úprava voskem/pinzetou & sérum', price: '250 Kč', duration: '50 min', description: 'Přirozené zvýraznění tvaru obočí pomocí vosku/pinzety bez barvení.' }
     ]
   },
   {
-    category: 'Řasy - Lash lifting & Barvení',
+    category: 'Řasy',
     services: [
-      { name: 'Lash lifting + barvení', price: '950 Kč', duration: '60 min', description: 'Lash lifting krásně natočí a zvýrazní řasy, opticky je prodlouží a otevře pohled. Výsledkem jsou přirozeně výrazné řasy na 3-6 týdnů.' },
-      { name: 'Barvení řas & Výživa', price: '200 Kč', duration: '30 min', description: 'Barvení řas se závěrečnou botoxovou péčí.' }
+      { name: 'Lash lifting', price: '950 Kč', duration: '60 min', description: 'Lash lifting krásně natočí a zvýrazní řasy, opticky je prodlouží a otevře pohled. Výsledkem jsou přirozeně výrazné řasy na 3-6 týdnů.' },
+      { name: 'Barvení řas & sérum', price: '250 Kč', duration: '30 min', description: 'Barvení řas se závěrečnou výživovou péčí.' },
+      { name: 'Prodloužení řas classic', price: '1100 Kč', duration: '150 min' },
+      { name: 'Doplnění 2 týdny', price: '550 Kč', duration: '100 min' },
+      { name: 'Doplnění 3 týdny', price: '750 Kč', duration: '130 min' },
+      { name: 'Doplnění 4 týdny', price: 'Dle stavu', duration: '150 min' },
+      { name: 'Prodloužení řas volume', price: '1200 Kč', duration: '150 min' },
+      { name: 'Doplnění 2 týdny', price: '600 Kč', duration: '100 min' },
+      { name: 'Doplnění 3 týdny', price: '800 Kč', duration: '130 min' },
+      { name: 'Doplnění 4 týdny', price: 'Dle stavu', duration: '150 min' },
+      { name: 'Prodloužení řas 2D,3D', price: '1350 Kč', duration: '150 min' },
+      { name: 'Doplnění 2 týdny', price: '650 Kč', duration: '100 min' },
+      { name: 'Doplnění 3 týdny', price: '850 Kč', duration: '130 min' },
+      { name: 'Doplnění 4 týdny', price: 'Dle stavu', duration: '150 min' },
+      { name: 'Výhodný balíček laminace obočí & lash lifting', price: '1700 Kč', duration: '120 min' }
+    ]
+  },
+  {
+    category: 'Kosmetika',
+    services: [
+      { name: 'Základní ošetření pure balance', price: '990 Kč', duration: '60 min' },
+      { name: 'Ošetření pro problematickou pleť', price: '1200 Kč', duration: '75 min' },
+      { name: 'Clearcalm therapy', price: '1200 Kč', duration: '75 min' },
+      { name: 'Ošetření anti-age youth therapy', price: '1400 Kč', duration: '90 min' },
+      { name: 'Relax therapy', price: '900 Kč', duration: '60 min' },
+      { name: 'Mikrojehlíčkování obličej', price: '1800 Kč', duration: '90 min' },
+      { name: 'Mikrojehlíčkování obličej & dekolt', price: '2090 Kč', duration: '120 min' },
+      { name: 'Dermaplaning', price: '1390 Kč', duration: '75 min' },
+      { name: 'Carboxy therapy CO2', price: '1400 Kč', duration: '75 min' },
+      { name: 'Elektroporace', price: '1450 Kč', duration: '90 min' },
+      { name: 'LHA & ALA chemický peeling', price: '1900 Kč', duration: '75 min' },
+      { name: 'Pánské ošetření pleti', price: '1000 Kč', duration: '60 min' },
+      { name: 'Ošetření mladistvé pleti', price: '1000 Kč', duration: '60 min' },
+      { name: 'Masáž rukou ke kosmetice', price: '150 Kč', duration: '15 min' }
     ]
   }
 ];
@@ -73,7 +89,7 @@ export default function PriceListPage() {
             <h1 className="text-4xl md:text-5xl font-serif font-light text-brand-black mb-6">Ceník služeb</h1>
             <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
             <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
-              Ceník služeb nabízených v Aura Beauty Salon. Specializujeme se na prodlužování řas, architekturu obočí a laminaci obočí. Ceny jsou uvedeny včetně DPH.
+              Ceník služeb nabízených v Aura Beauty Salon. Specializujeme se na prodlužování řas, architekturu obočí, laminaci obočí a kompletní kosmetické ošetření. Ceny jsou uvedeny včetně DPH.
             </p>
           </div>
         </div>
