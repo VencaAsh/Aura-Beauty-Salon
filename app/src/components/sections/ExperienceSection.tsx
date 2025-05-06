@@ -7,8 +7,8 @@ export default function ExperienceSection() {
         <div className="flex flex-col md:flex-row items-center">
           {/* Levá strana - Text */}
           <div className="w-full md:w-1/2 md:pr-12 mb-12 md:mb-0">
-            <h2 className="text-2xl md:text-3xl font-light mb-6 tracking-wide text-[#121212]">
-              The Experience
+            <h2 className="text-3xl md:text-4xl font-serif font-light mb-6 text-[#121212]">
+              Zážitek
             </h2>
 
             <div className="h-[1px] w-16 bg-[#C9B8A8]/50 mb-8"></div>

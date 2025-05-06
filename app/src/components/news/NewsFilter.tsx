@@ -13,6 +13,7 @@ export interface NewsItem {
   image: string;
   slug: string;
   category: string;
+  content?: string; // Volitelný obsah článku pro detail stránky
 }
 
 export interface Category {

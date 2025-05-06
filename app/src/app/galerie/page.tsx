@@ -38,7 +38,7 @@ export default function GaleriePage() {
       <Breadcrumbs />
 
       <PageHero
-        title="Gallery"
+        title="Galerie"
         subtitle="Prohlédněte si fotografie našich prací, interiéru salonu a výsledků našich služeb. Přesvědčte se o kvalitě, kterou nabízíme."
         backgroundClass="bg-[#F8F4E9]"
       />
@@ -85,7 +85,7 @@ export default function GaleriePage() {
           ))}
         </div>
 
-   
+
 
         {/* Instagram odkaz */}
         <div className="text-center mt-16 bg-white p-8 rounded-sm shadow-sm border border-[#E6CCB2]/30 max-w-3xl mx-auto">

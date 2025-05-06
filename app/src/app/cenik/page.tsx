@@ -86,7 +86,7 @@ export default function PriceListPage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-brand-black mb-6">Ceník služeb</h1>
+            <h1 className="text-3xl md:text-4xl font-serif font-light text-brand-black mb-6">Ceník služeb</h1>
             <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
             <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
               Ceník služeb nabízených v Aura Beauty Salon. Specializujeme se na prodlužování řas, architekturu obočí, laminaci obočí a kompletní kosmetické ošetření. Ceny jsou uvedeny včetně DPH.
@@ -120,7 +120,7 @@ export default function PriceListPage() {
         <div className="space-y-16 max-w-5xl mx-auto">
           {priceList.map((category, categoryIndex) => (
             <div key={categoryIndex} id={category.category.toLowerCase().replace(/\s+/g, '-')}>
-              <h2 className="text-2xl font-serif font-light mb-6 text-[#121212] text-center">
+              <h2 className="text-2xl md:text-3xl font-serif font-light mb-6 text-[#121212] text-center">
                 {category.category}
               </h2>
               <div className="bg-white shadow-lg rounded-sm overflow-hidden border-2 border-[#E6CCB2]/40">
@@ -213,7 +213,7 @@ export default function PriceListPage() {
 
         {/* CTA sekce */}
         <div className="bg-brand-secondary-light border border-brand-secondary/20 p-12 md:p-16 mt-32 text-center rounded-sm shadow-sm">
-          <h2 className="text-3xl font-serif font-light mb-4 text-brand-black">Rezervujte si termín</h2>
+          <h2 className="text-2xl md:text-3xl font-serif font-light mb-4 text-brand-black">Rezervujte si termín</h2>
           <div className="h-[1px] w-20 bg-brand-secondary/50 mx-auto mb-8"></div>
           <p className="mb-12 max-w-2xl mx-auto text-brand-secondary-dark font-light text-lg">
             Dopřejte si profesionální péči s individuálním přístupem v našem salonu. Jsme připraveni se o vás postarat.

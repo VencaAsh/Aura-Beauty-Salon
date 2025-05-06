@@ -14,7 +14,7 @@ export default function SluzbyPage() {
       <section className="relative bg-brand-secondary-light pt-32 pb-12">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-serif font-light text-[#121212]">Our Services</h1>
+            <h1 className="text-3xl md:text-4xl font-serif font-light text-[#121212]">Naše služby</h1>
             <div className="h-[1px] w-16 bg-[#E6CCB2] mx-auto mt-4 mb-2"></div>
           </div>
         </div>

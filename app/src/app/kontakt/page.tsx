@@ -25,7 +25,7 @@ export default function KontaktPage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-brand-black mb-6">Contact</h1>
+            <h1 className="text-3xl md:text-4xl font-serif font-light text-brand-black mb-6">Kontakt</h1>
             <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
             <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
               Máte dotaz, přání nebo se chcete objednat? Neváhejte nás kontaktovat! Jsme vám k dispozici na všech našich pobočkách.
@@ -37,7 +37,7 @@ export default function KontaktPage() {
       <div className="container mx-auto px-4 py-16">
 
         {/* Pobočka */}
-        <h2 className="text-2xl font-serif font-light mb-8 text-[#121212] text-center">Naše pobočka</h2>
+        <h2 className="text-2xl md:text-3xl font-serif font-light mb-8 text-[#121212] text-center">Naše pobočka</h2>
         <div className="mb-16 max-w-3xl mx-auto">
           <div className="bg-white shadow-md border border-[#E6CCB2]/30 rounded-sm overflow-hidden hover:shadow-lg transition-all duration-300">
             <div className="p-8">
@@ -112,7 +112,7 @@ export default function KontaktPage() {
         <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           {/* Kontaktní formulář */}
           <div>
-            <h2 className="text-2xl font-serif font-light mb-6 text-[#121212]">Napište nám</h2>
+            <h2 className="text-2xl md:text-3xl font-serif font-light mb-6 text-[#121212]">Napište nám</h2>
             <div className="bg-white shadow-md border border-[#E6CCB2]/30 rounded-sm overflow-hidden">
               <ContactForm />
             </div>
@@ -121,7 +121,7 @@ export default function KontaktPage() {
           {/* Doplňující informace */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-serif font-light mb-6 text-[#121212]">Sledujte nás</h2>
+              <h2 className="text-2xl md:text-3xl font-serif font-light mb-6 text-[#121212]">Sledujte nás</h2>
               <div className="bg-white shadow-md border border-[#E6CCB2]/30 rounded-sm overflow-hidden p-6">
                 <p className="text-brand-secondary-dark mb-6 font-light">
                   Sledujte nás na sociálních sítích, kde pravidelně zveřejňujeme novinky, tipy na péči a inspiraci.
@@ -143,7 +143,7 @@ export default function KontaktPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-serif font-light mb-6 text-[#121212]">Rezervace</h2>
+              <h2 className="text-2xl md:text-3xl font-serif font-light mb-6 text-[#121212]">Rezervace</h2>
               <div className="bg-white shadow-md border border-[#E6CCB2]/30 rounded-sm overflow-hidden p-6">
                 <p className="text-brand-secondary-dark mb-6 font-light">
                   Chcete si rezervovat termín? Využijte náš online rezervační systém nebo nás kontaktujte telefonicky.
