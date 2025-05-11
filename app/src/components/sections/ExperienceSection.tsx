@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import experienceImage from '@/assets/images/IMG_0719-min.jpeg';
 
 export default function ExperienceSection() {
   return (
@@ -27,7 +28,7 @@ export default function ExperienceSection() {
             <div className="aspect-[4/5] bg-[#E6CCB2]/20 relative overflow-hidden">
               {/* Skutečný obrázek */}
               <Image
-                src="/images/gallery/gallery-1.jpg"
+                src={experienceImage}
                 alt="Profesionální kosmetické ošetření"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

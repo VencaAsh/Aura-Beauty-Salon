@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+import React from 'react';
 
 // Definice typu pro recenze
 interface Testimonial {
@@ -6,31 +6,35 @@ interface Testimonial {
   quote: string;
   author: string;
   role?: string;
-  imageSrc: string;
+  initials: string;
+  bgColor: string;
 }
 
 // Data recenzí
 const testimonials: Testimonial[] = [
   {
     id: 'testimonial1',
-    quote: 'Návštěva Aura Beauty Salon je vždy jako malý útěk od reality. Péče o obočí je naprosto precizní a výsledek vydrží neuvěřitelně dlouho. Miluji ten pocit, když odcházím a cítím se krásná a sebevědomá.',
-    author: 'Karolína M.',
-    role: 'Stálá klientka',
-    imageSrc: '/images/testimonials/testimonial-1.jpg'
+    quote: 'Dnes jsem byla poprvé na kosmetice a rozhodně nelituji! Slečna je moc příjemná, prostředí salonu je pěkné a kromě krásně vyčištěné pleti jsem i super zrelaxovaná. Vřele doporučuji ❤️',
+    author: 'Aneta Helešicová',
+    role: 'Google recenze',
+    initials: 'AH',
+    bgColor: '#E6CCB2'
   },
   {
     id: 'testimonial2',
-    quote: 'Konečně jsem našla salon, kde se cítím jako doma. Atmosféra je uklidňující, personál profesionální a výsledky vždy překonají moje očekávání. Jejich péče o pleť s korejskou kosmetikou je něco, co musíte zažít!',
-    author: 'Tereza K.',
-    role: 'Klientka již 2 roky',
-    imageSrc: '/images/testimonials/testimonial-2.jpg'
+    quote: 'Byla jsem zde na lash lifting a musím říct, že jsem maximálně spokojená. Slečna je velice milá, prostředí moc příjemné, takže se sem budu určitě ráda vracet ✨',
+    author: 'Klára Bártková',
+    role: 'Google recenze',
+    initials: 'KB',
+    bgColor: '#D8C3B0'
   },
   {
     id: 'testimonial3',
-    quote: 'Prodlužování řas v Aura Beauty Salon je naprostá špička. Řasy jsou lehké, přirozené a vydrží neuvěřitelně dlouho. Oceňuji individuální přístup a pečlivost, se kterou se mi vždy věnují.',
-    author: 'Martina V.',
-    role: 'Nová klientka',
-    imageSrc: '/images/testimonials/testimonial-3.jpg'
+    quote: 'Včera jsem zde byla na prodloužení řas metodou řasa na řasu a úpravu obočí a byla jsem naprosto nadšená ❤️. Ačkoliv se velmi nerada svěřuji do cizích rukou, zde jsem byla maximálně spokojená.',
+    author: 'Karolína Kolková',
+    role: 'Google recenze',
+    initials: 'KK',
+    bgColor: '#C9B8A8'
   }
 ];
 
@@ -70,22 +74,19 @@ export default function TestimonialsSection() {
                 {testimonial.quote}
               </p>
 
-              {/* Kruhová fotka */}
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#E6CCB2]/20 mb-4 relative">
-                {/* Zde by byl skutečný obrázek */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#E6CCB2]/20 to-[#D8C3B0]/20"></div>
-
-                {/* Placeholder text - odstranit při použití skutečných obrázků */}
-                <div className="absolute inset-0 flex items-center justify-center text-[#C9B8A8]/30 text-xs tracking-widest">
-                  <span>FOTO</span>
-                </div>
-
-                {/* <Image
-                  src={testimonial.imageSrc}
-                  alt={`Fotka ${testimonial.author}`}
-                  fill
-                  className="object-cover"
-                /> */}
+              {/* Stylizované iniciály */}
+              <div
+                className="w-16 h-16 rounded-full overflow-hidden mb-4 relative flex items-center justify-center"
+                style={{
+                  backgroundColor: `${testimonial.bgColor}20`,
+                  borderColor: `${testimonial.bgColor}40`,
+                  borderWidth: '2px',
+                  borderStyle: 'solid'
+                }}
+              >
+                <span className="text-sm font-light tracking-wider" style={{ color: testimonial.bgColor }}>
+                  {testimonial.initials}
+                </span>
               </div>
 
               {/* Jméno a role */}

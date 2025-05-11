@@ -100,27 +100,27 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-8">
       {status.type === 'loading' && (
-        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border border-[#E6CCB2]/30">
+        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
           {status.message}
         </div>
       )}
 
       {status.type === 'success' && (
-        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border border-[#E6CCB2]/30">
+        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
           {status.message}
         </div>
       )}
 
       {status.type === 'error' && (
-        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border border-[#E6CCB2]/30">
+        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
           {status.message}
         </div>
       )}
 
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label htmlFor="name" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">
               Jméno a příjmení *
@@ -131,12 +131,13 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.name ? 'border-red-500' : 'border-[#E6CCB2]/30'} rounded-sm focus:outline-none focus:ring-1 focus:ring-[#E6CCB2] bg-[#F5F3F0]/30 font-light`}
+              placeholder="Vaše jméno"
+              className={`w-full px-4 py-3 border-2 ${errors.name ? 'border-[#C9B8A8]' : 'border-[#E6CCB2]/40'} rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]`}
               aria-invalid={errors.name ? 'true' : 'false'}
               aria-describedby={errors.name ? 'name-error' : undefined}
             />
             {errors.name && (
-              <p id="name-error" className="mt-1 text-sm text-red-500">
+              <p id="name-error" className="mt-1 text-sm text-[#C9B8A8]">
                 {errors.name}
               </p>
             )}
@@ -152,55 +153,60 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-[#E6CCB2]/30'} rounded-sm focus:outline-none focus:ring-1 focus:ring-[#E6CCB2] bg-[#F5F3F0]/30 font-light`}
+              placeholder="vas@email.cz"
+              className={`w-full px-4 py-3 border-2 ${errors.email ? 'border-[#C9B8A8]' : 'border-[#E6CCB2]/40'} rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]`}
               aria-invalid={errors.email ? 'true' : 'false'}
               aria-describedby={errors.email ? 'email-error' : undefined}
             />
             {errors.email && (
-              <p id="email-error" className="mt-1 text-sm text-red-500">
+              <p id="email-error" className="mt-1 text-sm text-[#C9B8A8]">
                 {errors.email}
               </p>
             )}
           </div>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="phone" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">
-            Telefon
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-[#E6CCB2]/30 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#E6CCB2] bg-[#F5F3F0]/30 font-light"
-          />
-          <input type="hidden" name="branch" value={formData.branch} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label htmlFor="phone" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">
+              Telefon
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+420 XXX XXX XXX"
+              className="w-full px-4 py-3 border-2 border-[#E6CCB2]/40 rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]"
+            />
+            <input type="hidden" name="branch" value={formData.branch} />
+          </div>
+
+          <div>
+            <label htmlFor="subject" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">
+              Předmět *
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Předmět zprávy"
+              className={`w-full px-4 py-3 border-2 ${errors.subject ? 'border-[#C9B8A8]' : 'border-[#E6CCB2]/40'} rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]`}
+              aria-invalid={errors.subject ? 'true' : 'false'}
+              aria-describedby={errors.subject ? 'subject-error' : undefined}
+            />
+            {errors.subject && (
+              <p id="subject-error" className="mt-1 text-sm text-[#C9B8A8]">
+                {errors.subject}
+              </p>
+            )}
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="subject" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">
-            Předmět *
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className={`w-full px-3 py-2 border ${errors.subject ? 'border-red-500' : 'border-[#E6CCB2]/30'} rounded-sm focus:outline-none focus:ring-1 focus:ring-[#E6CCB2] bg-[#F5F3F0]/30 font-light`}
-            aria-invalid={errors.subject ? 'true' : 'false'}
-            aria-describedby={errors.subject ? 'subject-error' : undefined}
-          />
-          {errors.subject && (
-            <p id="subject-error" className="mt-1 text-sm text-red-500">
-              {errors.subject}
-            </p>
-          )}
-        </div>
-
-        <div className="mb-6">
+        <div className="mb-8">
           <label htmlFor="message" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">
             Zpráva *
           </label>
@@ -210,29 +216,32 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className={`w-full px-3 py-2 border ${errors.message ? 'border-red-500' : 'border-[#E6CCB2]/30'} rounded-sm focus:outline-none focus:ring-1 focus:ring-[#E6CCB2] bg-[#F5F3F0]/30 font-light`}
+            placeholder="Text vaší zprávy..."
+            className={`w-full px-4 py-3 border-2 ${errors.message ? 'border-[#C9B8A8]' : 'border-[#E6CCB2]/40'} rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]`}
             aria-invalid={errors.message ? 'true' : 'false'}
             aria-describedby={errors.message ? 'message-error' : undefined}
           ></textarea>
           {errors.message && (
-            <p id="message-error" className="mt-1 text-sm text-red-500">
+            <p id="message-error" className="mt-1 text-sm text-[#C9B8A8]">
               {errors.message}
             </p>
           )}
         </div>
 
-        <button
-          type="submit"
-          disabled={status.type === 'loading'}
-          className="bg-[#E6CCB2]/80 hover:bg-[#E6CCB2] text-[#121212] font-light py-3 px-6 rounded-sm transition-all duration-300 border border-[#E6CCB2]/20 inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed text-sm tracking-wide"
-        >
-          {status.type === 'loading' ? 'Odesílání...' : 'Odeslat zprávu'}
-          {status.type !== 'loading' && <Send className="ml-3 h-5 w-5 text-[#C9B8A8]" />}
-        </button>
+        <div className="flex justify-between items-center">
+          <p className="text-sm text-[#121212] font-light">
+            * Povinné pole
+          </p>
 
-        <p className="mt-4 text-sm text-brand-secondary-dark font-light">
-          * Povinné pole
-        </p>
+          <button
+            type="submit"
+            disabled={status.type === 'loading'}
+            className="bg-[#E6CCB2] hover:bg-[#D8C3B0] text-[#121212] font-light py-3 px-8 rounded-sm transition-all duration-300 border-2 border-[#E6CCB2] inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed text-sm tracking-wide shadow-sm"
+          >
+            {status.type === 'loading' ? 'Odesílání...' : 'Odeslat zprávu'}
+            {status.type !== 'loading' && <Send className="ml-3 h-5 w-5" />}
+          </button>
+        </div>
       </form>
     </div>
   );

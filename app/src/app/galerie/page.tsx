@@ -1,38 +1,71 @@
-import type { Metadata } from 'next';
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { PageHero } from '@/components/ui';
 import { Camera } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Galerie - Aura Beauty Salon | Kosmetika, Řasy a Obočí',
-  description: 'Prohlédněte si fotografie našich prací v oblasti kosmetiky, péče o řasy a obočí. Výsledky laminace obočí, prodlužování řas a kosmetických ošetření.',
-};
+// Metadata is now in a separate file
 
 // Importy obrázků
-import galleryImage1 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png';
-import galleryImage2 from '@/assets/images/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png';
-import galleryImage3 from '@/assets/images/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png';
-// Náhledový obrázek pro galerii
-import galleryPreview from '../../../public/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png';
+import galleryImage1 from '@/assets/images/IMG_0719-min.jpeg';
+import galleryImage2 from '@/assets/images/IMG_0790-min.jpeg';
+import galleryImage3 from '@/assets/images/IMG_0981-min.jpeg';
+import galleryImage4 from '@/assets/images/IMG_0984-min.jpeg';
+import galleryImage5 from '@/assets/images/IMG_0985-min.jpeg';
+import galleryImage6 from '@/assets/images/IMG_2886-min.jpeg';
+import galleryImage7 from '@/assets/images/IMG_3177-min.jpeg';
+import galleryImage8 from '@/assets/images/IMG_9798-min.jpeg';
+import galleryImage9 from '@/assets/images/IMG_3044-min.jpeg';
+import galleryImage10 from '@/assets/images/IMG_3178-min.jpeg';
+import galleryImage11 from '@/assets/images/IMG_3181-min.jpeg';
+import galleryImage12 from '@/assets/images/IMG_9512-min.jpeg';
+import galleryImage13 from '@/assets/images/IMG_9769-min.jpeg';
+import galleryImage14 from '@/assets/images/IMG_9991-min.jpeg';
+import galleryImage15 from '@/assets/images/IMG_3289-min.jpeg';
+// Náhledový obrázek pro galerii byl odstraněn, protože se nepoužívá
 
 // Data pro galerii
 const galleryItems = [
   { id: 1, title: 'Kosmetické ošetření pleti', category: 'kosmetika', image: galleryImage1 },
   { id: 2, title: 'Výsledek po ošetření', category: 'kosmetika', image: galleryImage2 },
-  { id: 3, title: 'Ošetření problematické pleti', category: 'kosmetika', image: galleryImage3 },
-  { id: 4, title: 'Anti-age ošetření', category: 'kosmetika', image: galleryImage1 },
-  { id: 5, title: 'Pánská kosmetika', category: 'kosmetika', image: galleryImage2 },
-  { id: 6, title: 'Laminace obočí - před a po', category: 'oboci', image: galleryImage3 },
-  { id: 7, title: 'Barvení obočí - před a po', category: 'oboci', image: galleryImage1 },
-  { id: 8, title: 'Úprava obočí', category: 'oboci', image: galleryImage2 },
-  { id: 9, title: 'Prodlužování řas - před a po', category: 'rasy', image: galleryImage3 },
-  { id: 10, title: 'Lash lifting - před a po', category: 'rasy', image: galleryImage1 },
-  { id: 11, title: 'Interiér salonu', category: 'salon', image: galleryImage2 },
-  { id: 12, title: 'Používaná kosmetika', category: 'produkty', image: galleryImage3 },
+  { id: 3, title: 'Ošetření problematické pleti', category: 'kosmetika', image: galleryImage14 },
+  { id: 4, title: 'Hloubkové čištění pleti', category: 'kosmetika', image: galleryImage11 },
+  { id: 5, title: 'Laminace obočí - před a po', category: 'oboci', image: galleryImage6 },
+  { id: 6, title: 'Barvení obočí - profesionální výsledek', category: 'oboci', image: galleryImage7 },
+  { id: 7, title: 'Úprava obočí - precizní tvar', category: 'oboci', image: galleryImage8 },
+  { id: 8, title: 'Prodlužování řas - před a po', category: 'rasy', image: galleryImage10 },
+  { id: 9, title: 'Lash lifting - výrazný efekt', category: 'rasy', image: galleryImage15 },
+  { id: 10, title: 'Interiér salonu', category: 'salon', image: galleryImage5 },
+  { id: 11, title: 'Recepce salonu', category: 'salon', image: galleryImage3 },
+  { id: 12, title: 'Ošetřovací místnost', category: 'salon', image: galleryImage4 },
+  { id: 13, title: 'Profesionální kosmetika', category: 'produkty', image: galleryImage12 },
+  { id: 14, title: 'Luxusní produkty', category: 'produkty', image: galleryImage13 },
 ];
 
 export default function GaleriePage() {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  // Mapování českých názvů kategorií na hodnoty v datech
+  const categoryMapping: Record<string, string> = {
+    'Kosmetika': 'kosmetika',
+    'Obočí': 'oboci',
+    'Řasy': 'rasy',
+    'Salon': 'salon',
+    'Produkty': 'produkty'
+  };
+
+  // Filtrování položek galerie podle aktivního filtru
+  const filteredItems = activeFilter
+    ? galleryItems.filter(item => item.category === categoryMapping[activeFilter])
+    : galleryItems;
+
+  // Funkce pro nastavení aktivního filtru
+  const handleFilterClick = (category: string | null) => {
+    setActiveFilter(category);
+  };
+
   return (
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
@@ -48,24 +81,35 @@ export default function GaleriePage() {
         <div className="mb-12 bg-white shadow-sm rounded-sm border border-[#E6CCB2]/30 p-4 max-w-5xl mx-auto">
           <h3 className="text-center text-sm uppercase tracking-wider text-[#121212]/70 mb-4 font-medium">Vyberte kategorii</h3>
           <div className="flex flex-wrap justify-center gap-2">
-            <a href="#" className="px-4 py-2 bg-[#E6CCB2] text-[#121212] rounded-sm hover:bg-[#E6CCB2]/80 transition-all duration-300 text-sm font-light tracking-wide">
+            <button
+              onClick={() => handleFilterClick(null)}
+              className={`px-4 py-2 rounded-sm text-sm font-light tracking-wide transition-all duration-300 ${
+                activeFilter === null
+                  ? 'bg-[#E6CCB2] text-[#121212] hover:bg-[#E6CCB2]/80'
+                  : 'bg-transparent text-[#121212] border border-[#E6CCB2]/50 hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10'
+              }`}
+            >
               Všechny fotografie
-            </a>
+            </button>
             {['Kosmetika', 'Obočí', 'Řasy', 'Salon', 'Produkty'].map((category, index) => (
-              <a
+              <button
                 key={index}
-                href={`#${category.toLowerCase().replace(/\s+/g, '-')}`}
-                className="px-4 py-2 bg-transparent text-[#121212] border border-[#E6CCB2]/50 rounded-sm hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 transition-all duration-300 text-sm font-light tracking-wide"
+                onClick={() => handleFilterClick(category)}
+                className={`px-4 py-2 rounded-sm text-sm font-light tracking-wide transition-all duration-300 ${
+                  activeFilter === category
+                    ? 'bg-[#E6CCB2] text-[#121212] hover:bg-[#E6CCB2]/80'
+                    : 'bg-transparent text-[#121212] border border-[#E6CCB2]/50 hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10'
+                }`}
               >
                 {category}
-              </a>
+              </button>
             ))}
           </div>
         </div>
 
         {/* Galerie */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {galleryItems.map((item) => (
+          {filteredItems.map((item) => (
             <div key={item.id} className="group overflow-hidden rounded-sm shadow-md hover:shadow-lg transition-all duration-500 bg-white border border-[#E6CCB2]/20">
               <div className="relative h-80 overflow-hidden">
                 <Image

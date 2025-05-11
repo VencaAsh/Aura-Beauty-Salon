@@ -1,10 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { StaticImageData } from 'next/image';
+import cosmeticTreatmentImage from '@/assets/images/IMG_9991-min.jpeg';
+import lashLiftingImage from '@/assets/images/IMG_3297-min.jpeg';
+import deepCleansingImage from '@/assets/images/812C6B46-1BD1-4AC0-92F9-E830EEEF81C7-min.jpeg';
+import eyelashCareImage from '@/assets/images/IMG_3179-min.jpeg';
+import eyebrowLaminationImage from '@/assets/images/IMG_2886-min.jpeg';
+import eyebrowTintingImage from '@/assets/images/IMG_3177-min.jpeg';
 
 // Definice typu pro galerii
 interface GalleryImage {
   id: string;
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   caption?: string;
 }
@@ -13,40 +20,39 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: 'img1',
-    src: '/images/gallery/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png',
+    src: eyelashCareImage,
     alt: 'Péče o řasy a obočí',
     caption: 'Péče o řasy'
   },
   {
     id: 'img2',
-    src: '/images/gallery/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png',
+    src: cosmeticTreatmentImage,
     alt: 'Kosmetické ošetření pleti',
     caption: 'Péče o pleť'
   },
   {
     id: 'img3',
-    src: '/images/gallery/20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png',
-    alt: 'Profesionální kosmetické ošetření',
-    caption: 'Kosmetické ošetření'
+    src: eyebrowLaminationImage,
+    alt: 'Laminace obočí - profesionální výsledek',
+    caption: 'Laminace obočí'
   },
-  // Doplňující placeholdery pro zachování designu
   {
     id: 'img4',
-    src: '/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png', // Opakujeme první obrázek
+    src: lashLiftingImage,
     alt: 'Péče o řasy a obočí',
     caption: 'Lash lifting'
   },
   {
     id: 'img5',
-    src: '/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png', // Opakujeme druhý obrázek
-    alt: 'Kosmetické ošetření pleti',
-    caption: 'Hloubkové čištění'
+    src: eyebrowTintingImage,
+    alt: 'Barvení obočí - profesionální výsledek',
+    caption: 'Barvení obočí'
   },
   {
     id: 'img6',
-    src: '/images/gallery/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png', // Opakujeme třetí obrázek
-    alt: 'Profesionální kosmetické ošetření',
-    caption: 'Laminace obočí'
+    src: deepCleansingImage,
+    alt: 'Kosmetické ošetření pleti',
+    caption: 'Hloubkové čištění'
   }
 ];
 

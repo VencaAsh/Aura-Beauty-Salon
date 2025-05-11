@@ -34,8 +34,8 @@ export default function Breadcrumbs() {
       case 'aktuality':
         name = 'Aktuality';
         break;
-      case 'tym':
-        name = 'Náš tým';
+      case 'salon':
+        name = 'Salon';
         break;
       case 'cenik':
         name = 'Ceník';

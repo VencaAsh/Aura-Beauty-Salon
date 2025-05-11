@@ -1,92 +1,36 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { PageHero } from '@/components/ui';
-import { NewsFilter, NewsGrid, NewsItem, Category } from '@/components/news';
+import { NewsGrid, NewsItem } from '@/components/news';
 
-// Metadata je nyní v layout.tsx, protože toto je klientská komponenta
-
-// Ukázková data pro blog
+// Příspěvky na blogu
 const news: NewsItem[] = [
   {
-    id: '7',
-    title: 'AURA BEAUTY SALON– MÍSTO, KDE ZÁŘÍ VAŠE PŘIROZENÁ KRÁSA',
-    excerpt: 'Vítejte v Aura Beauty, salonu, který vznikl z touhy vytvořit místo, kde se každá žena může na chvíli zastavit, odpočinout si a cítit se krásná a sebevědomá.',
-    date: '2023-07-01',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'aura-beauty-salon-misto-kde-zari-vase-prirozena-krasa',
-    category: 'Nové služby'
+    id: '2',
+    title: 'LETNÍ GLOW UP AKCE – DOPŘEJTE SI ZÁŘIVOU PROMĚNU',
+    excerpt: 'Léto je ideální čas na svěží změnu! V Aura Beauty jsme pro vás připravili speciální letní Glow Up akci, díky které zazáříte na dovolené, festivalu i ve městě.',
+    date: '2025-05-15',
+    image: '/images/news/IMG_3044-min.jpeg',
+    slug: 'letni-glow-up-akce-dopreje-si-zarivou-promenu',
+    category: 'Akce'
   },
   {
     id: '1',
-    title: 'Nová kolekce letních procedur',
-    excerpt: 'Představujeme novou kolekci letních procedur, které osvěží vaši pleť a připraví ji na slunečné dny.',
-    date: '2023-06-15',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'nova-kolekce-letnich-procedur',
+    title: 'AURA BEAUTY SALON– MÍSTO, KDE ZÁŘÍ VAŠE PŘIROZENÁ KRÁSA',
+    excerpt: 'Vítejte v Aura Beauty, salonu, který vznikl z touhy vytvořit místo, kde se každá žena může na chvíli zastavit, odpočinout si a cítit se krásná a sebevědomá.',
+    date: '2025-05-06',
+    image: '/images/news/IMG_3177-min.jpeg',
+    slug: 'aura-beauty-salon-misto-kde-zari-vase-prirozena-krasa',
     category: 'Nové služby'
-  },
-  {
-    id: '2',
-    title: 'Speciální nabídka na prodloužení řas',
-    excerpt: 'Využijte naši speciální nabídku na prodloužení řas metodou řasa na řasu s 20% slevou do konce měsíce.',
-    date: '2023-06-10',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'specialni-nabidka-prodlouzeni-ras',
-    category: 'Akce'
-  },
-  {
-    id: '3',
-    title: 'Nový přístroj pro omlazení pleti',
-    excerpt: 'Do našeho salonu jsme pořídili nový přístroj pro neinvazivní omlazení pleti, který přináší viditelné výsledky již po prvním ošetření.',
-    date: '2023-06-05',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'novy-pristroj-omlazeni-pleti',
-    category: 'Nové služby'
-  },
-  {
-    id: '4',
-    title: 'Letní balíček péče o tělo',
-    excerpt: 'Připravte své tělo na léto s naším speciálním balíčkem, který zahrnuje anticelulitidní masáž, zábal a peeling.',
-    date: '2023-05-25',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'letni-balicek-pece-o-telo',
-    category: 'Akce'
-  },
-  {
-    id: '5',
-    title: 'Nová řada korejské kosmetiky',
-    excerpt: 'Rozšířili jsme naši nabídku o novou řadu korejské kosmetiky, která je známá svými inovativními přístupy a účinnými složkami.',
-    date: '2023-05-15',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'nova-rada-korejske-kosmetiky',
-    category: 'Produkty'
-  },
-  {
-    id: '6',
-    title: 'Věrnostní program pro stálé klienty',
-    excerpt: 'Spouštíme nový věrnostní program pro naše stálé klienty. Sbírejte body za každou návštěvu a získejte zajímavé odměny.',
-    date: '2023-05-01',
-    image: '/images/news/20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png',
-    slug: 'vernostni-program-stali-klienti',
-    category: 'Akce'
   }
 ];
 
-// Kategorie pro filtrování
-const categories: Category[] = [
-  { id: 'all', name: 'Všechny články' },
-  { id: 'nove-sluzby', name: 'Nové služby' },
-  { id: 'akce', name: 'Akce' },
-  { id: 'produkty', name: 'Produkty' }
-];
-
 export default function BlogPage() {
-  const [filteredNews, setFilteredNews] = useState<NewsItem[]>(news);
 
   return (
-    <main className="bg-[#F5F3F0]">
+    <main className="bg-white">
       <Breadcrumbs />
 
       <PageHero
@@ -96,68 +40,37 @@ export default function BlogPage() {
       />
 
       <div className="container mx-auto px-4 py-16">
-        {/* Filtr článků */}
-        <NewsFilter
-          news={news}
-          categories={categories}
-          onFilterChange={setFilteredNews}
-        />
-
         {/* Seznam článků */}
-        <NewsGrid news={filteredNews} />
+        <NewsGrid news={news} />
 
-        {/* Sociální sítě */}
-        <div className="bg-[#F8F4E9] border border-[#E6CCB2]/20 p-8 md:p-12 mt-24 text-center rounded-sm shadow-sm">
-          <h2 className="text-2xl font-serif font-light mb-4 text-[#121212]">Sledujte nás</h2>
-          <div className="h-[1px] w-16 bg-[#C9B8A8]/50 mx-auto mb-6"></div>
-          <p className="mb-10 max-w-2xl mx-auto text-[#121212]/70 font-light">
-            Sledujte nás na sociálních sítích, kde pravidelně zveřejňujeme novinky, tipy na péči a inspiraci
-          </p>
+        {/* Sociální sítě - minimalistická verze */}
+        <div className="mt-24 mb-16 text-center max-w-md mx-auto">
+          <p className="text-xs uppercase tracking-widest text-[#121212]/50 mb-8">Sledujte nás</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {/* Instagram */}
-            <div className="group flex flex-col items-center text-center p-6 bg-white border border-[#E6CCB2]/10 hover:border-[#E6CCB2]/30 transition-all duration-500 rounded-sm">
-              <div className="w-12 h-12 flex items-center justify-center border border-[#E6CCB2]/20 rounded-full mb-4 group-hover:bg-[#E6CCB2]/10 transition-all duration-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#121212]">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </div>
-              <h3 className="text-lg font-serif font-light mb-2 text-[#121212]">Instagram</h3>
-              <p className="text-[#121212]/70 mb-4 font-light text-sm">
-                Sledujte naše nejnovější práce a inspirace
-              </p>
-              <a
-                href="https://www.instagram.com/aura.beautyy.salon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-transparent border border-[#E6CCB2]/50 text-[#121212] hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 font-light py-2 px-4 rounded-sm transition-all duration-300 text-xs tracking-wide"
-              >
-                Sledovat na Instagramu
-              </a>
-            </div>
+          <div className="flex justify-center space-x-8">
+            <a
+              href="https://www.instagram.com/aura.beautyy.salon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#121212]/70 hover:text-[#121212] transition-colors duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
 
-            {/* Facebook */}
-            <div className="group flex flex-col items-center text-center p-6 bg-white border border-[#E6CCB2]/10 hover:border-[#E6CCB2]/30 transition-all duration-500 rounded-sm">
-              <div className="w-12 h-12 flex items-center justify-center border border-[#E6CCB2]/20 rounded-full mb-4 group-hover:bg-[#E6CCB2]/10 transition-all duration-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#121212]">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-              </div>
-              <h3 className="text-lg font-serif font-light mb-2 text-[#121212]">Facebook</h3>
-              <p className="text-[#121212]/70 mb-4 font-light text-sm">
-                Sledujte naše akce a speciální nabídky
-              </p>
-              <a
-                href="https://www.facebook.com/profile.php?id=61573920463799"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-transparent border border-[#E6CCB2]/50 text-[#121212] hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 font-light py-2 px-4 rounded-sm transition-all duration-300 text-xs tracking-wide"
-              >
-                Sledovat na Facebooku
-              </a>
-            </div>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573920463799"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#121212]/70 hover:text-[#121212] transition-colors duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>

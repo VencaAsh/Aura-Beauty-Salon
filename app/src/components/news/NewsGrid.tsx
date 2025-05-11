@@ -20,7 +20,7 @@ export default function NewsGrid({ news }: NewsGridProps) {
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-4xl mx-auto">
         <AnimatePresence>
           {news.slice(0, visibleCount).map((item, index) => (
             <NewsCard key={item.id} item={item} index={index} />

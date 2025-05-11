@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FlowingLines, FadeInView, FloatingElement, GradientText } from '@/components/animations';
 import { GoldenButton } from '@/components/ui';
 import { CONTACT_INFO } from '@/constants';
+import heroImage from '@/assets/images/IMG_0985-min.jpeg';
 
 export default function HeroSection() {
   return (
@@ -21,7 +22,7 @@ export default function HeroSection() {
           <div className="aspect-[3/4] bg-[#E6CCB2]/20 rounded-sm overflow-hidden relative">
             {/* Actual image */}
             <Image
-              src="/images/hero/image-darken.jpg"
+              src={heroImage}
               alt="Kosmetické ošetření pleti"
               fill
               priority
