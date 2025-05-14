@@ -63,7 +63,15 @@ export const SERVICES = [
 
 // Site metadata
 export const SITE_METADATA = {
-  title: 'Aura Beauty Salon - Kosmetika, Řasy a Obočí v Brně a Praze',
-  description: 'Profesionální kosmetický salon v Brně a Praze nabízející laminaci obočí, úpravu obočí, barvení obočí, prodlužování řas, lash lifting, kosmetiku, čištění pleti a pánskou kosmetiku.',
-  keywords: 'laminace obočí Brno, úprava obočí Brno, barvení obočí Brno, řasy Brno, lash lifting Brno, kosmetika Brno, čištění pleti Brno, pánská kosmetika Brno, kosmetika Praha, řasy Praha, obočí Praha',
+  title: 'Aura Beauty Salon - Kosmetika, Řasy a Obočí v Ostravě',
+  description: 'Profesionální kosmetický salon v Ostravě nabízející laminaci obočí, úpravu obočí, barvení obočí, prodlužování řas, lash lifting a kosmetiku.',
+  keywords: 'laminace obočí Ostrava, úprava obočí Ostrava, barvení obočí Ostrava, řasy Ostrava, lash lifting Ostrava, kosmetika Ostrava, čištění pleti Ostrava',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' },
+    ],
+  },
 };

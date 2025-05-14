@@ -3,6 +3,7 @@ import { BRANCHES } from '@/constants';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
+import { Logo } from '@/components/ui';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,12 +16,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16 mb-12">
           {/* Logo a popis */}
           <div className="max-w-md">
-            <Link href="/" className="inline-block mb-8">
-              <div className="relative">
-                <span className="text-xl font-light tracking-wide text-[#121212]">AURA</span>
-                <span className="text-xs tracking-widest text-[#C9B8A8] block mt-1">BEAUTY SALON</span>
-              </div>
-            </Link>
+            <div className="mb-8">
+              <Logo
+                width={160}
+                height={38}
+                mobileWidth={130}
+                mobileHeight={31}
+                className="transition-opacity duration-300 hover:opacity-80"
+              />
+            </div>
             <p className="text-sm text-[#121212]/70 font-light leading-relaxed mb-8">
               Profesionální kosmetický salon nabízející komplexní péči o pleť, řasy a obočí s důrazem na kvalitu a individuální přístup.
             </p>

@@ -3,9 +3,9 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import image1 from '@/assets/images/IMG_0985-min.jpeg';
-import image2 from '@/assets/images/IMG_0984-min.jpeg';
-import image3 from '@/assets/images/IMG_0981-min.jpeg';
+import image1 from '@/assets/images/salon/IMG_0985-min.jpeg';
+import image2 from '@/assets/images/salon/IMG_0984-min.jpeg';
+import image3 from '@/assets/images/salon/IMG_0981-min.jpeg';
 import ownerImage from '@/assets/images/makrushyna.jpg';
 
 export const metadata = {

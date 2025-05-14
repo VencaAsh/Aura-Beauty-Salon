@@ -21,7 +21,7 @@ const news: NewsItem[] = [
     title: 'AURA BEAUTY SALON– MÍSTO, KDE ZÁŘÍ VAŠE PŘIROZENÁ KRÁSA',
     excerpt: 'Vítejte v Aura Beauty, salonu, který vznikl z touhy vytvořit místo, kde se každá žena může na chvíli zastavit, odpočinout si a cítit se krásná a sebevědomá.',
     date: '2025-05-06',
-    image: '/images/news/IMG_3177-min.jpeg',
+    image: '/images/news/Salon-hero.jpeg',
     slug: 'aura-beauty-salon-misto-kde-zari-vase-prirozena-krasa',
     category: 'Nové služby'
   }

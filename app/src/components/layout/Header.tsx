@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react'; // Import useState pro stav menu
+import { Logo } from '@/components/ui';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Stav pro mobilní menu
@@ -11,9 +12,13 @@ export default function Header() {
     <header className="bg-[#F5F3F0] p-5 sticky top-0 z-50 border-b border-[#E6CCB2]/10">
       <nav className="container mx-auto flex justify-between items-center">
         {/* Logo - minimalistické, elegantní */}
-        <Link href="/" className="flex items-center space-x-2 group">
-           <span className="text-xl font-light tracking-wide text-[#121212] transition-all duration-300 group-hover:text-[#C9B8A8]">Aura Beauty</span>
-        </Link>
+        <Logo
+          width={140}
+          height={33}
+          mobileWidth={110}
+          mobileHeight={26}
+          className="transition-opacity duration-300 hover:opacity-80"
+        />
 
         {/* Minimalistické hamburger tlačítko */}
         <button

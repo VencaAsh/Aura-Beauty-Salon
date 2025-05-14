@@ -11,9 +11,9 @@ import { Camera } from 'lucide-react';
 // Importy obrázků
 import galleryImage1 from '@/assets/images/IMG_0719-min.jpeg';
 import galleryImage2 from '@/assets/images/IMG_0790-min.jpeg';
-import galleryImage3 from '@/assets/images/IMG_0981-min.jpeg';
-import galleryImage4 from '@/assets/images/IMG_0984-min.jpeg';
-import galleryImage5 from '@/assets/images/IMG_0985-min.jpeg';
+import galleryImage3 from '@/assets/images/salon/IMG_0981-min.jpeg';
+import galleryImage4 from '@/assets/images/salon/IMG_0984-min.jpeg';
+import galleryImage5 from '@/assets/images/salon/IMG_0985-min.jpeg';
 import galleryImage6 from '@/assets/images/IMG_2886-min.jpeg';
 import galleryImage7 from '@/assets/images/IMG_3177-min.jpeg';
 import galleryImage8 from '@/assets/images/IMG_9798-min.jpeg';
@@ -28,20 +28,19 @@ import galleryImage15 from '@/assets/images/IMG_3289-min.jpeg';
 
 // Data pro galerii
 const galleryItems = [
-  { id: 1, title: 'Kosmetické ošetření pleti', category: 'kosmetika', image: galleryImage1 },
-  { id: 2, title: 'Výsledek po ošetření', category: 'kosmetika', image: galleryImage2 },
-  { id: 3, title: 'Ošetření problematické pleti', category: 'kosmetika', image: galleryImage14 },
-  { id: 4, title: 'Hloubkové čištění pleti', category: 'kosmetika', image: galleryImage11 },
-  { id: 5, title: 'Laminace obočí - před a po', category: 'oboci', image: galleryImage6 },
-  { id: 6, title: 'Barvení obočí - profesionální výsledek', category: 'oboci', image: galleryImage7 },
-  { id: 7, title: 'Úprava obočí - precizní tvar', category: 'oboci', image: galleryImage8 },
-  { id: 8, title: 'Prodlužování řas - před a po', category: 'rasy', image: galleryImage10 },
-  { id: 9, title: 'Lash lifting - výrazný efekt', category: 'rasy', image: galleryImage15 },
-  { id: 10, title: 'Interiér salonu', category: 'salon', image: galleryImage5 },
-  { id: 11, title: 'Recepce salonu', category: 'salon', image: galleryImage3 },
-  { id: 12, title: 'Ošetřovací místnost', category: 'salon', image: galleryImage4 },
-  { id: 13, title: 'Profesionální kosmetika', category: 'produkty', image: galleryImage12 },
-  { id: 14, title: 'Luxusní produkty', category: 'produkty', image: galleryImage13 },
+  { id: 1, title: 'Relaxační kosmetické ošetření s masáží', category: 'kosmetika', image: galleryImage1 },
+  { id: 2, title: 'Rozjasněná pleť po hydratačním ošetření', category: 'kosmetika', image: galleryImage2 },
+  { id: 3, title: 'Speciální péče pro problematickou pleť', category: 'kosmetika', image: galleryImage14 },
+  { id: 4, title: 'Hloubkové čištění s ultrazvukovou špachtlí', category: 'kosmetika', image: galleryImage11 },
+  { id: 5, title: 'Laminace obočí - výrazná proměna', category: 'oboci', image: galleryImage6 },
+  { id: 6, title: 'Precizní barvení a úprava obočí', category: 'oboci', image: galleryImage7 },
+  { id: 7, title: 'Architektura obočí podle tvaru obličeje', category: 'oboci', image: galleryImage8 },
+  { id: 8, title: 'Lash lifting s barvením pro otevřený pohled', category: 'rasy', image: galleryImage15 },
+  { id: 9, title: 'Elegantní odpočinkový prostor salonu', category: 'salon', image: galleryImage5 },
+  { id: 10, title: 'Ošetřovací lůžko s osvětlením', category: 'salon', image: galleryImage3 },
+  { id: 11, title: 'Kosmetický koutek s profesionální péčí o pleť', category: 'salon', image: galleryImage4 },
+
+
 ];
 
 export default function GaleriePage() {
