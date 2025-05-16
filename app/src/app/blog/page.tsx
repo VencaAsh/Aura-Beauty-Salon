@@ -4,6 +4,8 @@ import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { PageHero } from '@/components/ui';
 import { NewsGrid, NewsItem } from '@/components/news';
+import blogImage1 from '@/assets/images/blog/IMG_2632.png';
+import blogImage2 from '@/assets/images/blog/IMG_3302.jpeg';
 
 // Příspěvky na blogu
 const news: NewsItem[] = [
@@ -12,7 +14,7 @@ const news: NewsItem[] = [
     title: 'LETNÍ GLOW UP AKCE – DOPŘEJTE SI ZÁŘIVOU PROMĚNU',
     excerpt: 'Léto je ideální čas na svěží změnu! V Aura Beauty jsme pro vás připravili speciální letní Glow Up akci, díky které zazáříte na dovolené, festivalu i ve městě.',
     date: '2025-05-15',
-    image: '/images/news/IMG_3044-min.jpeg',
+    image: blogImage2.src,
     slug: 'letni-glow-up-akce-dopreje-si-zarivou-promenu',
     category: 'Akce'
   },
@@ -21,7 +23,7 @@ const news: NewsItem[] = [
     title: 'AURA BEAUTY SALON– MÍSTO, KDE ZÁŘÍ VAŠE PŘIROZENÁ KRÁSA',
     excerpt: 'Vítejte v Aura Beauty, salonu, který vznikl z touhy vytvořit místo, kde se každá žena může na chvíli zastavit, odpočinout si a cítit se krásná a sebevědomá.',
     date: '2025-05-06',
-    image: '/images/news/Salon-hero.jpeg',
+    image: blogImage1.src,
     slug: 'aura-beauty-salon-misto-kde-zari-vase-prirozena-krasa',
     category: 'Nové služby'
   }

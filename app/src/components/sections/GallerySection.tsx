@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
-import cosmeticTreatmentImage from '@/assets/images/IMG_9991-min.jpeg';
-import lashLiftingImage from '@/assets/images/IMG_3297-min.jpeg';
-import deepCleansingImage from '@/assets/images/812C6B46-1BD1-4AC0-92F9-E830EEEF81C7-min.jpeg';
-import eyelashCareImage from '@/assets/images/IMG_3179-min.jpeg';
-import eyebrowLaminationImage from '@/assets/images/IMG_2886-min.jpeg';
-import eyebrowTintingImage from '@/assets/images/IMG_3177-min.jpeg';
+import eyelashCareImage from '@/assets/images/pouzite/IMG_2886-min.jpeg';
+import cosmeticTreatmentImage from '@/assets/images/pouzite/812C6B46-1BD1-4AC0-92F9-E830EEEF81C7-min.jpeg';
+import eyebrowLaminationImage from '@/assets/images/pouzite/IMG_9798-min.jpeg';
+import lashLiftingImage from '@/assets/images/pouzite/IMG_3289-min.jpeg';
+import lhalalaPeelingImage from '@/assets/images/pouzite/IMG_9991-min.jpeg';
+import problematicSkinImage from '@/assets/images/pouzite/IMG_0411-min.jpeg';
 
 // Definice typu pro galerii
 interface GalleryImage {
@@ -22,13 +22,13 @@ const galleryImages: GalleryImage[] = [
     id: 'img1',
     src: eyelashCareImage,
     alt: 'Péče o řasy a obočí',
-    caption: 'Péče o řasy'
+    caption: 'Barvení obočí a lash lifting'
   },
   {
     id: 'img2',
     src: cosmeticTreatmentImage,
     alt: 'Kosmetické ošetření pleti',
-    caption: 'Péče o pleť'
+    caption: 'Čištění pleti'
   },
   {
     id: 'img3',
@@ -40,19 +40,19 @@ const galleryImages: GalleryImage[] = [
     id: 'img4',
     src: lashLiftingImage,
     alt: 'Péče o řasy a obočí',
-    caption: 'Lash lifting'
+    caption: 'Prodloužení řas'
   },
   {
     id: 'img5',
-    src: eyebrowTintingImage,
-    alt: 'Barvení obočí - profesionální výsledek',
-    caption: 'Barvení obočí'
+    src: lhalalaPeelingImage,
+    alt: 'Lha lala peeling',
+    caption: 'Lha lala peeling s vysoce hydratační maskou Avalon'
   },
   {
     id: 'img6',
-    src: deepCleansingImage,
+    src: problematicSkinImage,
     alt: 'Kosmetické ošetření pleti',
-    caption: 'Hloubkové čištění'
+    caption: 'Problematická pleť'
   }
 ];
 

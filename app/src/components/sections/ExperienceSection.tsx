@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import experienceImage from '@/assets/images/salon/IMG_0985-min.jpeg';
+import experienceImage from '@/assets/images/pouzite/IMG_0777-min.jpeg';
 
 export default function ExperienceSection() {
   return (

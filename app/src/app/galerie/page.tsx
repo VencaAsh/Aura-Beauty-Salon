@@ -9,33 +9,33 @@ import { Camera } from 'lucide-react';
 // Metadata is now in a separate file
 
 // Importy obrázků
-import galleryImage1 from '@/assets/images/IMG_0719-min.jpeg';
-import galleryImage2 from '@/assets/images/IMG_0790-min.jpeg';
-import galleryImage3 from '@/assets/images/salon/IMG_0981-min.jpeg';
-import galleryImage4 from '@/assets/images/salon/IMG_0984-min.jpeg';
-import galleryImage5 from '@/assets/images/salon/IMG_0985-min.jpeg';
-import galleryImage6 from '@/assets/images/IMG_2886-min.jpeg';
-import galleryImage7 from '@/assets/images/IMG_3177-min.jpeg';
-import galleryImage8 from '@/assets/images/IMG_9798-min.jpeg';
-import galleryImage9 from '@/assets/images/IMG_3044-min.jpeg';
-import galleryImage10 from '@/assets/images/IMG_3178-min.jpeg';
-import galleryImage11 from '@/assets/images/IMG_3181-min.jpeg';
-import galleryImage12 from '@/assets/images/IMG_9512-min.jpeg';
-import galleryImage13 from '@/assets/images/IMG_9769-min.jpeg';
-import galleryImage14 from '@/assets/images/IMG_9991-min.jpeg';
-import galleryImage15 from '@/assets/images/IMG_3289-min.jpeg';
+import galleryImage1 from '@/assets/images/gallery/IMG_0719-min.jpeg';
+import galleryImage2 from '@/assets/images/gallery/IMG_0790-min.jpeg';
+import galleryImage3 from '@/assets/images/gallery/IMG_0981-min.jpeg';
+import galleryImage4 from '@/assets/images/gallery/IMG_0984-min.jpeg';
+import galleryImage5 from '@/assets/images/gallery/IMG_0985-min.jpeg';
+import galleryImage6 from '@/assets/images/gallery/IMG_2886-min.jpeg';
+import galleryImage7 from '@/assets/images/gallery/IMG_3177-min.jpeg';
+import galleryImage8 from '@/assets/images/gallery/IMG_9531-min.jpeg';
+import galleryImage9 from '@/assets/images/gallery/IMG_3044-min.jpeg';
+import galleryImage10 from '@/assets/images/gallery/IMG_3178-min.jpeg';
+import galleryImage11 from '@/assets/images/gallery/IMG_1158-min.jpeg';
+import galleryImage12 from '@/assets/images/gallery/IMG_9512-min.jpeg';
+import galleryImage13 from '@/assets/images/gallery/IMG_9769-min.jpeg';
+import galleryImage14 from '@/assets/images/gallery/IMG_9991-min.jpeg';
+import galleryImage15 from '@/assets/images/gallery/IMG_3289-min.jpeg';
 // Náhledový obrázek pro galerii byl odstraněn, protože se nepoužívá
 
 // Data pro galerii
 const galleryItems = [
-  { id: 1, title: 'Relaxační kosmetické ošetření s masáží', category: 'kosmetika', image: galleryImage1 },
+  { id: 1, title: 'Rozjasnění', category: 'kosmetika', image: galleryImage1 },
   { id: 2, title: 'Rozjasněná pleť po hydratačním ošetření', category: 'kosmetika', image: galleryImage2 },
   { id: 3, title: 'Speciální péče pro problematickou pleť', category: 'kosmetika', image: galleryImage14 },
   { id: 4, title: 'Hloubkové čištění s ultrazvukovou špachtlí', category: 'kosmetika', image: galleryImage11 },
   { id: 5, title: 'Laminace obočí - výrazná proměna', category: 'oboci', image: galleryImage6 },
   { id: 6, title: 'Precizní barvení a úprava obočí', category: 'oboci', image: galleryImage7 },
   { id: 7, title: 'Architektura obočí podle tvaru obličeje', category: 'oboci', image: galleryImage8 },
-  { id: 8, title: 'Lash lifting s barvením pro otevřený pohled', category: 'rasy', image: galleryImage15 },
+  { id: 8, title: 'Prodloužení řas', category: 'rasy', image: galleryImage15 },
   { id: 9, title: 'Elegantní odpočinkový prostor salonu', category: 'salon', image: galleryImage5 },
   { id: 10, title: 'Ošetřovací lůžko s osvětlením', category: 'salon', image: galleryImage3 },
   { id: 11, title: 'Kosmetický koutek s profesionální péčí o pleť', category: 'salon', image: galleryImage4 },
