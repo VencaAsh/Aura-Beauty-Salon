@@ -25,12 +25,16 @@ export default function SluzbyPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Filtry kategorií */}
           <div className="mb-12">
-            <div className="flex justify-center gap-8 border-b border-[#E6CCB2]/20 pb-2">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 border-b border-[#E6CCB2]/20 pb-4">
               {categories.map((category) => (
                 <a
                   key={category.id}
                   href={`#${category.id}`}
-                  className={`px-4 py-2 ${category.id === 'all' ? 'text-[#121212] font-medium' : 'text-brand-secondary-dark hover:text-[#121212]'} transition-all duration-300 text-sm tracking-wide`}
+                  className={`px-3 py-3 mb-2 text-center min-w-[100px] ${
+                    category.id === 'all'
+                      ? 'text-[#121212] font-medium bg-[#E6CCB2]/20'
+                      : 'text-brand-secondary-dark hover:text-[#121212] hover:bg-[#E6CCB2]/10'
+                  } transition-all duration-300 text-sm tracking-wide rounded-sm`}
                 >
                   {category.name}
                 </a>
