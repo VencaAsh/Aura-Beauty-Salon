@@ -60,7 +60,7 @@ const priceList: PriceCategory[] = [
       { name: 'Clearcalm therapy', price: '1200 Kč', duration: '75 min' },
       { name: 'Ošetření anti-age youth therapy', price: '1400 Kč', duration: '90 min' },
       { name: 'Relax therapy', price: '900 Kč', duration: '60 min' },
-      { name: 'Mikrojehlíčkování obličej', price: '1800 Kč', duration: '90 min' },
+      { name: 'Mikrojehlíčkování - obličej', price: '1800 Kč', duration: '90 min' },
       { name: 'Mikrojehlíčkování obličej & dekolt', price: '2090 Kč', duration: '120 min' },
       { name: 'Dermaplaning', price: '1390 Kč', duration: '75 min' },
       { name: 'Carboxy therapy CO2', price: '1400 Kč', duration: '75 min' },

@@ -38,15 +38,15 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 'img4',
-    src: lashLiftingImage,
-    alt: 'Péče o řasy a obočí',
-    caption: 'Prodloužení řas'
-  },
-  {
-    id: 'img5',
     src: lhalalaPeelingImage,
     alt: 'Lha lala peeling',
     caption: 'Lha lala peeling s vysoce hydratační maskou Avalon'
+  },
+  {
+    id: 'img5',
+    src: lashLiftingImage,
+    alt: 'Péče o řasy a obočí',
+    caption: 'Prodloužení řas'
   },
   {
     id: 'img6',

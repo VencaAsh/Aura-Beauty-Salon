@@ -2,9 +2,9 @@ import type { Metadata } from 'next'; // Import typu Metadata
 import { services, categories } from './services-data';
 
 export const metadata: Metadata = {
-  title: 'Služby - Aura Beauty Salon | Prodlužování řas, Architektura a Laminace obočí',
-  description: 'Nabízíme profesionální služby v Ostravě: prodlužování řas, architektura obočí a laminace obočí. Profesionální péče s důrazem na kvalitu a individuální přístup.',
-  keywords: 'prodlužování řas Ostrava, architektura obočí Ostrava, laminace obočí Ostrava, řasy Ostrava, obočí Ostrava',
+  title: 'Služby - Aura Beauty Salon | Prodlužování řas, Obočí a Kosmetika',
+  description: 'Nabízíme profesionální služby v Ostravě: prodlužování řas, lash lifting, laminace obočí, kosmetické ošetření pleti a další. Profesionální péče s důrazem na kvalitu a individuální přístup.',
+  keywords: 'prodlužování řas Ostrava, lash lifting Ostrava, architektura obočí Ostrava, laminace obočí Ostrava, kosmetické ošetření Ostrava, mikrojehlíčkování Ostrava, dermaplaning Ostrava',
 };
 
 export default function SluzbyPage() {
@@ -41,7 +41,7 @@ export default function SluzbyPage() {
           {/* Sekce Řasy */}
           <section id="rasy" className="mb-20">
             <div className="mb-8">
-              <h2 className="text-2xl font-serif font-light text-[#121212] mb-2">Prodlužování řas</h2>
+              <h2 className="text-2xl font-serif font-light text-[#121212] mb-2">Řasy</h2>
               <div className="h-[1px] w-full bg-[#E6CCB2]/20 mb-8"></div>
             </div>
 
@@ -88,6 +88,46 @@ export default function SluzbyPage() {
             {/* Služby */}
             {services
               .filter(service => service.category === 'oboci')
+              .map(service => (
+                <div key={service.id} className="mb-12 pb-8 border-b border-[#E6CCB2]/10">
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <h3 className="text-xl font-serif font-light text-[#121212] mb-2">{service.name}</h3>
+                      <p className="text-brand-secondary-dark text-sm font-light mb-3">{service.description}</p>
+                    </div>
+                    <div>
+                      <p className="text-[#121212]/80 text-sm font-light mb-4">{service.longDescription}</p>
+                    </div>
+                    <div className="flex gap-4">
+                      <a
+                        href="/rezervace"
+                        className="inline-flex items-center bg-[#E6CCB2]/80 hover:bg-[#E6CCB2] text-[#121212] font-light py-2 px-4 rounded-sm transition-all duration-300 text-xs tracking-wide whitespace-nowrap"
+                      >
+                        Rezervovat
+                      </a>
+                      <a
+                        href="/cenik"
+                        className="inline-flex items-center bg-transparent border border-[#E6CCB2]/50 text-[#121212] hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 font-light py-2 px-4 rounded-sm transition-all duration-300 text-xs tracking-wide whitespace-nowrap"
+                      >
+                        Ceník
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </section>
+
+          {/* Sekce Kosmetika */}
+          <section id="kosmetika" className="mb-20">
+            <div className="mb-8">
+              <h2 className="text-2xl font-serif font-light text-[#121212] mb-2">Kosmetika</h2>
+              <div className="h-[1px] w-full bg-[#E6CCB2]/20 mb-8"></div>
+            </div>
+
+            {/* Služby */}
+            {services
+              .filter(service => service.category === 'kosmetika')
               .map(service => (
                 <div key={service.id} className="mb-12 pb-8 border-b border-[#E6CCB2]/10">
                   <div className="flex flex-col gap-4">

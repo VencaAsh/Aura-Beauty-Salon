@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { PageHero } from '@/components/ui';
 import { NewsGrid, NewsItem } from '@/components/news';
 import blogImage1 from '@/assets/images/blog/IMG_2632.png';
-import blogImage2 from '@/assets/images/blog/IMG_3302.jpeg';
+import blogImage2 from '@/assets/images/blog/IMG_3304.jpg';
 
 // Příspěvky na blogu
 const news: NewsItem[] = [
