@@ -12,7 +12,7 @@ declare global {
 const isBrowser = typeof window !== 'undefined';
 
 // ID měření Google Analytics
-export const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Nahraďte skutečným ID měření z Google Analytics 4
+export const GA_MEASUREMENT_ID = 'G-KBDHJVFH3G';
 
 // Inicializace Google Analytics
 export function initializeGA(): void {
