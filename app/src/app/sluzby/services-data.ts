@@ -175,6 +175,15 @@ export const services = [
   },
   {
     id: 20,
+    name: "Mikrojehlíčkování obličej & dekolt",
+    description: "Komplexní ošetření obličeje a dekoltu pro maximální efekt.",
+    longDescription: "Mikrojehlíčkování obličeje a dekoltu je komplexní ošetření, které pomocí jemných mikrojehlíček stimuluje přirozenou tvorbu kolagenu a elastinu nejen v pleti obličeje, ale i v citlivé oblasti dekoltu. Tato kombinace přináší harmonický výsledek a celkové omlazení horní části těla. Ošetření je vhodné pro redukci vrásek, jizviček a zlepšení textury pleti.",
+    price: "2 090 Kč",
+    duration: "120 minut",
+    category: "kosmetika"
+  },
+  {
+    id: 21,
     name: "Dermaplaning",
     description: "Exfoliační metoda pro odstranění odumřelých buněk a jemných chloupků.",
     longDescription: "Dermaplaning je šetrná exfoliační metoda, při které se pomocí speciálního skalpelu odstraňují odumřelé buňky kůže a jemné chloupky z povrchu pleti. Výsledkem je hladká, rozjasněná pleť s lepší texturou. Ošetření také zlepšuje vstřebávání aktivních látek z kosmetických přípravků a umožňuje lepší aplikaci make-upu.",
@@ -183,12 +192,57 @@ export const services = [
     category: "kosmetika"
   },
   {
-    id: 21,
+    id: 22,
     name: "Carboxy therapy CO2",
     description: "Neinvazivní metoda pro omlazení a revitalizaci pleti.",
     longDescription: "Carboxy therapy CO2 je neinvazivní metoda, která využívá oxid uhličitý k stimulaci krevního oběhu a metabolismu buněk. Výsledkem je lepší okysličení tkání, zvýšená produkce kolagenu a elastinu, a celkové omlazení pleti. Ošetření je vhodné pro redukci vrásek, zpevnění kontur obličeje a zlepšení celkového vzhledu pleti.",
     price: "1 400 Kč",
     duration: "75 minut",
+    category: "kosmetika"
+  },
+  {
+    id: 23,
+    name: "Elektroporace",
+    description: "Pokročilá technologie pro hloubkovou hydrataci a regeneraci pleti.",
+    longDescription: "Elektroporace je neinvazivní metoda, která využívá elektrické mikroimpulzy k otevření dočasných kanálků v buněčných membránách, což umožňuje efektivnější průnik aktivních látek do hlubších vrstev pokožky. Výsledkem je intenzivní hydratace, zpevnění pleti a viditelné zlepšení její struktury. Ošetření je vhodné pro všechny typy pleti a přináší okamžité výsledky.",
+    price: "1 450 Kč",
+    duration: "90 minut",
+    category: "kosmetika"
+  },
+  {
+    id: 24,
+    name: "LHA & ALA chemický peeling",
+    description: "Intenzivní exfoliace pro obnovu a omlazení pleti.",
+    longDescription: "LHA & ALA chemický peeling je specializované ošetření, které kombinuje lipohydroxykyselinu (LHA) a kyselinu alfa-lipoovou (ALA) pro efektivní exfoliaci a obnovu pleti. Tato kombinace pomáhá odstranit odumřelé buňky, redukovat vrásky, pigmentové skvrny a jizvy po akné. Výsledkem je jasnější, hladší a mladistvější pleť s vylepšenou texturou.",
+    price: "1 900 Kč",
+    duration: "75 minut",
+    category: "kosmetika"
+  },
+  {
+    id: 25,
+    name: "Pánské ošetření pleti",
+    description: "Specializované ošetření přizpůsobené potřebám mužské pleti.",
+    longDescription: "Pánské ošetření pleti je speciálně navrženo pro specifické potřeby mužské pokožky. Zahrnuje hloubkové čištění, peeling, masku a závěrečnou péči s důrazem na hydrataci a zklidnění po holení. Ošetření respektuje přirozené pH mužské pleti a pomáhá řešit typické problémy jako je mastná pleť, rozšířené póry nebo podráždění po holení.",
+    price: "1 000 Kč",
+    duration: "60 minut",
+    category: "kosmetika"
+  },
+  {
+    id: 26,
+    name: "Ošetření mladistvé pleti",
+    description: "Šetrné ošetření pro problematickou pleť mladých.",
+    longDescription: "Ošetření mladistvé pleti je speciálně navrženo pro potřeby dospívající pokožky. Zaměřuje se na šetrné čištění, regulaci tvorby kožního mazu a zklidnění zánětů. Používáme produkty, které respektují citlivost mladé pleti a pomáhají předcházet akné a dalším problémům. Součástí ošetření je i edukace o správné domácí péči pro udržení zdravé pleti.",
+    price: "1 000 Kč",
+    duration: "60 minut",
+    category: "kosmetika"
+  },
+  {
+    id: 27,
+    name: "Masáž rukou ke kosmetice",
+    description: "Relaxační doplněk ke kosmetickému ošetření.",
+    longDescription: "Masáž rukou je příjemným doplňkem ke kosmetickému ošetření, který přináší uvolnění a relaxaci. Jemné masážní techniky stimulují krevní oběh, uvolňují napětí v rukou a přispívají k celkovému pocitu pohody. Masáž zahrnuje aplikaci výživného krému, který zanechává pokožku rukou hebkou a hydratovanou.",
+    price: "150 Kč",
+    duration: "15 minut",
     category: "kosmetika"
   },
 ];
