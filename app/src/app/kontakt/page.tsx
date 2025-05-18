@@ -6,8 +6,9 @@ import Link from 'next/link';
 import { BRANCHES } from '@/constants';
 
 export const metadata: Metadata = {
-  title: 'Kontakt | Aura Beauty Salon',
-  description: 'Kontaktujte Aura Beauty Salon pro objednání kosmetických služeb, péče o řasy a obočí. Najdete nás na adresách v Brně a Praze.',
+  title: 'Kontakt | Kosmetický salon Ostrava - Laminace obočí, Řasy a Kosmetika',
+  description: 'Kontaktujte Aura Beauty Salon v Ostravě pro objednání kosmetických služeb, laminace obočí, úpravy obočí, prodlužování řas a lash liftingu.',
+  keywords: 'kontakt kosmetický salon Ostrava, adresa laminace obočí Ostrava, telefon úprava obočí Ostrava, kontakt řasy Ostrava, rezervace lash lifting Ostrava, objednávka kosmetika Ostrava',
 };
 
 // Používáme pobočky z konstant
@@ -28,7 +29,7 @@ export default function KontaktPage() {
             <h1 className="text-3xl md:text-4xl font-serif font-light text-brand-black mb-6">Kontakt</h1>
             <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
             <p className="text-center text-[#121212] mb-0 max-w-2xl mx-auto font-light">
-              Máte dotaz, přání nebo se chcete objednat? Neváhejte nás kontaktovat! Jsme vám k dispozici na všech našich pobočkách.
+              Máte dotaz ohledně laminace obočí, úpravy obočí, prodlužování řas nebo kosmetiky? Neváhejte nás kontaktovat! Jsme vám k dispozici v našem salonu v Ostravě.
             </p>
           </div>
         </div>
@@ -146,7 +147,7 @@ export default function KontaktPage() {
               <h2 className="text-2xl md:text-3xl font-serif font-light mb-8 text-[#121212]">Rezervace</h2>
               <div className="bg-white shadow-md border border-[#E6CCB2]/40 rounded-sm overflow-hidden p-8">
                 <p className="text-[#121212] mb-8 font-light">
-                  Chcete si rezervovat termín? Využijte náš online rezervační systém nebo nás kontaktujte telefonicky.
+                  Chcete si rezervovat termín na laminaci obočí, úpravu obočí, prodlužování řas, lash lifting nebo kosmetické ošetření? Využijte náš online rezervační systém nebo nás kontaktujte telefonicky.
                 </p>
                 <Link
                   href="/rezervace"

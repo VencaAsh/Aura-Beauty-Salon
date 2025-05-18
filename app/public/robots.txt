@@ -7,4 +7,8 @@ Allow: /
 # Disallow: /api/
 # Disallow: /admin/
 
-Sitemap: /sitemap.xml
+# SEO keywords: laminace obočí Ostrava, úprava obočí Ostrava, barvení obočí Ostrava, řasy Ostrava,
+# lash lifting Ostrava, kosmetika Ostrava, čištění pleti Ostrava, pánská kosmetika Ostrava,
+# chemický peeling Ostrava, masáž obličeje, LHA LALA peeling, anti age, problematická pleť, prodlužování řas
+
+Sitemap: https://www.aurabeautysalon.cz/sitemap.xml

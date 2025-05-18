@@ -23,7 +23,7 @@ export default function HeroSection() {
             {/* Actual image */}
             <Image
               src={heroImage}
-              alt="Kosmetické ošetření pleti"
+              alt="Kosmetický salon Ostrava - laminace obočí, prodlužování řas a kosmetika"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -57,9 +57,9 @@ export default function HeroSection() {
           {/* Main tagline with minimalist typography */}
           <FadeInView direction="left" delay={400} className="mb-6">
             <h1 className="text-4xl md:text-5xl font-light leading-tight tracking-wide text-[#121212]">
-              Objevte krásu<br/>
+              Kosmetický salon<br/>
               <GradientText colors={['#C9B8A8', '#E6CCB2', '#D8C3B0']} className="font-extralight">
-                v jednoduchosti
+                Ostrava
               </GradientText>
             </h1>
           </FadeInView>
@@ -71,13 +71,13 @@ export default function HeroSection() {
           {/* Descriptive text - minimalist messaging */}
           <FadeInView direction="left" delay={800} className="mb-6">
             <p className="text-lg text-[#121212]/80 max-w-md font-light tracking-wide">
-              Zažijte personalizovanou péči o pleť v atmosféře vytříbené jednoduchosti
+              Laminace obočí, prodlužování řas, lash lifting a profesionální kosmetika v Ostravě
             </p>
           </FadeInView>
 
           <FadeInView direction="left" delay={1000} className="mb-10">
             <p className="text-base text-[#C9B8A8] max-w-md font-light tracking-wide">
-              Naše ošetření zdůrazňují vaši přirozenou krásu pomocí inovativní korejské kosmetiky a pečlivého přístupu k detailům
+              Specializujeme se na úpravu obočí, barvení obočí, čištění pleti, pánskou kosmetiku a péči o problematickou pleť
             </p>
           </FadeInView>
 
@@ -92,13 +92,13 @@ export default function HeroSection() {
           <FadeInView direction="up" delay={1400} className="mt-12">
             <div className="flex flex-col md:flex-row items-center justify-center md:space-x-8">
               <div className="px-4 py-2 mb-2 md:mb-0 border-b md:border-b-0 md:border-r border-[#C9B8A8]/20 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Péče o pleť</span>
+                <span className="text-[#121212] text-sm tracking-wider font-light">Laminace obočí</span>
               </div>
               <div className="px-4 py-2 mb-2 md:mb-0 border-b md:border-b-0 md:border-r border-[#C9B8A8]/20 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Úprava obočí</span>
+                <span className="text-[#121212] text-sm tracking-wider font-light">Lash lifting</span>
               </div>
               <div className="px-4 py-2 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Prodlužování řas</span>
+                <span className="text-[#121212] text-sm tracking-wider font-light">Kosmetika</span>
               </div>
             </div>
           </FadeInView>

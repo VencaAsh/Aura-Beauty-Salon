@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'; // Import typu Metadata
 import { services, categories } from './services-data';
+import { FAQStructuredData } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Služby - Aura Beauty Salon | Prodlužování řas, Obočí a Kosmetika',
-  description: 'Nabízíme profesionální služby v Ostravě: prodlužování řas, lash lifting, laminace obočí, kosmetické ošetření pleti a další. Profesionální péče s důrazem na kvalitu a individuální přístup.',
-  keywords: 'prodlužování řas Ostrava, lash lifting Ostrava, architektura obočí Ostrava, laminace obočí Ostrava, kosmetické ošetření Ostrava, mikrojehlíčkování Ostrava, dermaplaning Ostrava',
+  title: 'Služby - Aura Beauty Salon | Laminace obočí, Řasy a Kosmetika Ostrava',
+  description: 'Nabízíme profesionální služby v Ostravě: laminace obočí, úprava obočí, barvení obočí, prodlužování řas, lash lifting, čištění pleti, pánská kosmetika a chemický peeling.',
+  keywords: 'laminace obočí Ostrava, úprava obočí Ostrava, barvení obočí Ostrava, řasy Ostrava, lash lifting Ostrava, kosmetika Ostrava, čištění pleti Ostrava, pánská kosmetika Ostrava, chemický peeling Ostrava, masáž obličeje, LHA LALA peeling, anti age, problematická pleť, prodlužování řas',
 };
 
 export default function SluzbyPage() {
   return (
     <>
+      {/* Strukturovaná data pro FAQ */}
+      <FAQStructuredData />
       {/* Hero sekce */}
       <section className="relative bg-brand-secondary-light pt-32 pb-12">
         <div className="container mx-auto px-4">

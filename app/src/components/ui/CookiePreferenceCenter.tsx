@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Shield, X } from 'lucide-react';
+import { initializeAnalytics } from '@/utils/cookieConsent';
 
 // Definice typů cookies
 const COOKIE_TYPES = {
@@ -226,15 +227,13 @@ function applyPreferences(preferences: Record<string, boolean>) {
 
 // Pomocné funkce pro aktivaci/deaktivaci skriptů
 function enableGoogleAnalytics() {
-  // Kód pro aktivaci Google Analytics
-  console.log('Google Analytics aktivován');
-  // Zde byste přidali skutečnou implementaci
+  // Aktivace Google Analytics
+  initializeAnalytics();
 }
 
 function disableGoogleAnalytics() {
-  // Kód pro deaktivaci Google Analytics
-  console.log('Google Analytics deaktivován');
-  // Zde byste přidali skutečnou implementaci
+  // Deaktivace Google Analytics
+  initializeAnalytics(); // Funkce sama zkontroluje, zda má uživatel souhlas
 }
 
 function enableFacebookPixel() {

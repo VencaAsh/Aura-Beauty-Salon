@@ -9,8 +9,9 @@ import image3 from '@/assets/images/salon/IMG_0981-min.jpeg';
 import ownerImage from '@/assets/images/makrushyna.jpg';
 
 export const metadata = {
-  title: 'Salon | Aura Beauty Salon',
-  description: 'Seznamte se s naším salonem a jeho majitelkou, která se postará o vaši krásu a pohodu.',
+  title: 'Salon | Kosmetický salon Ostrava - Laminace obočí a Řasy',
+  description: 'Seznamte se s naším kosmetickým salonem v Ostravě, kde nabízíme laminaci obočí, úpravu obočí, barvení obočí, prodlužování řas, lash lifting a kosmetiku.',
+  keywords: 'kosmetický salon Ostrava, salon laminace obočí Ostrava, salon úprava obočí Ostrava, salon barvení obočí Ostrava, salon řasy Ostrava, salon lash lifting Ostrava, salon kosmetika Ostrava, salon čištění pleti Ostrava',
 };
 
 // Data pro salon

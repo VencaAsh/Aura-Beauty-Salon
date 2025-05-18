@@ -9,9 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '', // Domovská stránka
     '/sluzby',
     '/galerie',
-    '/o-nas',
+    '/salon',
+    '/cenik',
+    '/blog',
     '/kontakt',
     '/zasady-ochrany-osobnich-udaju',
+    '/obchodni-podminky',
   ].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date().toISOString(), // Jednoduché nastavení aktuálního data

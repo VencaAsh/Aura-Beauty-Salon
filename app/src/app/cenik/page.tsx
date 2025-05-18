@@ -17,8 +17,9 @@ type PriceCategory = {
 };
 
 export const metadata = {
-  title: 'Ceník služeb | Aura Beauty Salon',
-  description: 'Ceník služeb nabízených v Aura Beauty Salon. Prodlužování řas, architektura obočí, laminace obočí a kompletní kosmetické služby.',
+  title: 'Ceník služeb | Laminace obočí, Řasy a Kosmetika Ostrava',
+  description: 'Ceník služeb nabízených v Aura Beauty Salon v Ostravě. Laminace obočí, úprava obočí, barvení obočí, prodlužování řas, lash lifting, čištění pleti a pánská kosmetika.',
+  keywords: 'ceník laminace obočí Ostrava, ceník úprava obočí Ostrava, ceník barvení obočí Ostrava, ceník řasy Ostrava, ceník lash lifting Ostrava, ceník kosmetika Ostrava, ceník čištění pleti Ostrava, ceník pánská kosmetika Ostrava',
 };
 
 // Data pro ceník
