@@ -206,44 +206,62 @@ export default function CookiePreferenceCenter({ isOpen, onClose }: CookiePrefer
 
 // Funkce pro aplikaci preferencí
 function applyPreferences(preferences: Record<string, boolean>) {
-  // Zde implementujete logiku pro aktivaci/deaktivaci skriptů
+  try {
+    // Příklad: Google Analytics
+    if (preferences.analytics) {
+      enableGoogleAnalytics();
+    } else {
+      disableGoogleAnalytics();
+    }
 
-  // Příklad: Google Analytics
-  if (preferences.analytics) {
-    enableGoogleAnalytics();
-  } else {
-    disableGoogleAnalytics();
+    // Příklad: Facebook Pixel
+    if (preferences.marketing) {
+      enableFacebookPixel();
+    } else {
+      disableFacebookPixel();
+    }
+
+    // Další skripty...
+  } catch (error) {
+    console.error('Chyba při aplikaci preferencí cookies:', error);
   }
-
-  // Příklad: Facebook Pixel
-  if (preferences.marketing) {
-    enableFacebookPixel();
-  } else {
-    disableFacebookPixel();
-  }
-
-  // Další skripty...
 }
 
 // Pomocné funkce pro aktivaci/deaktivaci skriptů
 function enableGoogleAnalytics() {
-  // Aktivace Google Analytics
-  initializeAnalytics();
+  try {
+    // Aktivace Google Analytics
+    initializeAnalytics();
+  } catch (error) {
+    console.error('Chyba při aktivaci Google Analytics:', error);
+  }
 }
 
 function disableGoogleAnalytics() {
-  // Deaktivace Google Analytics
-  initializeAnalytics(); // Funkce sama zkontroluje, zda má uživatel souhlas
+  try {
+    // Deaktivace Google Analytics
+    initializeAnalytics(); // Funkce sama zkontroluje, zda má uživatel souhlas
+  } catch (error) {
+    console.error('Chyba při deaktivaci Google Analytics:', error);
+  }
 }
 
 function enableFacebookPixel() {
-  // Kód pro aktivaci Facebook Pixel
-  console.log('Facebook Pixel aktivován');
-  // Zde byste přidali skutečnou implementaci
+  try {
+    // Kód pro aktivaci Facebook Pixel
+    console.log('Facebook Pixel aktivován');
+    // Zde byste přidali skutečnou implementaci
+  } catch (error) {
+    console.error('Chyba při aktivaci Facebook Pixel:', error);
+  }
 }
 
 function disableFacebookPixel() {
-  // Kód pro deaktivaci Facebook Pixel
-  console.log('Facebook Pixel deaktivován');
-  // Zde byste přidali skutečnou implementaci
+  try {
+    // Kód pro deaktivaci Facebook Pixel
+    console.log('Facebook Pixel deaktivován');
+    // Zde byste přidali skutečnou implementaci
+  } catch (error) {
+    console.error('Chyba při deaktivaci Facebook Pixel:', error);
+  }
 }

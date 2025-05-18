@@ -1,38 +1,46 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { pageview, GA_MEASUREMENT_ID } from '@/utils/analytics';
-import { hasConsent } from '@/utils/cookieConsent';
+import Script from 'next/script';
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (hasConsent('analytics')) {
-      // Sledování změny stránky
-      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+    // Funkce pro kontrolu souhlasu s cookies
+    const checkConsent = () => {
+      if (typeof window !== 'undefined') {
+        try {
+          const preferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+          return preferences && preferences['analytics'] === true;
+        } catch (e) {
+          return false;
+        }
+      }
+      return false;
+    };
+
+    // Sledování změny stránky pouze pokud je souhlas
+    if (checkConsent()) {
+      // Získáme search params z window.location místo useSearchParams
+      const searchParams = typeof window !== 'undefined' ? window.location.search : '';
+      const url = pathname + searchParams;
       pageview(url);
     }
-  }, [pathname, searchParams]);
-
-  // Pokud uživatel nemá souhlas s analytickými cookies, nevkládáme nic
-  if (!hasConsent('analytics')) {
-    return null;
-  }
+  }, [pathname]);
 
   return (
     <>
       {/* Google Analytics - základní skript */}
-      <script
-        async
+      <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
-      
+
       {/* Google Analytics - inicializační kód */}
-      <script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -41,8 +49,24 @@ export default function GoogleAnalytics() {
             page_path: window.location.pathname,
             cookie_flags: 'SameSite=None;Secure'
           });
+
+          // Kontrola souhlasu s cookies
+          try {
+            const preferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+            if (!preferences || preferences['analytics'] !== true) {
+              // Pokud není souhlas, nastavíme opt-out
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied'
+              });
+            }
+          } catch (e) {
+            // V případě chyby nastavíme opt-out
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied'
+            });
+          }
         `}
-      </script>
+      </Script>
     </>
   );
 }

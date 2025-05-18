@@ -1,6 +1,14 @@
+'use client';
+
+// Inicializace Google Analytics
+import { loadGAScript, removeGAScript } from './analytics';
+
+// Pomocná funkce pro kontrolu, zda jsme v prohlížeči
+const isBrowser = typeof window !== 'undefined';
+
 // Kontrola, zda uživatel souhlasil s danou kategorií cookies
 export function hasConsent(category: string): boolean {
-  if (typeof window === 'undefined') return false;
+  if (!isBrowser) return false;
 
   try {
     const preferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
@@ -12,58 +20,76 @@ export function hasConsent(category: string): boolean {
 
 // Dynamické načtení skriptu, pokud je souhlas
 export function loadScriptIfConsented(category: string, src: string, attributes: Record<string, string> = {}): boolean {
-  if (typeof window === 'undefined') return false;
+  if (!isBrowser) return false;
 
-  if (hasConsent(category)) {
-    const script = document.createElement('script');
-    script.src = src;
+  try {
+    if (hasConsent(category)) {
+      // Kontrola, zda skript již existuje
+      if (document.querySelector(`script[src="${src}"]`)) return true;
 
-    // Přidání dalších atributů
-    Object.entries(attributes).forEach(([key, value]) => {
-      script.setAttribute(key, value);
-    });
+      const script = document.createElement('script');
+      script.src = src;
 
-    document.head.appendChild(script);
-    return true;
+      // Přidání dalších atributů
+      Object.entries(attributes).forEach(([key, value]) => {
+        script.setAttribute(key, value);
+      });
+
+      document.head.appendChild(script);
+      return true;
+    }
+  } catch (error) {
+    console.error('Chyba při načítání skriptu:', error);
   }
   return false;
 }
 
-// Inicializace Google Analytics
-import { loadGAScript, removeGAScript, GA_MEASUREMENT_ID } from './analytics';
-
 export function initializeAnalytics(): void {
-  if (typeof window === 'undefined') return;
+  if (!isBrowser) return;
 
-  if (hasConsent('analytics')) {
-    // Načtení a inicializace Google Analytics
-    loadGAScript();
-  } else {
-    // Odstranění Google Analytics, pokud uživatel odvolal souhlas
-    removeGAScript();
+  try {
+    if (hasConsent('analytics')) {
+      // Načtení a inicializace Google Analytics
+      loadGAScript();
+    } else {
+      // Odstranění Google Analytics, pokud uživatel odvolal souhlas
+      removeGAScript();
+    }
+  } catch (error) {
+    console.error('Chyba při inicializaci Google Analytics:', error);
   }
 }
 
 // Příklad použití pro Facebook Pixel
 export function initializeMarketing(): void {
-  if (typeof window === 'undefined') return;
+  if (!isBrowser) return;
 
-  if (hasConsent('marketing')) {
-    // Facebook Pixel kód
-    // Zde byste přidali skutečný kód pro Facebook Pixel
-    console.log('Facebook Pixel inicializován');
+  try {
+    if (hasConsent('marketing')) {
+      // Facebook Pixel kód
+      // Zde byste přidali skutečný kód pro Facebook Pixel
+      console.log('Facebook Pixel inicializován');
 
-    // Načtení FB Pixel skriptu
-    loadScriptIfConsented(
-      'marketing',
-      'https://connect.facebook.net/en_US/fbevents.js'
-    );
+      // Načtení FB Pixel skriptu
+      loadScriptIfConsented(
+        'marketing',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+    }
+  } catch (error) {
+    console.error('Chyba při inicializaci Facebook Pixel:', error);
   }
 }
 
 // Inicializace všech skriptů podle preferencí
 export function initializeAllScripts(): void {
-  initializeAnalytics();
-  initializeMarketing();
-  // Další inicializace...
+  try {
+    if (isBrowser) {
+      initializeAnalytics();
+      initializeMarketing();
+      // Další inicializace...
+    }
+  } catch (error) {
+    console.error('Chyba při inicializaci skriptů:', error);
+  }
 }

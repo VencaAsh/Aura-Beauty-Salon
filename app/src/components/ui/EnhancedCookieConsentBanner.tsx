@@ -6,11 +6,16 @@ import CookiePreferenceCenter from './CookiePreferenceCenter';
 import { initializeAllScripts } from '@/utils/cookieConsent';
 
 // Globální funkce pro otevření centra preferencí
-if (typeof window !== 'undefined') {
-  // @ts-ignore
-  window.openCookiePreferences = () => {
-    // Tato funkce bude přepsána při inicializaci komponenty
-  };
+// Bezpečná inicializace globální funkce
+try {
+  if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.openCookiePreferences = () => {
+      // Tato funkce bude přepsána při inicializaci komponenty
+    };
+  }
+} catch (error) {
+  console.error('Chyba při inicializaci globální funkce pro cookies:', error);
 }
 
 export default function EnhancedCookieConsentBanner({ hideFooterButton = false }: { hideFooterButton?: boolean } = {}) {
@@ -19,68 +24,97 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
 
   useEffect(() => {
     // Kontrola, zda uživatel již nastavil preference
-    if (typeof window !== 'undefined') {
-      // Nastavení globální funkce pro otevření centra preferencí
-      // @ts-ignore
-      window.openCookiePreferences = () => {
-        setShowPreferences(true);
-      };
+    try {
+      if (typeof window !== 'undefined') {
+        // Nastavení globální funkce pro otevření centra preferencí
+        // @ts-ignore
+        window.openCookiePreferences = () => {
+          setShowPreferences(true);
+        };
 
-      const preferences = localStorage.getItem('cookiePreferences');
-      if (!preferences) {
-        // Pokud ne, zobrazíme banner po krátké prodlevě
-        const timer = setTimeout(() => {
-          setShowBanner(true);
-        }, 1000);
-        return () => clearTimeout(timer);
-      } else {
-        // Pokud ano, inicializujeme skripty podle preferencí
-        initializeAllScripts();
+        try {
+          const preferences = localStorage.getItem('cookiePreferences');
+          if (!preferences) {
+            // Pokud ne, zobrazíme banner po krátké prodlevě
+            const timer = setTimeout(() => {
+              setShowBanner(true);
+            }, 1000);
+            return () => clearTimeout(timer);
+          } else {
+            // Pokud ano, inicializujeme skripty podle preferencí
+            initializeAllScripts();
+          }
+        } catch (storageError) {
+          console.error('Chyba při přístupu k localStorage:', storageError);
+          // Pokud nelze přistoupit k localStorage, zobrazíme banner
+          const timer = setTimeout(() => {
+            setShowBanner(true);
+          }, 1000);
+          return () => clearTimeout(timer);
+        }
       }
+    } catch (error) {
+      console.error('Chyba při inicializaci cookie banneru:', error);
     }
   }, []);
 
   // Přijmout všechny cookies
   const acceptAll = () => {
-    const allAccepted = {
-      necessary: true,
-      analytics: true,
-      marketing: true,
-      preferences: true
-    };
+    try {
+      const allAccepted = {
+        necessary: true,
+        analytics: true,
+        marketing: true,
+        preferences: true
+      };
 
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('cookiePreferences', JSON.stringify(allAccepted));
-      initializeAllScripts();
-      setShowBanner(false);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('cookiePreferences', JSON.stringify(allAccepted));
+        initializeAllScripts();
+        setShowBanner(false);
+      }
+    } catch (error) {
+      console.error('Chyba při přijetí všech cookies:', error);
     }
   };
 
   // Odmítnout všechny nepovinné cookies
   const rejectAll = () => {
-    const allRejected = {
-      necessary: true,
-      analytics: false,
-      marketing: false,
-      preferences: false
-    };
+    try {
+      const allRejected = {
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        preferences: false
+      };
 
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('cookiePreferences', JSON.stringify(allRejected));
-      setShowBanner(false);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('cookiePreferences', JSON.stringify(allRejected));
+        setShowBanner(false);
+      }
+    } catch (error) {
+      console.error('Chyba při odmítnutí cookies:', error);
     }
   };
 
   // Otevřít centrum preferencí
   const openPreferences = () => {
-    setShowPreferences(true);
-    setShowBanner(false);
+    try {
+      setShowPreferences(true);
+      setShowBanner(false);
+    } catch (error) {
+      console.error('Chyba při otevírání centra preferencí:', error);
+    }
   };
 
   // Po zavření centra preferencí
   const onClosePreferences = () => {
-    setShowPreferences(false);
-    initializeAllScripts();
+    try {
+      setShowPreferences(false);
+      initializeAllScripts();
+    } catch (error) {
+      console.error('Chyba při zavírání centra preferencí:', error);
+    }
   };
 
   return (
