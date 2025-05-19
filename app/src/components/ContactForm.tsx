@@ -1,8 +1,8 @@
 'use client'; // Označení jako klientská komponenta pro interaktivitu
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Send } from 'lucide-react';
-import { useSearchParams } from 'next/navigation';
+import SuccessMessage from './SuccessMessage';
 
 interface FormData {
   name: string;
@@ -14,7 +14,6 @@ interface FormData {
 }
 
 export default function ContactForm() {
-  const searchParams = useSearchParams();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -25,23 +24,7 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
-  const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'success' | 'error'; message: string }>({ type: 'idle', message: '' });
-
-  // Kontrola, zda byl formulář úspěšně odeslán (z URL parametru)
-  useEffect(() => {
-    if (searchParams.has('success')) {
-      setStatus({ type: 'success', message: 'Zpráva úspěšně odeslána!' });
-      // Vyčistit formulář po úspěšném odeslání
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        branch: 'ostrava'
-      });
-    }
-  }, [searchParams]);
+  const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'error'; message: string }>({ type: 'idle', message: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -93,13 +76,9 @@ export default function ContactForm() {
 
   return (
     <div className="p-8">
-      {status.type === 'loading' && (
-        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
-          {status.message}
-        </div>
-      )}
+      <SuccessMessage />
 
-      {status.type === 'success' && (
+      {status.type === 'loading' && (
         <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
           {status.message}
         </div>

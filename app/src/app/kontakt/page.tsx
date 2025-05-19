@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import ContactForm from '@/components/ContactForm';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import type { Metadata } from 'next';
@@ -115,7 +116,9 @@ export default function KontaktPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-serif font-light mb-8 text-[#121212]">Napište nám</h2>
             <div className="bg-white shadow-md border border-[#E6CCB2]/40 rounded-sm overflow-hidden">
-              <ContactForm />
+              <Suspense fallback={<div className="p-8">Načítání formuláře...</div>}>
+                <ContactForm />
+              </Suspense>
             </div>
           </div>
 
