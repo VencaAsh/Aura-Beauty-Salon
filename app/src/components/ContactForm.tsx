@@ -71,17 +71,16 @@ export default function ContactForm() {
 
     try {
       // Vytvoření FormData objektu pro Netlify Forms
-      const formDataObj = new FormData();
-      formDataObj.append('form-name', 'contact');
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataObj.append(key, value);
-      });
+      const formElement = e.target as HTMLFormElement;
+      const formData = new FormData(formElement);
 
-      // Odeslání formuláře pomocí nativního fetch API
+      // Zajistíme, že form-name je správně nastaveno
+      formData.set('form-name', 'contact');
+
+      // Odeslání formuláře pomocí fetch API s FormData
       const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataObj as any).toString()
+        body: formData
       });
 
       if (!response.ok) {
@@ -127,10 +126,17 @@ export default function ContactForm() {
         name="contact"
         method="POST"
         data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/kontakt/?success=true"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}
         <input type="hidden" name="form-name" value="contact" />
+        <div className="hidden">
+          <label>
+            Nevyplňujte toto pole, pokud jste člověk: <input name="bot-field" />
+          </label>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
