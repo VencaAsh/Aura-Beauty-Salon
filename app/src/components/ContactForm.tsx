@@ -61,6 +61,7 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Pouze validace formuláře, bez preventDefault
   const handleSubmit = (e: React.FormEvent) => {
     if (!validateForm()) {
       e.preventDefault(); // Zastavit odeslání pouze pokud validace selže
@@ -72,6 +73,7 @@ export default function ContactForm() {
 
     // Necháme formulář odeslat přirozeně - netlify ho zpracuje
     // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
+    console.log('Formulář se odesílá...');
   };
 
   return (
