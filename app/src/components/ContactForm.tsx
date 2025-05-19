@@ -1,7 +1,8 @@
 'use client'; // Označení jako klientská komponenta pro interaktivitu
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 interface FormData {
   name: string;
@@ -13,6 +14,7 @@ interface FormData {
 }
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -24,6 +26,22 @@ export default function ContactForm() {
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'success' | 'error'; message: string }>({ type: 'idle', message: '' });
+
+  // Kontrola, zda byl formulář úspěšně odeslán (z URL parametru)
+  useEffect(() => {
+    if (searchParams.has('success')) {
+      setStatus({ type: 'success', message: 'Zpráva úspěšně odeslána!' });
+      // Vyčistit formulář po úspěšném odeslání
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        branch: 'ostrava'
+      });
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -60,46 +78,17 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleSubmit = (e: React.FormEvent) => {
     if (!validateForm()) {
+      e.preventDefault(); // Zastavit odeslání pouze pokud validace selže
       return;
     }
 
+    // Nastavit stav na loading
     setStatus({ type: 'loading', message: 'Odesílám...' });
 
-    try {
-      // Vytvoření FormData objektu pro Netlify Forms
-      const formElement = e.target as HTMLFormElement;
-      const formData = new FormData(formElement);
-
-      // Zajistíme, že form-name je správně nastaveno
-      formData.set('form-name', 'contact');
-
-      // Odeslání formuláře pomocí fetch API s FormData
-      const response = await fetch('/', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (!response.ok) {
-        throw new Error('Nastala chyba při odesílání formuláře.');
-      }
-
-      setStatus({ type: 'success', message: 'Zpráva úspěšně odeslána!' });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        branch: 'ostrava'
-      });
-    } catch (error) {
-      console.error('Chyba při odesílání formuláře:', error);
-      setStatus({ type: 'error', message: error instanceof Error ? error.message : 'Nastala chyba při odesílání.' });
-    }
+    // Necháme formulář odeslat přirozeně - netlify ho zpracuje
+    // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
   };
 
   return (
@@ -126,7 +115,7 @@ export default function ContactForm() {
         name="contact"
         method="POST"
         data-netlify="true"
-        netlify-honeypot="bot-field"
+        data-netlify-honeypot="bot-field"
         action="/kontakt/?success=true"
         onSubmit={handleSubmit}
       >
