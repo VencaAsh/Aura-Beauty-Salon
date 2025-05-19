@@ -25,8 +25,6 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'success' | 'error'; message: string }>({ type: 'idle', message: '' });
 
-  // Používáme pobočky z konstant
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -72,19 +70,25 @@ export default function ContactForm() {
     setStatus({ type: 'loading', message: 'Odesílám...' });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      // Vytvoření FormData objektu pro Netlify Forms
+      const formDataObj = new FormData();
+      formDataObj.append('form-name', 'contact');
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataObj.append(key, value);
       });
 
-      const result = await response.json();
+      // Odeslání formuláře pomocí nativního fetch API
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataObj as any).toString()
+      });
 
       if (!response.ok) {
-        throw new Error(result.error || 'Neznámá chyba serveru.');
+        throw new Error('Nastala chyba při odesílání formuláře.');
       }
 
-      setStatus({ type: 'success', message: result.message || 'Zpráva úspěšně odeslána!' });
+      setStatus({ type: 'success', message: 'Zpráva úspěšně odeslána!' });
       setFormData({
         name: '',
         email: '',
@@ -119,7 +123,15 @@ export default function ContactForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+      >
+        {/* Skryté pole pro Netlify Forms */}
+        <input type="hidden" name="form-name" value="contact" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label htmlFor="name" className="block text-[#121212] text-sm uppercase tracking-wider font-medium mb-2">

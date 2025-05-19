@@ -13,3 +13,9 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Nastavení pro Netlify Forms
+[forms]
+  # Povolení AJAX odesílání formulářů
+  [forms.contact]
+    name = "contact"

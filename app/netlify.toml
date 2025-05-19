@@ -12,3 +12,9 @@
 
 [build.processing]
   skip_processing = true
+
+# Nastavení pro Netlify Forms
+[forms]
+  # Povolení AJAX odesílání formulářů
+  [forms.contact]
+    name = "contact"

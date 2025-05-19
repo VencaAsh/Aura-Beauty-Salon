@@ -1,25 +1,21 @@
 import { NextResponse } from 'next/server';
 
+// Tento endpoint již není používán, protože formulář je zpracováván pomocí Netlify Forms
+// Ponecháváme ho zde pro případné budoucí použití nebo jako zálohu
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, email, message } = body;
-
-    // Validace (jednoduchá kontrola, zda data existují)
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Chybějící pole ve formuláři.' }, { status: 400 });
-    }
-
+    // Informace o přechodu na Netlify Forms
     console.log('=== Kontakt Formulář ===');
-    console.log('Jméno:', name);
-    console.log('Email:', email);
-    console.log('Zpráva:', message);
+    console.log('Tento API endpoint již není používán.');
+    console.log('Formulář je nyní zpracováván pomocí Netlify Forms.');
     console.log('=======================');
 
-    // Zde by v budoucnu byla logika pro odeslání emailu, uložení do DB atd.
-
-    // Odeslání úspěšné odpovědi klientovi
-    return NextResponse.json({ message: 'Zpráva úspěšně přijata!' }, { status: 200 });
+    // Odeslání informativní odpovědi klientovi
+    return NextResponse.json({
+      message: 'Tento API endpoint již není používán. Formulář je nyní zpracováván pomocí Netlify Forms.',
+      redirected: true
+    }, { status: 200 });
 
   } catch (error) {
     console.error('Chyba při zpracování formuláře:', error);
