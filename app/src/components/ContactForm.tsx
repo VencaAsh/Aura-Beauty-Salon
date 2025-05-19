@@ -10,7 +10,6 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
-  branch: string;
 }
 
 export default function ContactForm() {
@@ -19,8 +18,7 @@ export default function ContactForm() {
     email: '',
     phone: '',
     subject: '',
-    message: '',
-    branch: 'ostrava'
+    message: ''
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -63,7 +61,10 @@ export default function ContactForm() {
 
   // Pouze validace formuláře, bez preventDefault
   const handleSubmit = (e: React.FormEvent) => {
+    console.log('Formulář se odesílá - začátek handleSubmit');
+
     if (!validateForm()) {
+      console.log('Validace selhala - formulář nebude odeslán');
       e.preventDefault(); // Zastavit odeslání pouze pokud validace selže
       return;
     }
@@ -73,7 +74,10 @@ export default function ContactForm() {
 
     // Necháme formulář odeslat přirozeně - netlify ho zpracuje
     // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
-    console.log('Formulář se odesílá...');
+    console.log('Formulář prošel validací a bude odeslán');
+    console.log('Data formuláře:', formData);
+
+    // Zde nepoužíváme preventDefault(), aby se formulář odeslal nativně
   };
 
   return (
@@ -97,7 +101,7 @@ export default function ContactForm() {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/kontakt/?success=true"
+        action="/dekujeme"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}
@@ -168,7 +172,6 @@ export default function ContactForm() {
               placeholder="+420 XXX XXX XXX"
               className="w-full px-4 py-3 border-2 border-[#E6CCB2]/40 rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]"
             />
-            <input type="hidden" name="branch" value={formData.branch} />
           </div>
 
           <div>
