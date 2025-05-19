@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
+import ContactForm from '@/components/ContactForm';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import type { Metadata } from 'next';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { BRANCHES } from '@/constants';
 
@@ -114,19 +116,9 @@ export default function KontaktPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-serif font-light mb-8 text-[#121212]">Napište nám</h2>
             <div className="bg-white shadow-md border border-[#E6CCB2]/40 rounded-sm overflow-hidden">
-              <div className="p-8">
-                <h3 className="text-xl font-serif font-light mb-4 text-[#121212]">Kontaktní formulář</h3>
-                <p className="mb-6 text-[#121212]/80">
-                  Pro odeslání zprávy prosím použijte náš <a href="/kontakt-formular" className="text-[#C9B8A8] hover:underline">kontaktní formulář</a>.
-                </p>
-                <a
-                  href="/kontakt-formular"
-                  className="bg-[#E6CCB2] hover:bg-[#D8C3B0] text-[#121212] font-light py-3 px-8 rounded-sm transition-all duration-300 border-2 border-[#E6CCB2] inline-flex items-center text-sm tracking-wide shadow-sm"
-                >
-                  Přejít na formulář
-                  <Send className="ml-3 h-5 w-5" />
-                </a>
-              </div>
+              <Suspense fallback={<div className="p-8">Načítání formuláře...</div>}>
+                <ContactForm />
+              </Suspense>
             </div>
           </div>
 
