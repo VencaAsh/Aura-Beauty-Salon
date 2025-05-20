@@ -18,3 +18,17 @@
   # Povolení AJAX odesílání formulářů
   [forms.contact]
     name = "contact"
+    fields = [
+      { name = "name", widget = "string", required = true },
+      { name = "email", widget = "email", required = true },
+      { name = "phone", widget = "string", required = false },
+      { name = "subject", widget = "string", required = true },
+      { name = "message", widget = "text", required = true }
+    ]
+    success_url = "/dekujeme"
+
+# Přesměrování po odeslání formuláře
+[[redirects]]
+  from = "/dekujeme"
+  to = "/dekujeme"
+  status = 200

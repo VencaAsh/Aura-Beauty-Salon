@@ -1,8 +1,8 @@
-'use client'; // Označení jako klientská komponenta pro interaktivitu
+'use client';
 
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
-import SuccessMessage from './SuccessMessage';
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   name: string;
@@ -12,7 +12,8 @@ interface FormData {
   message: string;
 }
 
-export default function ContactForm() {
+export default function FetchContactForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -22,9 +23,12 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
-  const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'error'; message: string }>({ type: 'idle', message: '' });
+  const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'error' | 'success'; message: string }>({ 
+    type: 'idle', 
+    message: '' 
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
 
@@ -59,45 +63,73 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Pouze validace formuláře, bez preventDefault
-  const handleSubmit = (e: React.FormEvent) => {
-    console.log('Formulář se odesílá - začátek handleSubmit');
-    console.log('URL formuláře:', (e.target as HTMLFormElement).action);
-    console.log('Metoda formuláře:', (e.target as HTMLFormElement).method);
-    console.log('Netlify atribut:', (e.target as HTMLFormElement).getAttribute('data-netlify'));
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Odesílání formuláře pomocí Fetch API');
 
     if (!validateForm()) {
-      console.log('Validace selhala - formulář nebude odeslán');
-      e.preventDefault(); // Zastavit odeslání pouze pokud validace selže
+      console.log('Validace selhala');
       return;
     }
 
-    // Nastavit stav na loading
     setStatus({ type: 'loading', message: 'Odesílám...' });
 
-    // Necháme formulář odeslat přirozeně - netlify ho zpracuje
-    // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
-    console.log('Formulář prošel validací a bude odeslán');
-    console.log('Data formuláře:', formData);
-
-    // Přidání debugovacích informací do konzole
-    console.log('Formulář se odesílá na:', (e.target as HTMLFormElement).action);
-    console.log('Skryté pole form-name:', document.querySelector('input[name="form-name"]')?.getAttribute('value'));
-
-    // Zde nepoužíváme preventDefault(), aby se formulář odeslal nativně
-
-    // Přidání debugovacího výpisu do localStorage pro pozdější kontrolu
     try {
-      localStorage.setItem('formSubmitTime', new Date().toISOString());
-      localStorage.setItem('formData', JSON.stringify(formData));
+      // Příprava dat pro Netlify Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('form-name', 'contact');
+      
+      // Přidání všech polí formuláře
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSend.append(key, value);
+      });
+
+      // Odeslání dat pomocí Fetch API
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      });
+
+      if (response.ok) {
+        console.log('Formulář úspěšně odeslán');
+        setStatus({ type: 'success', message: 'Zpráva byla úspěšně odeslána!' });
+        
+        // Vyčištění formuláře
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Přesměrování na stránku s poděkováním
+        router.push('/dekujeme');
+      } else {
+        console.error('Chyba při odesílání formuláře:', response.statusText);
+        setStatus({ 
+          type: 'error', 
+          message: `Chyba při odesílání: ${response.statusText}. Zkuste to prosím znovu.` 
+        });
+      }
     } catch (error) {
-      console.error('Chyba při ukládání do localStorage:', error);
+      console.error('Chyba při odesílání formuláře:', error);
+      setStatus({ 
+        type: 'error', 
+        message: 'Došlo k chybě při odesílání. Zkuste to prosím znovu.' 
+      });
     }
   };
 
   return (
     <div className="p-8">
-      <SuccessMessage />
+      {status.type === 'success' && (
+        <div className="mb-6 p-6 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2] shadow-md">
+          <h3 className="text-xl font-serif font-light mb-2 text-[#121212]">Děkujeme za vaši zprávu!</h3>
+          <p>Vaše zpráva byla úspěšně odeslána. Budeme vás kontaktovat co nejdříve.</p>
+        </div>
+      )}
 
       {status.type === 'loading' && (
         <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
@@ -106,7 +138,7 @@ export default function ContactForm() {
       )}
 
       {status.type === 'error' && (
-        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
+        <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#C9B8A8] shadow-sm">
           {status.message}
         </div>
       )}
@@ -116,7 +148,6 @@ export default function ContactForm() {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/.netlify/functions/submission-created"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}
