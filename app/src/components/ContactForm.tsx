@@ -116,7 +116,7 @@ export default function ContactForm() {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/.netlify/functions/submission-created"
+        action="/dekujeme"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}
