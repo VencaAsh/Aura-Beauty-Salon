@@ -15,6 +15,18 @@ const nextConfig = {
     // Ignorovat TypeScript chyby během buildu
     ignoreBuildErrors: true,
   },
+  // Add external dependencies for Rollup
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      // Mark swiper as external dependency
+      const externalDeps = ['swiper', 'swiper/react', 'swiper/css'];
+
+      // Add any existing externals
+      config.externals = [...(config.externals || []), ...externalDeps];
+    }
+
+    return config;
+  },
 };
 
 module.exports = nextConfig;
