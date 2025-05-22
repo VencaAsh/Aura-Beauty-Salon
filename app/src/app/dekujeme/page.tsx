@@ -38,8 +38,7 @@ export default function ThankYouPage() {
           </h2>
           
           <p className="text-[#121212] mb-10 font-light">
-            Děkujeme za Vaši zprávu. Náš tým ji brzy zpracuje a budeme Vás kontaktovat co nejdříve.
-            Obvykle odpovídáme do 24 hodin v pracovních dnech.
+            Děkujeme za Vaši zprávu.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
