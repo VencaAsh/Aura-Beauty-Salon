@@ -70,14 +70,8 @@ export default function ContactForm() {
     // Nastavit stav na loading
     setStatus({ type: 'loading', message: 'Odesílám...' });
 
-<<<<<<< HEAD
     // Formulář se odešle nativně díky atributu action="/dekujeme"
     // Netlify Forms zpracuje data a přesměruje uživatele na stránku s poděkováním
-=======
-    // Necháme formulář odeslat přirozeně - netlify ho zpracuje
-    // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
-    console.log('Formulář se odesílá...');
->>>>>>> parent of 2cf51ee (Contact Form FIX)
   };
 
   return (
