@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
-import SuccessMessage from './SuccessMessage';
 
 interface FormData {
   name: string;
@@ -59,15 +58,9 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Pouze validace formuláře, bez preventDefault
+  // Validace formuláře před odesláním
   const handleSubmit = (e: React.FormEvent) => {
-    console.log('Formulář se odesílá - začátek handleSubmit');
-    console.log('URL formuláře:', (e.target as HTMLFormElement).action);
-    console.log('Metoda formuláře:', (e.target as HTMLFormElement).method);
-    console.log('Netlify atribut:', (e.target as HTMLFormElement).getAttribute('data-netlify'));
-
     if (!validateForm()) {
-      console.log('Validace selhala - formulář nebude odeslán');
       e.preventDefault(); // Zastavit odeslání pouze pokud validace selže
       return;
     }
@@ -75,30 +68,12 @@ export default function ContactForm() {
     // Nastavit stav na loading
     setStatus({ type: 'loading', message: 'Odesílám...' });
 
-    // Necháme formulář odeslat přirozeně - netlify ho zpracuje
-    // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
-    console.log('Formulář prošel validací a bude odeslán');
-    console.log('Data formuláře:', formData);
-
-    // Přidání debugovacích informací do konzole
-    console.log('Formulář se odesílá na:', (e.target as HTMLFormElement).action);
-    console.log('Skryté pole form-name:', document.querySelector('input[name="form-name"]')?.getAttribute('value'));
-
-    // Zde nepoužíváme preventDefault(), aby se formulář odeslal nativně
-
-    // Přidání debugovacího výpisu do localStorage pro pozdější kontrolu
-    try {
-      localStorage.setItem('formSubmitTime', new Date().toISOString());
-      localStorage.setItem('formData', JSON.stringify(formData));
-    } catch (error) {
-      console.error('Chyba při ukládání do localStorage:', error);
-    }
+    // Formulář se odešle nativně díky atributu action="/dekujeme"
+    // Netlify Forms zpracuje data a přesměruje uživatele na stránku s poděkováním
   };
 
   return (
     <div className="p-8">
-      <SuccessMessage />
-
       {status.type === 'loading' && (
         <div className="mb-6 p-4 bg-[#F5F3F0] text-[#121212] rounded-sm border-2 border-[#E6CCB2]/40 shadow-sm">
           {status.message}
