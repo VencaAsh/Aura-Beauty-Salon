@@ -1,12 +1,12 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { NewsItem } from '@/components/news/NewsFilter';
-import { useParams } from 'next/navigation';
+
+// Required for static export
+export const dynamic = 'force-static';
 
 // Příspěvky na blogu - stejné jako v blog/page.tsx a layout.tsx
 const news: NewsItem[] = [
@@ -67,9 +67,15 @@ const news: NewsItem[] = [
   }
 ];
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+// Generate static paths for all blog posts
+export function generateStaticParams() {
+  return news.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
 
   // Najít článek podle slugu
   const post = news.find(item => item.slug === slug);
@@ -154,25 +160,6 @@ export default function BlogPostPage() {
               <p>Obsah článku se připravuje...</p>
             )}
           </div>
-
-          <style jsx global>{`
-            .article-content p {
-              margin-bottom: 2.5rem;
-              line-height: 1.7;
-              font-size: 1rem;
-              letter-spacing: 0.01em;
-            }
-
-            .article-content p:last-child {
-              margin-bottom: 0;
-            }
-
-            @media (min-width: 768px) {
-              .article-content p {
-                font-size: 1.05rem;
-              }
-            }
-          `}</style>
 
           {/* Kategorie - minimalistická verze */}
           <div className="mt-24 mb-16 text-center">
