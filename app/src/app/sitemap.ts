@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 
+// Required for static export
+export const dynamic = 'force-static';
+
 // Předpokládaná základní URL webu - upravte podle potřeby pro produkci
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
