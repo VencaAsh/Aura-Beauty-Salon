@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura Beauty Salon</title>
+  <title>Kontaktní formulář</title>
 </head>
 <body>
   <!-- Skrytý formulář pro Netlify Forms -->
-  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <form name="contact" method="POST" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
     <input type="tel" name="phone" />
     <input type="text" name="subject" />
     <textarea name="message"></textarea>
-<<<<<<< HEAD:app/public/index.html
-=======
     <input type="hidden" name="branch" value="ostrava" />
->>>>>>> parent of 2cf51ee (Contact Form FIX):app/public/netlify-form.html
+    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="form-name" value="contact" />
   </form>
 </body>
 </html>

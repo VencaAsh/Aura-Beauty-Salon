@@ -9,6 +9,7 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
+  branch: string;
 }
 
 export default function ContactForm() {
@@ -17,7 +18,8 @@ export default function ContactForm() {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    branch: 'ostrava'
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -68,8 +70,14 @@ export default function ContactForm() {
     // Nastavit stav na loading
     setStatus({ type: 'loading', message: 'Odesílám...' });
 
+<<<<<<< HEAD
     // Formulář se odešle nativně díky atributu action="/dekujeme"
     // Netlify Forms zpracuje data a přesměruje uživatele na stránku s poděkováním
+=======
+    // Necháme formulář odeslat přirozeně - netlify ho zpracuje
+    // Přesměrování a vyčištění formuláře se provede po návratu na stránku s parametrem ?success=true
+    console.log('Formulář se odesílá...');
+>>>>>>> parent of 2cf51ee (Contact Form FIX)
   };
 
   return (
@@ -91,7 +99,7 @@ export default function ContactForm() {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/dekujeme"
+        action="/kontakt/?success=true"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}
@@ -162,6 +170,7 @@ export default function ContactForm() {
               placeholder="+420 XXX XXX XXX"
               className="w-full px-4 py-3 border-2 border-[#E6CCB2]/40 rounded-sm focus:outline-none focus:border-[#C9B8A8] bg-white font-light text-[#121212]"
             />
+            <input type="hidden" name="branch" value={formData.branch} />
           </div>
 
           <div>
