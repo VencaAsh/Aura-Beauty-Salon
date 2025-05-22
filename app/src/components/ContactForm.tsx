@@ -104,7 +104,8 @@ export default function ContactForm() {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/kontakt/?success=true"
+        action="/dekujeme"
+        data-netlify-success-url="/dekujeme"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}

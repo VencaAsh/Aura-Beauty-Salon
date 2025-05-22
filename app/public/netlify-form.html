@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netlify Form</title>
+</head>
+<body>
+  <!-- Tento soubor je určen pro Netlify Forms detekci -->
+  <!-- Musí přesně odpovídat struktuře formuláře v React komponentě -->
+  <form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/dekujeme" data-netlify-success-url="/dekujeme">
+    <input type="hidden" name="form-name" value="contact" />
+    
+    <div style="display: none;">
+      <label>
+        Nevyplňujte toto pole, pokud jste člověk: <input name="bot-field" />
+      </label>
+    </div>
+    
+    <div>
+      <label for="name">Jméno a příjmení *</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    
+    <div>
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    
+    <div>
+      <label for="phone">Telefon</label>
+      <input type="tel" id="phone" name="phone" />
+      <input type="hidden" name="branch" value="ostrava" />
+    </div>
+    
+    <div>
+      <label for="subject">Předmět *</label>
+      <input type="text" id="subject" name="subject" required />
+    </div>
+    
+    <div>
+      <label for="message">Zpráva *</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    
+    <div>
+      <p>* Povinné pole</p>
+      <button type="submit">Odeslat zprávu</button>
+    </div>
+  </form>
+</body>
+</html>

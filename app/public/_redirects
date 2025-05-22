@@ -1,5 +1,9 @@
 # Přesměrování pro formulář
 /dekujeme /dekujeme 200
 
-# Toto přesměrování bude fungovat pouze na serveru Netlify, ne při lokálním vývoji
-/kontakt /dekujeme 302!  query=success=true
+# Přesměrování pro formulář s parametrem success
+/kontakt /dekujeme 302! query=success=true
+
+# Přesměrování pro Netlify Forms
+/thanks /dekujeme 301!
+/success /dekujeme 301!

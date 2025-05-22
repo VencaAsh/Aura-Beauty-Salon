@@ -23,7 +23,8 @@
       { name = "email", widget = "email", required = true },
       { name = "phone", widget = "string", required = false },
       { name = "subject", widget = "string", required = true },
-      { name = "message", widget = "text", required = true }
+      { name = "message", widget = "text", required = true },
+      { name = "branch", widget = "string", required = false }
     ]
     success_url = "/dekujeme"
 
@@ -39,3 +40,16 @@
   status = 302
   force = true
   conditions = {Query = ["success=true"]}
+
+# Přesměrování pro výchozí Netlify stránky s poděkováním
+[[redirects]]
+  from = "/thanks"
+  to = "/dekujeme"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/success"
+  to = "/dekujeme"
+  status = 301
+  force = true
