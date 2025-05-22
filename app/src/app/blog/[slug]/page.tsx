@@ -1,12 +1,12 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { useParams } from 'next/navigation';
 import { NewsItem } from '@/components/news/NewsFilter';
+
+// Required for static export
+export const dynamic = 'force-static';
 
 // Příspěvky na blogu - stejné jako v blog/page.tsx a layout.tsx
 const news: NewsItem[] = [
@@ -67,9 +67,15 @@ const news: NewsItem[] = [
   }
 ];
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+// Generate static paths for all blog posts
+export function generateStaticParams() {
+  return news.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
 
   // Najít článek podle slugu
   const post = news.find(item => item.slug === slug);
