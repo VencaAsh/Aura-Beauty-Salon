@@ -35,12 +35,13 @@ export default function CustomServiceIcon({ type, className = "w-16 h-16" }: Cus
 
   return (
     <div className={className}>
-      <Image 
-        src={iconSrc} 
-        alt={alt} 
-        width={64} 
-        height={64} 
-        className="w-full h-full object-contain"
+      <Image
+        src={iconSrc}
+        alt={alt}
+        width={64}
+        height={64}
+        className="w-full h-auto object-contain"
+        style={{ height: 'auto' }}
       />
     </div>
   );
