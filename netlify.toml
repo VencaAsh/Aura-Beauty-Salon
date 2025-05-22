@@ -31,3 +31,10 @@
   from = "/dekujeme"
   to = "/dekujeme"
   status = 200
+
+[[redirects]]
+  from = "/kontakt"
+  to = "/dekujeme"
+  status = 302
+  force = true
+  conditions = {Query = ["success=true"]}

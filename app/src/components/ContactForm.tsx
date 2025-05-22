@@ -1,7 +1,8 @@
 'use client'; // Označení jako klientská komponenta pro interaktivitu
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 interface FormData {
   name: string;
@@ -13,6 +14,8 @@ interface FormData {
 }
 
 export default function ContactForm() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -24,6 +27,14 @@ export default function ContactForm() {
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'error'; message: string }>({ type: 'idle', message: '' });
+
+  // Kontrola, zda byl formulář úspěšně odeslán
+  useEffect(() => {
+    if (searchParams.has('success')) {
+      // Přesměrování na stránku s poděkováním
+      router.push('/dekujeme');
+    }
+  }, [searchParams, router]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -93,7 +104,7 @@ export default function ContactForm() {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/dekujeme"
+        action="/kontakt/?success=true"
         onSubmit={handleSubmit}
       >
         {/* Skryté pole pro Netlify Forms */}
