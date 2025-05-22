@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Děkujeme za zprávu | Aura Beauty Salon</title>
+  <meta name="description" content="Děkujeme za odeslání kontaktního formuláře. Brzy se vám ozveme.">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F5F3F0;
+      color: #121212;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: white;
+      border: 1px solid rgba(230, 204, 178, 0.4);
+      border-radius: 2px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #121212;
+    }
+    p {
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .divider {
+      height: 1px;
+      width: 60px;
+      background-color: #E6CCB2;
+      margin: 0 auto 30px;
+    }
+    .icon {
+      color: #C9B8A8;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #E6CCB2;
+      color: #121212;
+      font-weight: 300;
+      padding: 12px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 1px solid #E6CCB2;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+    .button:hover {
+      background-color: #D8C3B0;
+    }
+    .button-outline {
+      background-color: transparent;
+      border: 2px solid #E6CCB2;
+    }
+    .button-outline:hover {
+      background-color: rgba(230, 204, 178, 0.2);
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    @media (min-width: 640px) {
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">✓</div>
+    <h1>Děkujeme za Vaši zprávu</h1>
+    <div class="divider"></div>
+    <p>
+      Děkujeme za Vaši zprávu. Náš tým ji brzy zpracuje a budeme Vás kontaktovat co nejdříve.
+      Obvykle odpovídáme do 24 hodin v pracovních dnech.
+    </p>
+    <div class="buttons">
+      <a href="/" class="button">Zpět na úvodní stránku</a>
+      <a href="/kontakt" class="button button-outline">Zpět na kontakt</a>
+    </div>
+  </div>
+</body>
+</html>
