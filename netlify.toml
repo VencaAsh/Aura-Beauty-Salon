@@ -1,6 +1,6 @@
 [build]
   base = "app"
-  publish = ".next"
+  publish = "out"
   command = "npm run build"
   functions = "../netlify/functions"
 
@@ -11,9 +11,6 @@
 
 [build.processing]
   skip_processing = true
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 # Nastavení pro Netlify Forms
 [forms]
