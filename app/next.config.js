@@ -102,8 +102,8 @@ const nextConfig = {
 
   // Experimental features for performance (Next.js 15.x compatible)
   experimental: {
-    // CSS optimization is now stable in Next.js 15.x
-    optimizeCss: true,
+    // CSS optimization disabled due to critters dependency issue
+    // optimizeCss: true,
     // Package import optimization for better tree shaking
     optimizePackageImports: ['lucide-react', 'framer-motion', 'react-icons'],
   },
