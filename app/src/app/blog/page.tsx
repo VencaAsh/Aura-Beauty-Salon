@@ -4,8 +4,8 @@ import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { PageHero } from '@/components/ui';
 import { NewsGrid, NewsItem } from '@/components/news';
-import blogImage1 from '@/assets/images/blog/IMG_2632.png';
-import blogImage2 from '@/assets/images/blog/IMG_3304.jpg';
+import blogImage1 from '@/assets/images/blog/IMG_2632.webp';
+import blogImage2 from '@/assets/images/blog/IMG_3304.webp';
 
 // Příspěvky na blogu
 const news: NewsItem[] = [

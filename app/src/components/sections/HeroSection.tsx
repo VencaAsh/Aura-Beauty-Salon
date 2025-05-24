@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FlowingLines, FadeInView, FloatingElement, GradientText } from '@/components/animations';
 import { GoldenButton } from '@/components/ui';
 import { CONTACT_INFO } from '@/constants';
-import heroImage from '@/assets/images/salon/IMG_0986-min.jpeg';
+import heroImage from '@/assets/images/salon/IMG_0986-min.webp';
 
 export default function HeroSection() {
   return (

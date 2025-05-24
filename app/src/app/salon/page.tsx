@@ -3,10 +3,10 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import image1 from '@/assets/images/salon/IMG_0985-min.jpeg';
-import image2 from '@/assets/images/salon/IMG_0984-min.jpeg';
-import image3 from '@/assets/images/salon/IMG_0981-min.jpeg';
-import ownerImage from '@/assets/images/makrushyna.jpg';
+import image1 from '@/assets/images/salon/IMG_0985-min.webp';
+import image2 from '@/assets/images/salon/IMG_0984-min.webp';
+import image3 from '@/assets/images/salon/IMG_0981-min.webp';
+import ownerImage from '@/assets/images/makrushyna.webp';
 
 export const metadata = {
   title: 'Salon | Kosmetický salon Ostrava - Laminace obočí a Řasy',

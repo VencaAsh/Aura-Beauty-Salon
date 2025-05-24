@@ -1,0 +1,64 @@
+=== NEPOUŽITÉ FOLDER ANALYSIS ===
+Generated on: Sat May 24 11:27:15 CEST 2025
+
+FILES IN NEPOUŽITÉ FOLDER:
+==========================
+total 26424
+drwxr-xr-x@ 20 lukasmrkvicka  staff      640 May 23 17:05 .
+drwxr-xr-x  12 lukasmrkvicka  staff      384 May 24 10:55 ..
+-rw-r--r--@  1 lukasmrkvicka  staff  1484844 Apr 18 15:13 20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png
+-rw-r--r--@  1 lukasmrkvicka  staff  4043983 Apr 18 14:58 20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886.png
+-rw-r--r--@  1 lukasmrkvicka  staff   906383 May 10 13:36 20250510_1329_Summer Glow Up_simple_compose_01jtwz8c8tfraakakaje3r4gss-min.png
+-rw-r--r--@  1 lukasmrkvicka  staff  1384247 May 10 13:36 20250510_1333_Serene Aura Glow_simple_compose_01jtwzfya9fp8vrqnrh5cbrfha-min.png
+-rw-r--r--@  1 lukasmrkvicka  staff   101416 Apr 16 17:26 487887388_17861238159384747_2260617714556481489_n.jpg
+-rw-r--r--@  1 lukasmrkvicka  staff    84748 Apr 16 17:25 488362544_17861140617384747_6723293397755226033_n.jpg
+-rw-r--r--@  1 lukasmrkvicka  staff   216534 Apr 16 17:25 488526782_17861239131384747_1447675895797273619_n.jpg
+-rw-r--r--@  1 lukasmrkvicka  staff   858617 May 16 11:21 IMG_0006-min.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff   502763 May 16 10:24 IMG_2632 (2).png
+-rw-r--r--@  1 lukasmrkvicka  staff   517859 May 10 11:36 IMG_3179-min.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff   687584 May 10 11:36 IMG_3181-min.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff   269405 May 10 11:36 IMG_3297-min.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff    66425 May 16 10:24 IMG_3302.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff   272033 May 16 10:24 IMG_3303.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff  1166457 May 16 11:21 IMG_9374-min.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff    49938 May 16 11:21 IMG_9716-min.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff   581987 May 11 22:13 WhatsApp Image 2025-05-11 at 22.04.40.jpeg
+-rw-r--r--@  1 lukasmrkvicka  staff   302472 May 11 22:13 WhatsApp Image 2025-05-11 at 22.04.45.jpeg
+
+CHECKING FOR REFERENCES IN CODEBASE:
+=====================================
+
+Checking: 20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886-min.png
+  ✓ FOUND references:
+  ✓ FOUND in public directory:
+  ✓ FOUND in root files:
+    - ./nepouzite_analysis.txt
+    - ./move_unused_images.sh
+    - ./analyze_nepouzite_folder.sh
+
+Checking: 20250418_1148_Grainy Filtered Eye_remix_01js44nzzwe45bymjg9mhqg886.png
+  ✓ FOUND references:
+  ✓ FOUND in public directory:
+  ✓ FOUND in root files:
+    - ./nepouzite_analysis.txt
+    - ./move_unused_images.sh
+    - ./analyze_nepouzite_folder.sh
+
+Checking: 20250510_1329_Summer Glow Up_simple_compose_01jtwz8c8tfraakakaje3r4gss-min.png
+  ✓ FOUND references:
+  ✓ FOUND in public directory:
+  ✓ FOUND in root files:
+    - ./nepouzite_analysis.txt
+    - ./move_unused_images.sh
+    - ./analyze_nepouzite_folder.sh
+
+Checking: 20250510_1333_Serene Aura Glow_simple_compose_01jtwzfya9fp8vrqnrh5cbrfha-min.png
+  ✓ FOUND references:
+  ✓ FOUND in public directory:
+  ✓ FOUND in root files:
+    - ./nepouzite_analysis.txt
+    - ./move_unused_images.sh
+    - ./analyze_nepouzite_folder.sh
+
+Checking: 487887388_17861238159384747_2260617714556481489_n.jpg
+  ✓ FOUND references:

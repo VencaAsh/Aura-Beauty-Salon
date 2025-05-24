@@ -9,21 +9,21 @@ import { Camera } from 'lucide-react';
 // Metadata is now in a separate file
 
 // Importy obrázků
-import galleryImage1 from '@/assets/images/gallery/IMG_0719-min.jpeg';
-import galleryImage2 from '@/assets/images/gallery/IMG_0790-min.jpeg';
-import galleryImage3 from '@/assets/images/gallery/IMG_0981-min.jpeg';
-import galleryImage4 from '@/assets/images/gallery/IMG_0984-min.jpeg';
-import galleryImage5 from '@/assets/images/gallery/IMG_0985-min.jpeg';
-import galleryImage6 from '@/assets/images/gallery/IMG_2886-min.jpeg';
-import galleryImage7 from '@/assets/images/gallery/IMG_3177-min.jpeg';
-import galleryImage8 from '@/assets/images/gallery/IMG_9531-min.jpeg';
-import galleryImage9 from '@/assets/images/gallery/IMG_3044-min.jpeg';
-import galleryImage10 from '@/assets/images/gallery/IMG_3178-min.jpeg';
-import galleryImage11 from '@/assets/images/gallery/IMG_1158-min.jpeg';
-import galleryImage12 from '@/assets/images/gallery/IMG_9512-min.jpeg';
-import galleryImage13 from '@/assets/images/gallery/IMG_9769-min.jpeg';
-import galleryImage14 from '@/assets/images/gallery/IMG_9991-min.jpeg';
-import galleryImage15 from '@/assets/images/gallery/IMG_3289-min.jpeg';
+import galleryImage1 from '@/assets/images/gallery/IMG_0719-min.webp';
+import galleryImage2 from '@/assets/images/gallery/IMG_0790-min.webp';
+import galleryImage3 from '@/assets/images/gallery/IMG_0981-min.webp';
+import galleryImage4 from '@/assets/images/gallery/IMG_0984-min.webp';
+import galleryImage5 from '@/assets/images/gallery/IMG_0985-min.webp';
+import galleryImage6 from '@/assets/images/gallery/IMG_2886-min.webp';
+import galleryImage7 from '@/assets/images/gallery/IMG_3177-min.webp';
+import galleryImage8 from '@/assets/images/gallery/IMG_9531-min.webp';
+import galleryImage9 from '@/assets/images/gallery/IMG_3044-min.webp';
+import galleryImage10 from '@/assets/images/gallery/IMG_3178-min.webp';
+import galleryImage11 from '@/assets/images/gallery/IMG_1158-min.webp';
+import galleryImage12 from '@/assets/images/gallery/IMG_9512-min.webp';
+import galleryImage13 from '@/assets/images/gallery/IMG_9769-min.webp';
+import galleryImage14 from '@/assets/images/gallery/IMG_9991-min.webp';
+import galleryImage15 from '@/assets/images/gallery/IMG_3289-min.webp';
 // Náhledový obrázek pro galerii byl odstraněn, protože se nepoužívá
 
 // Data pro galerii

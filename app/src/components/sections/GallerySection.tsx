@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
-import eyelashCareImage from '@/assets/images/pouzite/IMG_2886-min.jpeg';
-import cosmeticTreatmentImage from '@/assets/images/pouzite/812C6B46-1BD1-4AC0-92F9-E830EEEF81C7-min.jpeg';
-import eyebrowLaminationImage from '@/assets/images/pouzite/IMG_9798-min.jpeg';
-import lashLiftingImage from '@/assets/images/pouzite/IMG_3289-min.jpeg';
-import lhalalaPeelingImage from '@/assets/images/pouzite/IMG_9991-min.jpeg';
-import problematicSkinImage from '@/assets/images/pouzite/IMG_0411-min.jpeg';
+import eyelashCareImage from '@/assets/images/pouzite/IMG_2886-min.webp';
+import cosmeticTreatmentImage from '@/assets/images/pouzite/812C6B46-1BD1-4AC0-92F9-E830EEEF81C7-min.webp';
+import eyebrowLaminationImage from '@/assets/images/pouzite/IMG_9798-min.webp';
+import lashLiftingImage from '@/assets/images/pouzite/IMG_3289-min.webp';
+import lhalalaPeelingImage from '@/assets/images/pouzite/IMG_9991-min.webp';
+import problematicSkinImage from '@/assets/images/pouzite/IMG_0411-min.webp';
 
 // Definice typu pro galerii
 interface GalleryImage {

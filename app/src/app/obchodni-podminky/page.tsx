@@ -57,7 +57,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-serif font-light text-[#121212] mb-4">1. Všeobecná ustanovení</h2>
             <div className="prose prose-sm max-w-none text-[#121212]/80 font-light">
               <p>
-                1.1 Tyto obchodní podmínky upravují vztahy mezi poskytovatelem služeb, společností Aura Beauty Salon, IČO: [DOPLNIT], se sídlem Vítkovická 3080/10, 702 00 Ostrava (dále jen „poskytovatel") a zákazníkem při poskytování kosmetických služeb.
+                1.1 Tyto obchodní podmínky upravují vztahy mezi poskytovatelem služeb, společností Aura Beauty Salon, IČO: 19242387, se sídlem Vítkovická 3080/10, 702 00 Ostrava (dále jen „poskytovatel") a zákazníkem při poskytování kosmetických služeb.
               </p>
               <p>
                 1.2 Zákazník je povinen se před objednáním služby seznámit s těmito obchodními podmínkami. Objednáním služby zákazník vyjadřuje, že se seznámil s těmito obchodními podmínkami, a že s nimi souhlasí.

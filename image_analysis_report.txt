@@ -1,0 +1,73 @@
+=== COMPREHENSIVE IMAGE ANALYSIS REPORT ===
+Generated on: Sat May 24 10:42:24 CEST 2025
+
+ANALYSIS RESULTS:
+=================
+
+Checking: 20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk-min.png
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/blog/[slug]/layout.tsx
+    - app/src/app/blog/[slug]/page.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: 20250418_1337_Elegant Beauty Session_simple_compose_01js4az81tfqbak85m1hs5jjjk.png
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/blog/[slug]/layout.tsx
+    - app/src/app/blog/[slug]/page.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: 812C6B46-1BD1-4AC0-92F9-E830EEEF81C7-min.jpeg
+  ✓ Found in TypeScript/JavaScript files:
+    - app/.next/server/app/page.js
+    - app/.next/server/app/kontakt/page_client-reference-manifest.js
+    - app/.next/server/app/dekujeme/page_client-reference-manifest.js
+    - app/.next/server/app/page_client-reference-manifest.js
+    - app/.next/server/app/_not-found/page_client-reference-manifest.js
+    - app/.next/static/chunks/app/page.js
+    - app/src/components/sections/GallerySection.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: IMG_2632.png
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/blog/page.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: IMG_3304.jpg
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/blog/page.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: Salon-hero.jpeg
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/blog/[slug]/layout.tsx
+    - app/src/app/blog/[slug]/page.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: IMG_0719-min.jpeg
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/galerie/page.tsx
+  ✓ Found in CSS files:
+  ✓ Found in config/other files:
+  ✓ Found in build output (.next)
+
+Checking: IMG_0790-min.jpeg
+  ✓ Found in TypeScript/JavaScript files:
+    - app/src/app/galerie/page.tsx
+
+SUMMARY:
+========
+
+All images appear to be in use.
+
