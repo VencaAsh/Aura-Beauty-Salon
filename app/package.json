@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "build:analyze": "npm run analyze",
+    "optimize:images": "imagemin src/assets/images/**/*.{jpg,jpeg,png} --out-dir=src/assets/images/optimized --plugin=imagemin-webp",
+    "performance:audit": "lighthouse http://localhost:3000 --output=html --output-path=./performance-report.html",
+    "performance:fix": "node scripts/performance-fix.js",
+    "performance:test": "node scripts/performance-test.js",
+    "performance:monitor": "npm run performance:fix && npm run performance:test"
   },
   "dependencies": {
     "framer-motion": "^11.0.8",
@@ -17,20 +24,26 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "sharp": "^0.34.2",
-    "swiper": "^11.2.7"
+    "swiper": "^11.2.7",
+    "web-vitals": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.1.8",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.2.5",
     "imagemin": "^9.0.1",
     "imagemin-cli": "^8.0.0",
     "imagemin-webp": "^8.0.0",
+    "lighthouse": "^12.6.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }

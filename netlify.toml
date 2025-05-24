@@ -8,9 +8,94 @@
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_VERSION = "18"
   NEXT_TELEMETRY_DISABLED = "1"
+  # TTFB optimization
+  NETLIFY_USE_EDGE = "true"
 
 [build.processing]
   skip_processing = true
+
+# TTFB optimization with edge functions
+[edge_functions]
+  # Enable edge functions for faster response times
+
+# Performance optimizations with HTTP headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+    # TTFB optimization headers
+    X-DNS-Prefetch-Control = "on"
+    X-Preload = "1"
+    # Enable HTTP/2 Server Push (if supported)
+    Link = "</images/hero/hero-main.webp>; rel=preload; as=image"
+
+    # Connection optimization
+    Connection = "keep-alive"
+    Keep-Alive = "timeout=5, max=1000"
+
+# Cache static assets for 1 year
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/favicon/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache fonts for 1 year
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache CSS and JS for 1 year
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache HTML for 1 hour
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Service Worker
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Service-Worker-Allowed = "/"
+
+# Compress all text-based assets
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Enable compression
+    Content-Encoding = "gzip"
 
 # Nastavení pro Netlify Forms
 [forms]
