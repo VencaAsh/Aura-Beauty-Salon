@@ -59,26 +59,26 @@ export default function Breadcrumbs() {
   });
 
   return (
-    <nav aria-label="Drobečková navigace" className="py-2 px-4 bg-brand-secondary-light">
+    <nav aria-label="Drobečková navigace" className="py-2 px-4 bg-[#f1ede6]">
       <ol className="flex flex-wrap items-center text-sm">
         <li className="flex items-center">
-          <Link href="/" className="text-brand-primary hover:text-brand-primary-dark transition-colors">
+          <Link href="/" className="text-[#121212]/80 hover:text-[#121212] transition-colors">
             Domů
           </Link>
         </li>
 
         {breadcrumbs.map((breadcrumb, index) => (
           <li key={breadcrumb.url} className="flex items-center">
-            <ChevronRight className="mx-2 h-4 w-4 text-brand-secondary-dark" />
+            <ChevronRight className="mx-2 h-4 w-4 text-[#121212]/50" />
             {index === breadcrumbs.length - 1 ? (
               // Poslední položka není odkaz
-              <span className="text-brand-secondary-dark font-medium" aria-current="page">
+              <span className="text-[#121212]/70 font-medium" aria-current="page">
                 {breadcrumb.name}
               </span>
             ) : (
               <Link
                 href={breadcrumb.url}
-                className="text-brand-primary hover:text-brand-primary-dark transition-colors"
+                className="text-[#121212]/80 hover:text-[#121212] transition-colors"
               >
                 {breadcrumb.name}
               </Link>

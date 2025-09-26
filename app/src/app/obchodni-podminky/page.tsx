@@ -16,7 +16,7 @@ export default function TermsPage() {
       <PageHero
         title="Obchodní podmínky"
         subtitle="Seznamte se s našimi obchodními podmínkami pro poskytování kosmetických služeb."
-        backgroundClass="bg-[#F8F4E9]"
+        backgroundClass="bg-[#f1ede6]"
       />
 
       <div className="container mx-auto px-4 py-16">
@@ -192,7 +192,7 @@ export default function TermsPage() {
             Pokud máte jakékoliv dotazy týkající se našich obchodních podmínek, neváhejte nás kontaktovat.
           </p>
           <a
-            href="mailto:info@aurabeauty.cz"
+            href="mailto:alexandramak@seznam.cz"
             className="inline-flex items-center bg-[#E6CCB2]/80 hover:bg-[#E6CCB2] text-[#121212] font-light py-3 px-6 rounded-sm transition-all duration-300 border border-[#E6CCB2]/20 text-sm tracking-wide"
           >
             Kontaktujte nás

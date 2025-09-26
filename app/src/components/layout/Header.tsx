@@ -13,10 +13,8 @@ export default function Header() {
       <nav className="container mx-auto flex justify-between items-center">
         {/* Logo - minimalistické, elegantní */}
         <Logo
-          width={140}
-          height={33}
-          mobileWidth={110}
-          mobileHeight={26}
+          height={22}
+          mobileHeight={20}
           className="transition-opacity duration-300 hover:opacity-80"
         />
 

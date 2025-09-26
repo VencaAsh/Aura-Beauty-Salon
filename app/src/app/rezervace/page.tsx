@@ -1,5 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import { CalendarCheck, Clock, CheckCircle, Phone, Mail, Info } from 'lucide-react';
 import NoonaReservation from '@/components/NoonaReservation';
 
@@ -13,22 +14,11 @@ export default function ReservationPage() {
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-[#F8F4E9] py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-[#121212] mb-6">Rezervace</h1>
-            <div className="h-[1px] w-16 bg-[#C9B8A8] mx-auto mb-6"></div>
-            <p className="text-center text-[#121212]/70 mb-0 max-w-2xl mx-auto font-light">
-              Rezervujte si termín v našem salonu online. Vyberte si službu, specialistu a termín, který vám vyhovuje.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Rezervace"
+        subtitle="Rezervujte si termín v našem salonu online. Vyberte si službu, specialistu a termín, který vám vyhovuje."
+        backgroundClass="bg-[#f1ede6]"
+      />
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
@@ -73,12 +63,12 @@ export default function ReservationPage() {
               </span>
             </div>
           </div>
-          <div className="p-0 md:p-2 bg-[#F8F4E9]/30">
+          <div className="p-0 md:p-2 bg-[#f1ede6]/30">
             <div className="bg-white rounded-sm overflow-hidden">
               <NoonaReservation />
             </div>
           </div>
-          <div className="p-4 border-t border-[#E6CCB2]/30 bg-[#F8F4E9]/20">
+          <div className="p-4 border-t border-[#E6CCB2]/30 bg-[#f1ede6]/20">
             <div className="flex items-center justify-center text-sm text-[#121212]/70 font-light">
               <Info className="w-4 h-4 mr-2 text-[#C9B8A8]" />
               <span>Rezervační systém je poskytován službou Noona</span>
@@ -100,11 +90,11 @@ export default function ReservationPage() {
               +420 773 054 563
             </a>
             <a
-              href="mailto:info@aurabeauty.cz"
+              href="mailto:alexandramak@seznam.cz"
               className="inline-flex items-center bg-transparent border border-[#E6CCB2]/50 text-[#121212] hover:border-[#E6CCB2] hover:bg-[#E6CCB2]/10 font-light py-3 px-6 rounded-sm transition-all duration-300 text-sm tracking-wide"
             >
               <Mail className="mr-3 h-5 w-5 text-[#C9B8A8]" />
-              info@aurabeauty.cz
+              alexandramak@seznam.cz
             </a>
           </div>
         </div>

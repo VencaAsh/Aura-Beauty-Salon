@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import Link from 'next/link';
 import { Shield, Lock, FileText, Mail, Cookie, Server } from 'lucide-react';
 import CookiePreferencesButton from './CookiePreferencesButton';
@@ -28,15 +29,10 @@ export default function ZasadyOchranyOsobnichUdajuPage() {
       <CookiePreferencesButton />
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative bg-brand-secondary-light pt-32 pb-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-serif font-light text-[#121212]">Zásady ochrany osobních údajů</h1>
-            <div className="h-[1px] w-16 bg-[#E6CCB2] mx-auto mt-4 mb-2"></div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Zásady ochrany osobních údajů"
+        backgroundClass="bg-[#f1ede6]"
+      />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto bg-white shadow-sm rounded-sm border border-[#E6CCB2]/10 p-8 md:p-12">
@@ -128,7 +124,7 @@ export default function ZasadyOchranyOsobnichUdajuPage() {
           </ul>
 
           <p className="text-[#121212]/80 font-light mb-8 leading-relaxed">
-            Pro uplatnění těchto práv nás prosím kontaktujte na e-mailové adrese <a href="mailto:info@aurabeauty.cz" className="text-[#C9B8A8] hover:text-[#D8C3B0] transition-colors duration-300">info@aurabeauty.cz</a> nebo na adrese Aura Beauty Salon, Vítkovická 3080/10, 702 00 Ostrava.
+            Pro uplatnění těchto práv nás prosím kontaktujte na e-mailové adrese <a href="mailto:alexandramak@seznam.cz" className="text-[#C9B8A8] hover:text-[#D8C3B0] transition-colors duration-300">alexandramak@seznam.cz</a> nebo na adrese Aura Beauty Salon, Vítkovická 3080/10, 702 00 Ostrava.
           </p>
 
           <div className="flex items-center mb-8 mt-12">
@@ -176,7 +172,7 @@ export default function ZasadyOchranyOsobnichUdajuPage() {
 
           <div className="flex items-center mb-8 mt-12">
             <div className="w-full">
-              <div className="bg-[#F8F4E9] border border-[#E6CCB2]/30 rounded-sm p-6 mb-8">
+              <div className="bg-[#f1ede6] border border-[#E6CCB2]/30 rounded-sm p-6 mb-8">
                 <h3 className="text-lg font-serif font-light text-[#121212] mb-4">Správa cookies</h3>
                 <p className="text-[#121212]/80 font-light mb-6">
                   Na našem webu používáme různé typy cookies. Některé jsou nezbytné pro fungování webu, zatímco jiné nám pomáhají zlepšovat uživatelský zážitek a poskytovat vám relevantní obsah.

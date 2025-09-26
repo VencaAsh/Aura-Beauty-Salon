@@ -38,7 +38,7 @@ export default function BlogPage() {
       <PageHero
         title="Blog"
         subtitle="Buďte mezi prvními, kdo se dozví o našich novinkách, akcích a doporučeních."
-        backgroundClass="bg-[#F8F4E9]"
+        backgroundClass="bg-[#f1ede6]"
       />
 
       <div className="container mx-auto px-4 py-16">

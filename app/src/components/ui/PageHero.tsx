@@ -9,7 +9,7 @@ interface PageHeroProps {
 export default function PageHero({
   title,
   subtitle,
-  backgroundClass = "bg-[#F8F4E9]"
+  backgroundClass = "bg-[#f1ede6]"
 }: PageHeroProps) {
   return (
     <section className={`relative overflow-hidden ${backgroundClass} py-24`}>

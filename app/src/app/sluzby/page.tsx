@@ -7,21 +7,17 @@ export const metadata: Metadata = {
   description: 'Nabízíme profesionální služby v Ostravě: laminace obočí, úprava obočí, barvení obočí, prodlužování řas, lash lifting, čištění pleti, pánská kosmetika a chemický peeling.',
   keywords: 'laminace obočí Ostrava, úprava obočí Ostrava, barvení obočí Ostrava, řasy Ostrava, lash lifting Ostrava, kosmetika Ostrava, čištění pleti Ostrava, pánská kosmetika Ostrava, chemický peeling Ostrava, masáž obličeje, LHA LALA peeling, anti age, problematická pleť, prodlužování řas',
 };
+import { PageHero } from '@/components/ui';
 
 export default function SluzbyPage() {
   return (
     <>
       {/* Strukturovaná data pro FAQ */}
       <FAQStructuredData />
-      {/* Hero sekce */}
-      <section className="relative bg-brand-secondary-light pt-32 pb-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-serif font-light text-[#121212]">Naše služby</h1>
-            <div className="h-[1px] w-16 bg-[#E6CCB2] mx-auto mt-4 mb-2"></div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Naše služby"
+        backgroundClass="bg-[#f1ede6]"
+      />
 
       {/* Hlavní obsah */}
       <div className="bg-white py-16">

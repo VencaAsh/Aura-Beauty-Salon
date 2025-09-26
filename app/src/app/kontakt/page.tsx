@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import ContactForm from '@/components/ContactForm';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import type { Metadata } from 'next';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Link from 'next/link';
@@ -19,22 +20,11 @@ export default function KontaktPage() {
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-brand-secondary-light py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-serif font-light text-brand-black mb-6">Kontakt</h1>
-            <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
-            <p className="text-center text-[#121212] mb-0 max-w-2xl mx-auto font-light">
-              Máte dotaz ohledně laminace obočí, úpravy obočí, prodlužování řas nebo kosmetiky? Neváhejte nás kontaktovat! Jsme vám k dispozici v našem salonu v Ostravě.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Kontakt"
+        subtitle="Máte dotaz ohledně laminace obočí, úpravy obočí, prodlužování řas nebo kosmetiky? Neváhejte nás kontaktovat! Jsme vám k dispozici v našem salonu v Ostravě."
+        backgroundClass="bg-[#f1ede6]"
+      />
 
       <div className="container mx-auto px-4 py-20">
 

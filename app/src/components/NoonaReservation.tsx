@@ -47,7 +47,7 @@ export default function NoonaReservation() {
   return (
     <div className="noona-reservation-container relative">
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-[#F8F4E9]/50 z-10">
+        <div className="absolute inset-0 flex items-center justify-center bg-[#f1ede6]/50 z-10">
           <div className="text-center">
             <Loader2 className="h-10 w-10 animate-spin text-[#C9B8A8] mx-auto mb-4" />
             <p className="text-[#121212] font-light">Načítám rezervační systém...</p>

@@ -70,6 +70,8 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
 
       if (typeof window !== 'undefined') {
         localStorage.setItem('cookiePreferences', JSON.stringify(allAccepted));
+        // Notifikace o zmbnb souhlasu (okamditb)
+        window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: { analytics: true } }));
         initializeAllScripts();
         setShowBanner(false);
       }
@@ -90,6 +92,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
 
       if (typeof window !== 'undefined') {
         localStorage.setItem('cookiePreferences', JSON.stringify(allRejected));
+        window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: { analytics: false } }));
         setShowBanner(false);
       }
     } catch (error) {
@@ -121,7 +124,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
     <>
       {/* Banner s cookies */}
       {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 bg-[#F8F4E9] border-t border-[#E6CCB2]/30 p-4 z-50 shadow-lg" style={{ backdropFilter: 'none', backgroundColor: '#F8F4E9' }}>
+        <div className="fixed bottom-0 left-0 right-0 bg-[#f1ede6] border-t border-[#E6CCB2]/30 p-4 z-50 shadow-lg" style={{ backdropFilter: 'none', backgroundColor: '#f1ede6' }}>
           <div className="container mx-auto flex flex-col md:flex-row md:items-center justify-between">
             <div className="mb-4 md:mb-0 md:mr-8">
               <p className="text-[#121212]/80 font-light text-sm">
@@ -166,7 +169,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
       {!hideFooterButton && (
         <button
           onClick={() => setShowPreferences(true)}
-          className="text-xs text-[#C9B8A8] hover:text-[#D8C3B0] transition-colors border border-[#E6CCB2]/30 px-3 py-1 rounded-sm hover:bg-[#F8F4E9] mt-2"
+          className="text-xs text-[#C9B8A8] hover:text-[#D8C3B0] transition-colors border border-[#E6CCB2]/30 px-3 py-1 rounded-sm hover:bg-[#f1ede6] mt-2"
         >
           Nastavení cookies
         </button>

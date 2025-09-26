@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { PageHero } from '@/components/ui';
+import { PageHero, LightboxViewer } from '@/components/ui';
 import { Camera } from 'lucide-react';
 
 // Metadata is now in a separate file
@@ -39,12 +39,13 @@ const galleryItems = [
   { id: 9, title: 'Elegantní odpočinkový prostor salonu', category: 'salon', image: galleryImage5 },
   { id: 10, title: 'Ošetřovací lůžko s osvětlením', category: 'salon', image: galleryImage3 },
   { id: 11, title: 'Kosmetický koutek s profesionální péčí o pleť', category: 'salon', image: galleryImage4 },
-
-
 ];
 
 export default function GaleriePage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [viewerIndex, setViewerIndex] = useState(0);
+  const [viewerImages, setViewerImages] = useState<{ src: any; alt?: string }[]>([]);
 
   // Mapování českých názvů kategorií na hodnoty v datech
   const categoryMapping: Record<string, string> = {
@@ -65,6 +66,14 @@ export default function GaleriePage() {
     setActiveFilter(category);
   };
 
+  const openViewerAt = (idx: number) => {
+    // Snapshot současně zobrazených položek do lightboxu
+    const imgs = filteredItems.map(it => ({ src: it.image, alt: it.title }));
+    setViewerImages(imgs);
+    setViewerIndex(idx);
+    setIsViewerOpen(true);
+  };
+
   return (
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
@@ -72,7 +81,7 @@ export default function GaleriePage() {
       <PageHero
         title="Galerie"
         subtitle="Prohlédněte si fotografie našich prací, interiéru salonu a výsledků našich služeb. Přesvědčte se o kvalitě, kterou nabízíme."
-        backgroundClass="bg-[#F8F4E9]"
+        backgroundClass="bg-[#f1ede6]"
       />
 
       <div className="container mx-auto px-4 py-16">
@@ -108,9 +117,14 @@ export default function GaleriePage() {
 
         {/* Galerie */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {filteredItems.map((item) => (
+          {filteredItems.map((item, idx) => (
             <div key={item.id} className="group overflow-hidden rounded-sm shadow-md hover:shadow-lg transition-all duration-500 bg-white border border-[#E6CCB2]/20">
-              <div className="relative h-80 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => openViewerAt(idx)}
+                aria-label={`Otevřít obrázek: ${item.title}`}
+                className="relative h-80 w-full overflow-hidden text-left"
+              >
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -118,8 +132,8 @@ export default function GaleriePage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
-              </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500" />
+              </button>
               <div className="p-5 border-t border-[#E6CCB2]/20">
                 <h3 className="text-lg font-medium text-[#121212] mb-1">{item.title}</h3>
                 <p className="text-sm text-brand-secondary-dark capitalize">{item.category.replace('-', ' ')}</p>
@@ -128,7 +142,13 @@ export default function GaleriePage() {
           ))}
         </div>
 
-
+        {isViewerOpen && (
+          <LightboxViewer
+            images={viewerImages}
+            startIndex={viewerIndex}
+            onClose={() => setIsViewerOpen(false)}
+          />
+        )}
 
         {/* Instagram odkaz */}
         <div className="text-center mt-16 bg-white p-8 rounded-sm shadow-sm border border-[#E6CCB2]/30 max-w-3xl mx-auto">

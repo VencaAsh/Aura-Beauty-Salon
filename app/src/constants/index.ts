@@ -19,7 +19,7 @@ export const SOCIAL_LINKS = [
 export const CONTACT_INFO = {
   address: 'Vítkovická 3080/10, 702 00 Ostrava',
   phone: '+420 773 054 563',
-  email: 'info@aurabeauty.cz',
+  email: 'alexandramak@seznam.cz',
 };
 
 // Branch information
@@ -29,9 +29,9 @@ export const BRANCHES = [
     name: 'Ostrava',
     address: 'Vítkovická 3080/10, 702 00 Ostrava',
     phone: '+420 773 054 563',
-    email: 'info@aurabeauty.cz',
+    email: 'alexandramak@seznam.cz',
     hours: {
-      weekdays: 'Po - Pá: 11:00 - 20:00',
+      weekdays: 'Po - Pá: Dle objednávek',
       saturday: 'So: Zavřeno',
       sunday: 'Ne: Zavřeno'
     },

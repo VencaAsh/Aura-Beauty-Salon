@@ -1,5 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import Link from 'next/link';
 import { Download, CalendarCheck } from 'lucide-react';
 
@@ -36,7 +37,7 @@ const priceList: PriceCategory[] = [
   {
     category: 'Řasy',
     services: [
-      { name: 'Lash lifting', price: '950 Kč', duration: '60 min', description: 'Lash lifting krásně natočí a zvýrazní řasy, opticky je prodlouží a otevře pohled. Výsledkem jsou přirozeně výrazné řasy na 3-6 týdnů.' },
+      { name: 'Lash lifting', price: '1050 Kč', duration: '60 min', description: 'Lash lifting krásně natočí a zvýrazní řasy, opticky je prodlouží a otevře pohled. Výsledkem jsou přirozeně výrazné řasy na 3-6 týdnů.' },
       { name: 'Barvení řas & sérum', price: '250 Kč', duration: '30 min', description: 'Barvení řas se závěrečnou výživovou péčí.' },
       { name: 'Prodloužení řas classic', price: '1100 Kč', duration: '150 min' },
       { name: 'Doplnění 2 týdny', price: '550 Kč', duration: '100 min' },
@@ -66,7 +67,7 @@ const priceList: PriceCategory[] = [
       { name: 'Dermaplaning', price: '1390 Kč', duration: '75 min' },
       { name: 'Carboxy therapy CO2', price: '1400 Kč', duration: '75 min' },
       { name: 'Elektroporace', price: '1450 Kč', duration: '90 min' },
-      { name: 'LHA & ALA chemický peeling', price: '1900 Kč', duration: '75 min' },
+      { name: 'LHA & LAHA chemický peeling', price: '1900 Kč', duration: '75 min' },
       { name: 'Pánské ošetření pleti', price: '1000 Kč', duration: '60 min' },
       { name: 'Ošetření mladistvé pleti', price: '1000 Kč', duration: '60 min' },
       { name: 'Masáž rukou ke kosmetice', price: '150 Kč', duration: '15 min' }
@@ -79,22 +80,11 @@ export default function PriceListPage() {
     <main className="bg-[#F5F3F0]">
       <Breadcrumbs />
 
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-brand-secondary-light py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-brand-secondary/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-serif font-light text-brand-black mb-6">Ceník služeb</h1>
-            <div className="h-[1px] w-16 bg-brand-secondary mx-auto mb-6"></div>
-            <p className="text-center text-brand-secondary-dark mb-0 max-w-2xl mx-auto font-light">
-              Ceník služeb nabízených v Aura Beauty Salon. Specializujeme se na prodlužování řas, architekturu obočí, laminaci obočí a kompletní kosmetické ošetření. Ceny jsou uvedeny včetně DPH.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Ceník služeb"
+        subtitle="Ceník služeb nabízených v Aura Beauty Salon. Specializujeme se na prodlužování řas, architekturu obočí, laminaci obočí a kompletní kosmetické ošetření. Ceny jsou uvedeny včetně DPH."
+        backgroundClass="bg-[#f1ede6]"
+      />
 
       <div className="container mx-auto px-4 py-16">
 

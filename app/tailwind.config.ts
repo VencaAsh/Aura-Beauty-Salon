@@ -17,7 +17,7 @@ const config: Config = {
           dark: '#aa8c2c',  // Tmavší zlatá
         },
         'brand-secondary': {
-          light: '#f8f4e9', // Světlá béžová
+          light: '#f1ede6', // Světlá béžová
           DEFAULT: '#e6ccb2', // Střední nude/béžová
           dark: '#c9a689',  // Tmavší nude/béžová
         },
@@ -35,7 +35,7 @@ const config: Config = {
           dark: '#aa8c2c',  // Tmavší zlatá
         },
         'brand-rose': {
-          light: '#f8f4e9', // Světlá béžová
+          light: '#f1ede6', // Světlá béžová
           DEFAULT: '#e6ccb2', // Střední nude/béžová
           dark: '#c9a689',  // Tmavší nude/béžová
         },

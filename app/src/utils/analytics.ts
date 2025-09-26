@@ -11,8 +11,8 @@ declare global {
 // Pomocná funkce pro kontrolu, zda jsme v prohlížeči
 const isBrowser = typeof window !== 'undefined';
 
-// ID měření Google Analytics
-export const GA_MEASUREMENT_ID = 'G-KBDHJVFH3G';
+// ID měření Google Analytics (přečtené z env proměnné pro flexibilitu)
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-KBDHJVFH3G';
 
 // Inicializace Google Analytics
 export function initializeGA(): void {

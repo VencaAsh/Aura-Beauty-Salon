@@ -7,7 +7,7 @@ import heroImage from '@/assets/images/salon/IMG_0986-min.webp';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#F5F3F0]">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-[#f1ede6]">
       {/* Subtle flowing lines animation background */}
       <FlowingLines
         colors={['#E6CCB2', '#D8C3B0', '#C9B8A8', '#F5F5F5']}
@@ -70,16 +70,11 @@ export default function HeroSection() {
 
           {/* Descriptive text - minimalist messaging */}
           <FadeInView direction="left" delay={800} className="mb-6">
-            <p className="text-lg text-[#121212]/80 max-w-md font-light tracking-wide">
-              Laminace obočí, prodlužování řas, lash lifting a profesionální kosmetika v Ostravě
+            <p className="text-md text-[#121212]/80 max-w-md font-light tracking-wide">
+              Profesionální kosmetický salon v Ostravě zaměřený na úpravu obočí, řasy a kosmetické procedury s medicínskou kosmetikou Cell by Cell
             </p>
           </FadeInView>
 
-          <FadeInView direction="left" delay={1000} className="mb-10">
-            <p className="text-base text-[#C9B8A8] max-w-md font-light tracking-wide">
-              Specializujeme se na úpravu obočí, barvení obočí, čištění pleti, pánskou kosmetiku a péči o problematickou pleť
-            </p>
-          </FadeInView>
 
           {/* Minimalist booking button */}
           <FadeInView direction="left" delay={1200}>
@@ -90,12 +85,12 @@ export default function HeroSection() {
 
           {/* Services indicator */}
           <FadeInView direction="up" delay={1400} className="mt-12">
-            <div className="flex flex-col md:flex-row items-center justify-center md:space-x-8">
+            <div className="flex flex-col md:flex-row items-center ">
               <div className="px-4 py-2 mb-2 md:mb-0 border-b md:border-b-0 md:border-r border-[#C9B8A8]/20 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Laminace obočí</span>
+                <span className="text-[#121212] text-sm tracking-wider font-light">Obočí</span>
               </div>
               <div className="px-4 py-2 mb-2 md:mb-0 border-b md:border-b-0 md:border-r border-[#C9B8A8]/20 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Lash lifting</span>
+                <span className="text-[#121212] text-sm tracking-wider font-light">Řasy</span>
               </div>
               <div className="px-4 py-2 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
                 <span className="text-[#121212] text-sm tracking-wider font-light">Kosmetika</span>

@@ -48,13 +48,9 @@ export function initializeAnalytics(): void {
   if (!isBrowser) return;
 
   try {
-    if (hasConsent('analytics')) {
-      // Načtení a inicializace Google Analytics
-      loadGAScript();
-    } else {
-      // Odstranění Google Analytics, pokud uživatel odvolal souhlas
-      removeGAScript();
-    }
+    const granted = hasConsent('analytics');
+    // Oznámit změnu souhlasu ostatním částem aplikace (např. GA komponentě)
+    window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: { analytics: granted } }));
   } catch (error) {
     console.error('Chyba při inicializaci Google Analytics:', error);
   }

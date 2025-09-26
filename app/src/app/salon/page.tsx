@@ -1,5 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { PageHero } from '@/components/ui';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
@@ -33,7 +34,7 @@ const salonInfo = {
   ],
   address: 'Vítkovická 3080/10, 702 00 Ostrava',
   phone: '+420 773 054 563',
-  email: 'info@aurabeauty.cz'
+  email: 'alexandramak@seznam.cz'
 };
 
 // Data pro majitelku salonu
@@ -50,22 +51,11 @@ export default function SalonPage() {
   return (
     <main>
       <Breadcrumbs />
-      {/* Hero sekce */}
-      <section className="relative overflow-hidden bg-[#F8F6F4] py-24">
-        {/* Dekorativní prvky */}
-        <div className="absolute top-0 right-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[15rem] h-[15rem] rounded-full bg-[#E6CCB2]/10 blur-[100px]"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-light text-[#121212] mb-6">O salonu</h1>
-            <div className="h-[1px] w-16 bg-[#E6CCB2] mx-auto mb-6"></div>
-            <p className="text-center text-[#121212]/70 mb-0 max-w-2xl mx-auto font-light">
-              {salonInfo.description}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="O salonu"
+        subtitle={salonInfo.description}
+        backgroundClass="bg-[#f1ede6]"
+      />
 
       <div className="container mx-auto px-4 py-20">
         {/* Fotky salonu */}

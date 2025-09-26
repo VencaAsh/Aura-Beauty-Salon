@@ -108,7 +108,7 @@ export default function NewsFilter({ news, categories, onFilterChange }: NewsFil
           )}
           <button
             onClick={() => setIsAdvancedFilterOpen(!isAdvancedFilterOpen)}
-            className={`px-4 py-3 border-l border-[#E6CCB2]/30 text-[#121212] hover:bg-[#F8F4E9]/50 transition-all duration-300 flex items-center ${isAdvancedFilterOpen ? 'bg-[#F8F4E9]/50' : ''}`}
+            className={`px-4 py-3 border-l border-[#E6CCB2]/30 text-[#121212] hover:bg-[#f1ede6]/50 transition-all duration-300 flex items-center ${isAdvancedFilterOpen ? 'bg-[#f1ede6]/50' : ''}`}
           >
             <Filter size={16} className="mr-2" />
             <span className="text-sm font-light">Filtry</span>
