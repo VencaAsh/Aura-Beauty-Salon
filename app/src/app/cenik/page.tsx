@@ -212,7 +212,7 @@ export default function PriceListPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link
               href="/rezervace"
-              className="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden rounded-sm font-sans text-sm tracking-wider text-brand-black transition-all duration-500 bg-brand-secondary border border-brand-secondary hover:bg-brand-secondary-dark shadow-sm"
+              className="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden rounded-sm font-sans text-sm tracking-wider text-[#121212] transition-all duration-500 bg-brand-secondary border border-brand-secondary hover:bg-brand-secondary-dark shadow-sm"
             >
               <span className="relative z-10 flex items-center font-medium">
                 <CalendarCheck className="mr-3 h-5 w-5" />
