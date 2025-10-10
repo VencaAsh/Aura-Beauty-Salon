@@ -1,16 +1,7 @@
 import Link from 'next/link';
-import { CONTACT_INFO } from '@/constants';
+import { BRANCHES } from '@/constants';
 
-// Otevírací doba
-const openingHours = [
-  { day: 'Pondělí', hours: '11:00 - 20:00' },
-  { day: 'Úterý', hours: '11:00 - 20:00' },
-  { day: 'Středa', hours: '11:00 - 20:00' },
-  { day: 'Čtvrtek', hours: '11:00 - 20:00' },
-  { day: 'Pátek', hours: '11:00 - 20:00' },
-  { day: 'Sobota', hours: 'Zavřeno' },
-  { day: 'Neděle', hours: 'Zavřeno' }
-];
+// Otevírací doba – konzistentní s /kontakt stránkou (zdroj: BRANCHES)
 
 // Sociální sítě
 const socialLinks = [
@@ -70,13 +61,10 @@ export default function ContactSection() {
             <div className="border border-[#E6CCB2]/20 p-8 mb-8">
               <h3 className="text-lg font-light mb-6 text-[#121212]">Otevírací doba</h3>
 
-              <div className="space-y-3">
-                {openingHours.map((item) => (
-                  <div key={item.day} className="flex justify-between items-center">
-                    <span className="text-[#121212]/80 font-light">{item.day}</span>
-                    <span className="text-[#121212] font-light">{item.hours}</span>
-                  </div>
-                ))}
+              <div className="space-y-2 text-[#121212] font-light">
+                <p>{BRANCHES[0].hours.weekdays}</p>
+                <p>{BRANCHES[0].hours.saturday}</p>
+                <p>{BRANCHES[0].hours.sunday}</p>
               </div>
             </div>
 

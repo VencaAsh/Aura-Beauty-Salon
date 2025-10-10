@@ -211,9 +211,9 @@ export const services = [
   },
   {
     id: 24,
-    name: "LHA & ALA chemický peeling",
+    name: "LHA & LAHA chemický peeling",
     description: "Intenzivní exfoliace pro obnovu a omlazení pleti.",
-    longDescription: "LHA & ALA chemický peeling je specializované ošetření, které kombinuje lipohydroxykyselinu (LHA) a kyselinu alfa-lipoovou (ALA) pro efektivní exfoliaci a obnovu pleti. Tato kombinace pomáhá odstranit odumřelé buňky, redukovat vrásky, pigmentové skvrny a jizvy po akné. Výsledkem je jasnější, hladší a mladistvější pleť s vylepšenou texturou.",
+    longDescription: "LHA & LAHA chemický peeling je specializované ošetření, které kombinuje lipohydroxykyselinu (LHA) a LAHA pro efektivní exfoliaci a obnovu pleti. Tato kombinace pomáhá odstranit odumřelé buňky, redukovat vrásky, pigmentové skvrny a jizvy po akné. Výsledkem je jasnější, hladší a mladistvější pleť s vylepšenou texturou.",
     price: "1 900 Kč",
     duration: "75 minut",
     category: "kosmetika"

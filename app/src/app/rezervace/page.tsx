@@ -59,7 +59,7 @@ export default function ReservationPage() {
             <div className="text-sm text-[#121212]/70 font-light">
               <span className="inline-flex items-center">
                 <Clock className="w-4 h-4 mr-2 text-[#C9B8A8]" />
-                Otevíraci doba: Po-Pá 11:00-20:00
+                Otevírací doba: Po - Pá: Dle objednávek, So: Zavřeno, Ne: Zavřeno
               </span>
             </div>
           </div>
