@@ -25,7 +25,7 @@ const GoldenButton: React.FC<GoldenButtonProps> = ({
         relative inline-flex items-center justify-center
         px-8 py-3 overflow-hidden
         ${roundedClass}
-        font-sans text-sm tracking-wider
+        text-sm tracking-wider
         text-[#121212]
         transition-all duration-500
         group
