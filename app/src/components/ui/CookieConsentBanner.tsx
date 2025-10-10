@@ -12,7 +12,7 @@ export default function CookieConsentBanner() {
       style={{
         background: "rgba(248, 244, 233, 0.95)", // Světlé béžové pozadí s průhledností
         color: "#121212", // Tmavý text
-        fontFamily: "'Montserrat', sans-serif",
+        fontFamily: "'Bebas Neue', sans-serif",
         fontSize: "14px",
         padding: "16px 24px",
         boxShadow: "0 -4px 10px rgba(0, 0, 0, 0.05)",

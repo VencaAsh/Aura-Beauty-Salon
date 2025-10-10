@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'], weight: '300', display: 'swap' });
 
 interface LogoProps {
   className?: string;
@@ -33,8 +36,8 @@ export default function Logo({
         {/* Desktop */}
         <span className="hidden md:inline-block">
           <span
-            className={`font-light tracking-wide ${imageClassName}`}
-            style={{ fontSize: desktopFontSize, lineHeight: 1, color: '#000000', display: 'inline-block', fontFamily: "var(--font-montserrat), 'Montserrat', sans-serif", fontWeight: 300 }}
+            className={`font-light tracking-wide ${montserrat.className} ${imageClassName}`}
+            style={{ fontSize: desktopFontSize, lineHeight: 1, color: '#000000', display: 'inline-block', fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}
           >
             aurabeauty
           </span>
@@ -42,8 +45,8 @@ export default function Logo({
         {/* Mobile */}
         <span className="inline-block md:hidden">
           <span
-            className={`font-light tracking-wide ${imageClassName}`}
-            style={{ fontSize: mobileFontSize, lineHeight: 1, color: '#000000', display: 'inline-block', fontFamily: "var(--font-montserrat), 'Montserrat', sans-serif", fontWeight: 300 }}
+            className={`font-light tracking-wide ${montserrat.className} ${imageClassName}`}
+            style={{ fontSize: mobileFontSize, lineHeight: 1, color: '#000000', display: 'inline-block', fontFamily: "'Montserrat', sans-serif", fontWeight: 300 }}
           >
             aurabeauty
           </span>

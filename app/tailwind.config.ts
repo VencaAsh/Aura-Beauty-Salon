@@ -47,8 +47,8 @@ const config: Config = {
       },
       // Nastavení fontů
       fontFamily: {
-        sans: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'], // Základní font pro texty
-        serif: ['var(--font-playfair)', 'Playfair Display', 'serif'], // Elegantní font pro nadpisy
+        sans: ['var(--font-bebas)', 'Bebas Neue', 'sans-serif'], // Primární font pro texty (simulace "Bison")
+        serif: ['var(--font-bebas)', 'Bebas Neue', 'sans-serif'], // Nadpisy i prvky označené jako serif nyní používají Bebas Neue
       },
       // Vlastní animace
       keyframes: {

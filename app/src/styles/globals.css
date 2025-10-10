@@ -42,12 +42,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-family: 'Bison', var(--font-bebas), 'Bebas Neue', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), 'Playfair Display', serif;
+  font-family: 'Bison', var(--font-bebas), 'Bebas Neue', sans-serif;
 }
+
 
 /* Elegantní styly pro tlačítka */
 .btn-primary {
@@ -288,4 +289,39 @@ h1, h2, h3, h4, h5, h6 {
   .spacer--lg {
     height: var(--section-spacing-md);
   }
+
+/* Text stroke utilities for display text over complex backgrounds */
+.text-stroke {
+  /* Base: uses CSS variables so width/color can be combined via classes */
+  -webkit-text-stroke-width: var(--stroke-width, 0);
+  -webkit-text-stroke-color: var(--stroke-color, transparent);
+  text-stroke-width: var(--stroke-width, 0);
+  text-stroke-color: var(--stroke-color, transparent);
+}
+
+/* Stroke widths with text-shadow fallback for non-WebKit */
+.stroke-1 {
+  --stroke-width: 1px;
+  text-shadow:
+    1px 0 var(--stroke-color), -1px 0 var(--stroke-color),
+    0 1px var(--stroke-color), 0 -1px var(--stroke-color),
+    1px 1px var(--stroke-color), -1px 1px var(--stroke-color),
+    1px -1px var(--stroke-color), -1px -1px var(--stroke-color);
+}
+
+.stroke-2 {
+  --stroke-width: 2px;
+  text-shadow:
+    2px 0 var(--stroke-color), -2px 0 var(--stroke-color),
+    0 2px var(--stroke-color), 0 -2px var(--stroke-color),
+    2px 2px var(--stroke-color), -2px 2px var(--stroke-color),
+    2px -2px var(--stroke-color), -2px -2px var(--stroke-color);
+}
+
+/* Brand-aware stroke colors */
+.stroke-black { --stroke-color: #121212; }
+.stroke-white { --stroke-color: #ffffff; }
+.stroke-gold  { --stroke-color: #d4af37; }
+.stroke-beige { --stroke-color: #f1ede6; }
+
 }

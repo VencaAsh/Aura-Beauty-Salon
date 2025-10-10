@@ -89,7 +89,7 @@ export default function GallerySection() {
               {/* Overlay s popiskem */}
               <div className="absolute inset-0 bg-[#121212]/0 group-hover:bg-[#121212]/20 transition-all duration-500 flex items-end justify-start p-6">
                 <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-white text-sm font-light tracking-wider">{image.caption}</p>
+                  <p className="text-white text-sm font-light tracking-wider text-stroke stroke-1 stroke-black">{image.caption}</p>
                 </div>
               </div>
 

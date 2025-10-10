@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google"; // Elegantní kombinace fontů
+import { Bebas_Neue } from "next/font/google"; // Globální display font
 import { Header, Footer } from "@/components/layout"; // Import layout komponent
 // import { CookieConsentBanner } from "@/components/ui"; // Původní cookie banner - nyní nepoužíváme
 import EnhancedCookieConsentBanner from "@/components/ui/EnhancedCookieConsentBanner"; // Import vylepšeného cookie banneru
@@ -11,16 +11,11 @@ import ResourcePreloader from "@/components/performance/ResourcePreloader"; // R
 import { SITE_METADATA } from "@/constants";
 import "@/styles/globals.css";
 
-// Nastavení fontů
-const playfair = Playfair_Display({
+// Nastavení fontů (globálně používáme Bebas Neue)
+const bebas = Bebas_Neue({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  display: 'swap',
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
+  weight: '400',
+  variable: "--font-bebas",
   display: 'swap',
 });
 
@@ -32,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs" className={`${playfair.variable} ${montserrat.variable}`}>
+    <html lang="cs" className={`${bebas.variable}`}>
       <head>
         {/* Performance optimizations */}
         <ResourcePreloader />
