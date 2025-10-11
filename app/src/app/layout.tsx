@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue } from "next/font/google"; // Globální display font
+import { Bebas_Neue, Montserrat } from "next/font/google"; // Globální display font
 import { Header, Footer } from "@/components/layout"; // Import layout komponent
 // import { CookieConsentBanner } from "@/components/ui"; // Původní cookie banner - nyní nepoužíváme
 import EnhancedCookieConsentBanner from "@/components/ui/EnhancedCookieConsentBanner"; // Import vylepšeného cookie banneru
@@ -11,11 +11,17 @@ import ResourcePreloader from "@/components/performance/ResourcePreloader"; // R
 import { SITE_METADATA } from "@/constants";
 import "@/styles/globals.css";
 
-// Nastavení fontů (globálně používáme Bebas Neue)
+// Nastavení fontů (Bebas Neue pro display, Montserrat pro body/UI)
 const bebas = Bebas_Neue({
   subsets: ["latin"],
   weight: '400',
   variable: "--font-bebas",
+  display: 'swap',
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ['300','400','500','600','700'],
+  variable: "--font-montserrat",
   display: 'swap',
 });
 
@@ -27,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs" className={`${bebas.variable}`}>
+    <html lang="cs" className={`${bebas.variable} ${montserrat.variable}`}>
       <head>
         {/* Performance optimizations */}
         <ResourcePreloader />
