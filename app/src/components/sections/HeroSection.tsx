@@ -85,15 +85,15 @@ export default function HeroSection() {
 
           {/* Services indicator */}
           <FadeInView direction="up" delay={1400} className="mt-12">
-            <div className="flex flex-col md:flex-row items-center ">
-              <div className="px-4 py-2 mb-2 md:mb-0 border-b md:border-b-0 md:border-r border-[#C9B8A8]/20 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Obočí</span>
+            <div className="flex md:flex-row items-center justify-left md:justify-start text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-[#C9B8A8]/20">
+              <div className="px-5 py-2 md:px-6 md:py-2.5 lg:px-7 lg:py-3 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
+                <span className="text-[#121212] text-base  md:text-sm font-normal tracking-wide md:tracking-wider whitespace-nowrap">Obočí</span>
               </div>
-              <div className="px-4 py-2 mb-2 md:mb-0 border-b md:border-b-0 md:border-r border-[#C9B8A8]/20 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Řasy</span>
+              <div className="px-5 py-2 md:px-6 md:py-2.5 lg:px-7 lg:py-3 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
+                <span className="text-[#121212] text-base  md:text-sm font-normal tracking-wide md:tracking-wider whitespace-nowrap">Řasy</span>
               </div>
-              <div className="px-4 py-2 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
-                <span className="text-[#121212] text-sm tracking-wider font-light">Kosmetika</span>
+              <div className="px-5 py-2 md:px-6 md:py-2.5 lg:px-7 lg:py-3 hover:bg-[#E6CCB2]/5 transition-colors duration-300">
+                <span className="text-[#121212] text-base  md:text-sm font-normal tracking-wide md:tracking-wider whitespace-nowrap">Kosmetika</span>
               </div>
             </div>
           </FadeInView>
