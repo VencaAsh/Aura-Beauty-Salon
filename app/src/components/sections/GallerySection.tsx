@@ -8,13 +8,7 @@ import lashLiftingImage from '@/assets/images/pouzite/IMG_3289-min.webp';
 import lhalalaPeelingImage from '@/assets/images/pouzite/IMG_9991-min.webp';
 import problematicSkinImage from '@/assets/images/pouzite/IMG_0411-min.webp';
 
-import { Cormorant_Garamond } from 'next/font/google';
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-});
 
 // Definice typu pro galerii
 interface GalleryImage {
@@ -75,7 +69,7 @@ export default function GallerySection() {
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-light text-center mb-4 tracking-wide text-[#121212]">Galerie</h2>
           <div className="h-[1px] w-16 bg-[#C9B8A8]/50 mx-auto mb-6"></div>
-          <p className={`${cormorant.className} text-[#121212]/80 font-light leading-relaxed max-w-2xl mx-auto`}>
+          <p className="text-[#121212]/70 font-light leading-relaxed max-w-2xl mx-auto">
             Nahlédněte do našeho světa krásy a elegance prostřednictvím fotografií zachycujících naši práci a prostředí
           </p>
         </div>
@@ -98,7 +92,7 @@ export default function GallerySection() {
               <div className="absolute inset-0 bg-transparent group-hover:bg-black/30 transition-all duration-500 flex items-end justify-start p-6">
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className={`${cormorant.className} text-[#f1ede6] text-sm font-light tracking-wide drop-shadow`}>{image.caption}</p>
+                  <p className="text-[#f1ede6] text-sm font-light tracking-wide drop-shadow">{image.caption}</p>
                 </div>
               </div>
 
