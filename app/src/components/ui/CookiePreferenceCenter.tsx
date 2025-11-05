@@ -54,7 +54,7 @@ export default function CookiePreferenceCenter({ isOpen, onClose }: CookiePrefer
         try {
           setPreferences(JSON.parse(savedPreferences));
         } catch (e) {
-          console.error('Chyba při načítání preferencí cookies:', e);
+
         }
       }
     }
@@ -223,7 +223,7 @@ function applyPreferences(preferences: Record<string, boolean>) {
 
     // Další skripty...
   } catch (error) {
-    console.error('Chyba při aplikaci preferencí cookies:', error);
+
   }
 }
 
@@ -233,7 +233,7 @@ function enableGoogleAnalytics() {
     // Aktivace Google Analytics
     initializeAnalytics();
   } catch (error) {
-    console.error('Chyba při aktivaci Google Analytics:', error);
+
   }
 }
 
@@ -242,26 +242,26 @@ function disableGoogleAnalytics() {
     // Deaktivace Google Analytics
     initializeAnalytics(); // Funkce sama zkontroluje, zda má uživatel souhlas
   } catch (error) {
-    console.error('Chyba při deaktivaci Google Analytics:', error);
+
   }
 }
 
 function enableFacebookPixel() {
   try {
     // Kód pro aktivaci Facebook Pixel
-    console.log('Facebook Pixel aktivován');
+
     // Zde byste přidali skutečnou implementaci
   } catch (error) {
-    console.error('Chyba při aktivaci Facebook Pixel:', error);
+
   }
 }
 
 function disableFacebookPixel() {
   try {
     // Kód pro deaktivaci Facebook Pixel
-    console.log('Facebook Pixel deaktivován');
+
     // Zde byste přidali skutečnou implementaci
   } catch (error) {
-    console.error('Chyba při deaktivaci Facebook Pixel:', error);
+
   }
 }

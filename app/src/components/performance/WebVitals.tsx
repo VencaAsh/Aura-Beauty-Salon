@@ -15,21 +15,23 @@ export default function WebVitals() {
     // Only run in browser environment
     if (typeof window === 'undefined') return;
 
-    console.log('🔍 Initializing Web Vitals measurement...');
+
 
     // Check if performance API is available
     if (!window.performance) {
-      console.warn('⚠️ Performance API not available');
+      if (process.env.NODE_ENV !== 'production') console.warn('⚠️ Performance API not available');
       return;
     }
 
     // Function to send metrics to analytics
     const sendToAnalytics = (metric: WebVitalsMetric) => {
-      console.log(`✅ ${metric.name}:`, {
-        value: `${metric.value.toFixed(2)}ms`,
-        rating: metric.rating,
-        id: metric.id
-      });
+      if (process.env.NODE_ENV !== 'production') {
+        console.log(`✅ ${metric.name}:`, {
+          value: `${metric.value.toFixed(2)}ms`,
+          rating: metric.rating,
+          id: metric.id
+        });
+      }
 
       // Send to Google Analytics if available
       if (window.gtag) {
@@ -54,11 +56,11 @@ export default function WebVitals() {
       const threshold = thresholds[metric.name as keyof typeof thresholds];
       if (threshold) {
         if (metric.value > threshold.poor) {
-          console.warn(`⚠️ Poor ${metric.name}: ${metric.value.toFixed(2)}ms (target: <${threshold.good}ms)`);
+          if (process.env.NODE_ENV !== 'production') console.warn(`⚠️ Poor ${metric.name}: ${metric.value.toFixed(2)}ms (target: <${threshold.good}ms)`);
         } else if (metric.value > threshold.good) {
-          console.warn(`⚡ ${metric.name} needs improvement: ${metric.value.toFixed(2)}ms (target: <${threshold.good}ms)`);
+          if (process.env.NODE_ENV !== 'production') console.warn(`⚡ ${metric.name} needs improvement: ${metric.value.toFixed(2)}ms (target: <${threshold.good}ms)`);
         } else {
-          console.log(`✅ Good ${metric.name}: ${metric.value.toFixed(2)}ms`);
+          if (process.env.NODE_ENV !== 'production') console.log(`✅ Good ${metric.name}: ${metric.value.toFixed(2)}ms`);
         }
       }
     };
@@ -66,7 +68,7 @@ export default function WebVitals() {
     // Measure Core Web Vitals with conditional loading
     const measureWebVitals = async () => {
       try {
-        console.log('📦 Loading web-vitals library...');
+
 
         // Try to load web-vitals library conditionally
         if (typeof window !== 'undefined') {
@@ -74,7 +76,7 @@ export default function WebVitals() {
           const webVitals = await import('web-vitals').catch(() => null);
 
           if (webVitals) {
-            console.log('📦 Web-vitals module loaded successfully');
+
 
             // Use the correct function names for web-vitals 5.x
             const { onCLS, onINP, onFCP, onLCP, onTTFB } = webVitals;
@@ -139,17 +141,17 @@ export default function WebVitals() {
               });
             }
 
-            console.log('✅ Web Vitals measurement initialized successfully');
+
           } else {
             throw new Error('Failed to load web-vitals library');
           }
         }
 
       } catch (error) {
-        console.error('❌ Error loading or measuring Web Vitals:', error);
+
 
         // Fallback to basic performance measurement if web-vitals fails
-        console.log('🔄 Falling back to basic performance measurement...');
+
         measureBasicPerformance();
       }
     };
@@ -163,7 +165,7 @@ export default function WebVitals() {
           const navEntry = navEntries[0];
           const ttfb = navEntry.responseStart - navEntry.requestStart;
 
-          console.log('✅ Basic TTFB measured:', `${ttfb.toFixed(2)}ms`);
+
 
           if (window.gtag) {
             window.gtag('event', 'web_vitals', {
@@ -201,33 +203,33 @@ export default function WebVitals() {
 
           // DNS lookup time
           const dnsTime = navEntry.domainLookupEnd - navEntry.domainLookupStart;
-          console.log('DNS Lookup Time:', `${dnsTime.toFixed(2)}ms`);
+
 
           // TCP connection time
           const tcpTime = navEntry.connectEnd - navEntry.connectStart;
-          console.log('TCP Connection Time:', `${tcpTime.toFixed(2)}ms`);
+
 
           // SSL negotiation time
           if (navEntry.secureConnectionStart > 0) {
             const sslTime = navEntry.connectEnd - navEntry.secureConnectionStart;
-            console.log('SSL Negotiation Time:', `${sslTime.toFixed(2)}ms`);
+
           }
 
           // Request time
           const requestTime = navEntry.responseStart - navEntry.requestStart;
-          console.log('Request Time:', `${requestTime.toFixed(2)}ms`);
+
 
           // Response time
           const responseTime = navEntry.responseEnd - navEntry.responseStart;
-          console.log('Response Time:', `${responseTime.toFixed(2)}ms`);
+
 
           // DOM processing time
           const domTime = navEntry.domContentLoadedEventEnd - navEntry.responseEnd;
-          console.log('DOM Processing Time:', `${domTime.toFixed(2)}ms`);
+
 
           // Total page load time
           const totalTime = navEntry.loadEventEnd - navEntry.navigationStart;
-          console.log('Total Page Load Time:', `${totalTime.toFixed(2)}ms`);
+
 
           // Send additional metrics to analytics
           if (window.gtag) {
@@ -260,11 +262,7 @@ export default function WebVitals() {
             const avgDuration = items.reduce((sum, item) => sum + item.duration, 0) / items.length;
             const totalSize = items.reduce((sum, item) => sum + (item.transferSize || 0), 0);
 
-            console.log(`${type.charAt(0).toUpperCase() + type.slice(1)} Performance:`, {
-              count: items.length,
-              avgDuration: `${avgDuration.toFixed(2)}ms`,
-              totalSize: `${(totalSize / 1024).toFixed(2)}KB`
-            });
+
 
             if (window.gtag) {
               window.gtag('event', 'resource_performance', {
@@ -291,10 +289,7 @@ export default function WebVitals() {
 
     // Performance summary after 5 seconds
     setTimeout(() => {
-      console.group('📊 Performance Monitoring Summary');
-      console.log('Web Vitals measurement completed');
-      console.log('Check the metrics above for detailed performance data');
-      console.groupEnd();
+
     }, 5000);
 
   }, []);

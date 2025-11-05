@@ -129,25 +129,26 @@ export default function ReservationForm() {
     setStatus({ type: 'loading', message: 'Odesílám rezervaci...' });
     
     try {
-      // Zde bude API volání pro odeslání rezervace
+      // TODO: Implement API endpoint for reservation submission
+      // The commented code below shows the intended API integration structure
+      // Uncomment and configure when backend API is ready
+
       // const response = await fetch('/api/reservation', {
       //   method: 'POST',
       //   headers: { 'Content-Type': 'application/json' },
       //   body: JSON.stringify(formData)
       // });
-      
       // const result = await response.json();
-      
       // if (!response.ok) {
       //   throw new Error(result.error || 'Neznámá chyba serveru.');
       // }
-      
-      // Simulace úspěšného odeslání
+
+      // Temporary: Simulate successful submission (remove when API is implemented)
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       setStatus({ type: 'success', message: 'Vaše rezervace byla úspěšně odeslána! Potvrzení jsme vám zaslali na e-mail.' });
     } catch (error) {
-      console.error('Chyba při odesílání rezervace:', error);
+      if (process.env.NODE_ENV !== 'production') console.error('Chyba při odesílání rezervace:', error);
       setStatus({ type: 'error', message: error instanceof Error ? error.message : 'Nastala chyba při odesílání rezervace.' });
     }
   };

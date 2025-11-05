@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Montserrat } from "next/font/google"; // Globální display font
 import { Header, Footer } from "@/components/layout"; // Import layout komponent
-// import { CookieConsentBanner } from "@/components/ui"; // Původní cookie banner - nyní nepoužíváme
+
 import EnhancedCookieConsentBanner from "@/components/ui/EnhancedCookieConsentBanner"; // Import vylepšeného cookie banneru
 import { SalonStructuredData, LocalBusinessStructuredData } from "@/components/seo/StructuredData"; // Import strukturovaných dat pro SEO
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics"; // Import Google Analytics komponenty
@@ -51,7 +51,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer /> {/* Použití komponenty Footer */}
-          {/* <CookieConsentBanner /> */} {/* Původní cookie lišta - zaměněno za vylepšenou verzi */}
+
           <EnhancedCookieConsentBanner hideFooterButton={true} /> {/* Vylepšená cookie lišta s centrem preferencí */}
 
           {/* Strukturovaná data pro SEO */}

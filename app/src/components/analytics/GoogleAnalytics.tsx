@@ -47,18 +47,6 @@ export default function GoogleAnalytics() {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
-        onLoad={() => {
-          console.log('Google Analytics loaded successfully');
-        }}
-        onError={(e) => {
-          // Některé prohlížeče/rozšíření (adblock) blokují GA; událost může být prázdný objekt
-          try {
-            const target = (e as any)?.currentTarget as HTMLScriptElement | undefined;
-            console.error('Failed to load Google Analytics:', target?.src || e);
-          } catch {
-            console.error('Failed to load Google Analytics');
-          }
-        }}
       />
 
       {/* Google Analytics - inicializační kód */}

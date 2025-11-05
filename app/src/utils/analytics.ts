@@ -11,8 +11,8 @@ declare global {
 // Pomocná funkce pro kontrolu, zda jsme v prohlížeči
 const isBrowser = typeof window !== 'undefined';
 
-// ID měření Google Analytics (přečtené z env proměnné pro flexibilitu)
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-KBDHJVFH3G';
+// ID měření Google Analytics (čtené z env proměnné; bez fallbacku pro bezpečný handover)
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
 
 // Inicializace Google Analytics
 export function initializeGA(): void {
@@ -77,7 +77,7 @@ export function loadGAScript(): void {
       initializeGA();
     };
   } catch (error) {
-    console.error('Chyba při načítání GA skriptu:', error);
+
   }
 }
 
@@ -106,7 +106,7 @@ export function removeGAScript(): void {
     // Odstranění cookies
     removeGACookies();
   } catch (error) {
-    console.error('Chyba při odstraňování GA skriptu:', error);
+
   }
 }
 
@@ -128,6 +128,6 @@ function removeGACookies(): void {
       document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}; SameSite=None; Secure`;
     });
   } catch (error) {
-    console.error('Chyba při odstraňování GA cookies:', error);
+
   }
 }

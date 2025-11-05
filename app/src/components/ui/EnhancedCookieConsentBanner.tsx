@@ -15,7 +15,7 @@ try {
     };
   }
 } catch (error) {
-  console.error('Chyba při inicializaci globální funkce pro cookies:', error);
+
 }
 
 export default function EnhancedCookieConsentBanner({ hideFooterButton = false }: { hideFooterButton?: boolean } = {}) {
@@ -45,7 +45,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
             initializeAllScripts();
           }
         } catch (storageError) {
-          console.error('Chyba při přístupu k localStorage:', storageError);
+
           // Pokud nelze přistoupit k localStorage, zobrazíme banner
           const timer = setTimeout(() => {
             setShowBanner(true);
@@ -54,7 +54,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
         }
       }
     } catch (error) {
-      console.error('Chyba při inicializaci cookie banneru:', error);
+
     }
   }, []);
 
@@ -76,7 +76,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
         setShowBanner(false);
       }
     } catch (error) {
-      console.error('Chyba při přijetí všech cookies:', error);
+
     }
   };
 
@@ -96,7 +96,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
         setShowBanner(false);
       }
     } catch (error) {
-      console.error('Chyba při odmítnutí cookies:', error);
+
     }
   };
 
@@ -106,7 +106,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
       setShowPreferences(true);
       setShowBanner(false);
     } catch (error) {
-      console.error('Chyba při otevírání centra preferencí:', error);
+
     }
   };
 
@@ -116,7 +116,7 @@ export default function EnhancedCookieConsentBanner({ hideFooterButton = false }
       setShowPreferences(false);
       initializeAllScripts();
     } catch (error) {
-      console.error('Chyba při zavírání centra preferencí:', error);
+
     }
   };
 

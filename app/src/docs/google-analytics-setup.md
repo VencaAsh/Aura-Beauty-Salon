@@ -41,20 +41,14 @@ Po vytvoření datového streamu získáte měřicí ID (Measurement ID), které
 
 ## 3. Konfigurace v kódu
 
-1. Otevřete soubor `app/src/utils/analytics.ts`
-2. Nahraďte placeholder ID vaším skutečným měřicím ID:
+1. Vytvořte soubor `.env` v adresáři `app/` podle šablony `app/.env.example`
+2. Nastavte proměnnou prostředí s vaším měřicím ID:
 
-```typescript
-// ID měření Google Analytics
-export const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Nahraďte skutečným ID měření z Google Analytics 4
+```
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
-Například:
-
-```typescript
-// ID měření Google Analytics
-export const GA_MEASUREMENT_ID = 'G-ABC123XYZ'; // Skutečné ID měření z Google Analytics 4
-```
+Poznámka: Aplikace načítá ID z proměnné prostředí a v kódu není žádné hardcodované fallback ID.
 
 ## 4. Ověření implementace
 

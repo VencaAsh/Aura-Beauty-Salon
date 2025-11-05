@@ -63,6 +63,8 @@ export const SERVICES = [
 
 // Site metadata
 export const SITE_METADATA = {
+  // Base URL used for generating absolute URLs in OpenGraph/Twitter images and canonical links
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: 'Aura Beauty Salon - Kosmetika, Řasy a Obočí v Ostravě',
   description: 'Profesionální kosmetický salon v Ostravě nabízející laminaci obočí, úpravu obočí, barvení obočí, prodlužování řas, lash lifting, kosmetiku, čištění pleti a pánskou kosmetiku.',
   keywords: 'laminace obočí Ostrava, úprava obočí Ostrava, barvení obočí Ostrava, řasy Ostrava, lash lifting Ostrava, kosmetika Ostrava, čištění pleti Ostrava, pánská kosmetika Ostrava, chemický peeling Ostrava, masáž obličeje, LHA LALA peeling, anti age, problematická pleť, prodlužování řas',

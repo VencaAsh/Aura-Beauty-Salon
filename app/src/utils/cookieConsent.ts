@@ -39,7 +39,8 @@ export function loadScriptIfConsented(category: string, src: string, attributes:
       return true;
     }
   } catch (error) {
-    console.error('Chyba při načítání skriptu:', error);
+    // Silently fail - script loading is non-critical and shouldn't break the application
+    // User experience continues without the optional script
   }
   return false;
 }
@@ -52,7 +53,7 @@ export function initializeAnalytics(): void {
     // Oznámit změnu souhlasu ostatním částem aplikace (např. GA komponentě)
     window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: { analytics: granted } }));
   } catch (error) {
-    console.error('Chyba při inicializaci Google Analytics:', error);
+    // Silently fail - analytics initialization is non-critical
   }
 }
 
@@ -64,7 +65,7 @@ export function initializeMarketing(): void {
     if (hasConsent('marketing')) {
       // Facebook Pixel kód
       // Zde byste přidali skutečný kód pro Facebook Pixel
-      console.log('Facebook Pixel inicializován');
+
 
       // Načtení FB Pixel skriptu
       loadScriptIfConsented(
@@ -73,7 +74,7 @@ export function initializeMarketing(): void {
       );
     }
   } catch (error) {
-    console.error('Chyba při inicializaci Facebook Pixel:', error);
+    // Silently fail - marketing script initialization is non-critical
   }
 }
 
@@ -86,6 +87,6 @@ export function initializeAllScripts(): void {
       // Další inicializace...
     }
   } catch (error) {
-    console.error('Chyba při inicializaci skriptů:', error);
+    // Silently fail - script initialization is non-critical
   }
 }

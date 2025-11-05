@@ -174,7 +174,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-serif font-light text-[#121212] mb-4">9. Závěrečná ustanovení</h2>
             <div className="prose prose-sm max-w-none text-[#121212]/80 font-light">
               <p>
-                9.1 Tyto obchodní podmínky nabývají účinnosti dnem [DOPLNIT].
+                9.1 Tyto obchodní podmínky nabývají účinnosti dnem 11.5.2025.
               </p>
               <p>
                 9.2 Poskytovatel si vyhrazuje právo tyto obchodní podmínky změnit. Změna obchodních podmínek bude oznámena na webových stránkách poskytovatele.

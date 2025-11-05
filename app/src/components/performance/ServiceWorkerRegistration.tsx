@@ -13,7 +13,7 @@ export default function ServiceWorkerRegistration() {
       navigator.serviceWorker
         .register('/sw.js')
         .then((registration) => {
-          console.log('Service Worker registered successfully:', registration);
+
           
           // Check for updates
           registration.addEventListener('updatefound', () => {
@@ -22,7 +22,7 @@ export default function ServiceWorkerRegistration() {
               newWorker.addEventListener('statechange', () => {
                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                   // New content is available, notify user
-                  console.log('New content available! Please refresh.');
+
                   
                   // Optional: Show update notification
                   if (window.confirm('Nová verze webu je k dispozici. Chcete ji načíst?')) {
@@ -34,24 +34,24 @@ export default function ServiceWorkerRegistration() {
           });
         })
         .catch((error) => {
-          console.error('Service Worker registration failed:', error);
+
         });
 
       // Listen for service worker messages
       navigator.serviceWorker.addEventListener('message', (event) => {
         if (event.data && event.data.type === 'CACHE_UPDATED') {
-          console.log('Cache updated:', event.data.payload);
+
         }
       });
 
       // Handle offline/online status
       const handleOnline = () => {
-        console.log('App is online');
+
         // Optional: Show online notification
       };
 
       const handleOffline = () => {
-        console.log('App is offline');
+
         // Optional: Show offline notification
       };
 

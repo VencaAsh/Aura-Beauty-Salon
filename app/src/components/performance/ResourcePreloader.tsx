@@ -91,12 +91,7 @@ export default function ResourcePreloader({
         crossOrigin="anonymous"
       />
       
-      {/* Preload Google Analytics */}
-      <link
-        rel="preload"
-        href="https://www.googletagmanager.com/gtag/js?id=G-KBDHJVFH3G"
-        as="script"
-      />
+
 
       {/* Critical CSS inlining hint */}
       <style
